@@ -53,7 +53,7 @@ urls:
     - https://github.com/taku-o/vim-copypath.git
     - https://github.com/terryma/vim-multiple-cursors.git
     - https://github.com/tmhedberg/matchit.git
-    - https://github.com/tpope/vim-abolish
+    - https://github.com/tpope/vim-abolish.git
     - https://github.com/tpope/vim-commentary.git
     - https://github.com/tpope/vim-fugitive.git
     - https://github.com/tpope/vim-rails.git

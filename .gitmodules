@@ -1,0 +1,28 @@
+[submodule "bundle/vim-startify"]
+    path = bundle/vim-startify
+    url = https://github.com/mhinz/vim-startify.git
+    ignore = dirty
+[submodule "bundle/YouCompleteMe"]
+    path = bundle/YouCompleteMe
+    url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/tern_for_vim"]
+    path = bundle/tern_for_vim
+    url = https://github.com/marijnh/tern_for_vim.git
+[submodule "bundle/vim-abolish"]
+    path = bundle/vim-abolish
+    url = https://github.com/tpope/vim-abolish.git
+[submodule "bundle/vim-easymotion"]
+    path = bundle/vim-easymotion
+    url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/vim-exchange"]
+    path = bundle/vim-exchange
+    url = https://github.com/tommcdo/vim-exchange.git
+[submodule "bundle/vim-markdown"]
+    path = bundle/vim-markdown
+    url = https://github.com/plasticboy/vim-markdown.git
+[submodule "bundle/vim-rails"]
+    path = bundle/vim-rails
+    url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-unimpaired"]
+    path = bundle/vim-unimpaired
+    url = https://github.com/gabesoft/vim-unimpaired.git
