@@ -404,7 +404,7 @@ set iskeyword-=-
 
 " Use local vimrc if available {{{
 " --------------------------------------------------------------------------------
-if filereadable(expand("$VIMHOME/../.vimrc.local"))
+if filereadable(expand("$VIMHOME/vimrc.local"))
     source $VIMHOME/vimrc.local
 endif
 " }}}
