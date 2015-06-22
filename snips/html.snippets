@@ -1,0 +1,27 @@
+snippet ! "comment"
+<!-- $1 -->$0
+endsnippet
+
+snippet x "x-handlebars script"
+<script type="text/x-handlebars" id="${1:id}">
+	$0
+</script>
+endsnippet
+
+snippet lb "line break" w
+<br/>$0
+endsnippet
+
+snippet is "if start"
+{{#if ${1:condition}}}$0
+endsnippet
+
+snippet el "if else"
+{{else}}$0
+endsnippet
+
+snippet ie "if end"
+{{/if}}$0
+endsnippet
+
+

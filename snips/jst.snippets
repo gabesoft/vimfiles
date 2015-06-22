@@ -1,0 +1,21 @@
+#https://github.com/visionmedia/ejs
+
+snippet % "server tags" i
+<%${1} ${2:code} %>$0
+endsnippet
+
+snippet = "server tags escaped html" i
+<%= ${1:code} %>$0
+endsnippet
+
+snippet - "server tags unescaped buffering" i
+<%- ${1:code} %>$0
+endsnippet
+
+snippet : "server tags using filter" i
+<%=: ${1:code} | ${2:filter} %>$0
+endsnippet
+
+snippet / "comment"
+<%/* ${1:comment} */%>$0
+endsnippet

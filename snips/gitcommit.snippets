@@ -1,0 +1,19 @@
+snippet cl "creativelive issue commit message"
+creativelive/tigris#${1:`!v ReadFirstLine($HOME . '/.gitissue')`}: $0
+endsnippet
+
+snippet qs "creativelive issue commit message (JIRA Questions)"
+QUES-${1:`!v ReadFirstLine($HOME . '/.gitissue')`}: $0
+endsnippet
+
+snippet no "creativelive issue commit message (JIRA Notes)"
+NOT-${1:`!v ReadFirstLine($HOME . '/.gitissue')`}: $0
+endsnippet
+
+snippet ga "creativelive issue commit message (JIRA Gallery)"
+GAL-${1:`!v ReadFirstLine($HOME . '/.gitissue')`}: $0
+endsnippet
+
+snippet ca "creativelive issue commit message (JIRA Calendar)"
+CAL-${1:`!v ReadFirstLine($HOME . '/.gitissue')`}: $0
+endsnippet

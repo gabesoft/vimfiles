@@ -1,0 +1,43 @@
+snippet td "todo"
+{!TODO: $0!}
+endsnippet
+
+snippet ! "comment"
+<!-- $1 -->$0
+endsnippet
+
+snippet > "template import"
+{>"$1"/}$0
+endsnippet
+
+snippet # "template context"
+{#${1:name}}
+	$0
+{/$1}
+endsnippet
+
+snippet ? "template if exists"
+{?${1:name}}
+	$0
+{/$1}
+endsnippet
+
+snippet ^ "template if not exists"
+{^${1:name}}
+	$0
+{/$1}
+endsnippet
+
+snippet < "template block"
+{<${1:name}}$0{/$1}
+endsnippet
+
+snippet @/ "single tag helper"
+{@${1:name}/}$0
+endsnippet
+
+snippet @ "dual tag helper" i
+{@${1:name}}$0{/$1}
+endsnippet
+
+# vim:ft=snippets:

@@ -1,0 +1,27 @@
+snippet @ "import"
+@import '$1';$0
+endsnippet
+
+snippet m "media"
+@media (max-width: ${1:@screen-tablet}) {
+	$0
+}
+endsnippet
+
+snippet : "style item"
+${1:key}: ${2:value};$0
+endsnippet
+
+snippet . "class declaration"
+.${1:name} {
+	$0
+}
+endsnippet
+
+snippet ex "extend"
+&:extend(.${1:class});$0
+endsnippet
+
+snippet td "todo"
+// TODO: $0
+endsnippet

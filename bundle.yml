@@ -1,0 +1,136 @@
+---
+urls:
+    - https://github.com/airblade/vim-gitgutter.git
+    - https://github.com/altercation/vim-colors-solarized.git
+    - https://github.com/briancollins/vim-jst.git
+    - https://github.com/digitaltoad/vim-jade.git
+    - https://github.com/duff/vim-scratch.git
+    - https://github.com/EinfachToll/DidYouMean.git
+    - https://github.com/evanmiller/nginx-vim-syntax.git
+    - https://github.com/gabesoft/rainbow_parentheses.vim.git
+    - https://github.com/gabesoft/splitjoin.vim.git
+    - https://github.com/gabesoft/vim-ags.git
+    - https://github.com/tpope/vim-endwise.git
+    - https://github.com/gabesoft/vim-haml.git
+    - https://github.com/gabesoft/vim-java.git
+    - https://github.com/gabesoft/vim-javascript-syntax.git
+    - https://github.com/gabesoft/vim-javascript.git
+    - https://github.com/gabesoft/vim-twm.git
+    - https://github.com/gabesoft/vim-unimpaired.git
+    - https://github.com/gerw/vim-HiLinkTrace.git
+    - https://github.com/godlygeek/tabular.git
+    - https://github.com/groenewege/vim-less.git
+    - https://github.com/haya14busa/incsearch.vim.git
+    - https://github.com/itchyny/lightline.vim.git
+    - https://github.com/jimmyhchan/dustjs.vim.git
+    - https://github.com/Julian/vim-textobj-variable-segment
+    - https://github.com/junegunn/vim-peekaboo.git
+    - https://github.com/kana/vim-niceblock.git
+    - https://github.com/kana/vim-smartchr.git
+    - https://github.com/kana/vim-textobj-indent.git
+    - https://github.com/kana/vim-textobj-user.git
+    - https://github.com/kchmck/vim-coffee-script.git
+    - https://github.com/kshenoy/vim-signature.git
+    - https://github.com/Lokaltog/vim-easymotion.git
+    - https://github.com/machakann/vim-columnmove.git
+    - https://github.com/maksimr/vim-jsbeautify.git
+    - https://github.com/marijnh/tern_for_vim.git
+    - https://github.com/mattn/emmet-vim.git
+    - https://github.com/mustache/vim-mustache-handlebars.git
+    - https://github.com/osyo-manga/vim-anzu.git
+    - https://github.com/osyo-manga/vim-over.git
+    - https://github.com/plasticboy/vim-markdown.git
+    - https://github.com/Raimondi/delimitMate.git
+    - https://github.com/rhysd/accelerated-jk.git
+    - https://github.com/rhysd/committia.vim.git
+    - https://github.com/scrooloose/nerdtree.git
+    - https://github.com/scrooloose/syntastic.git
+    - https://github.com/Shougo/neomru.vim.git
+    - https://github.com/Shougo/unite.vim.git
+    - https://github.com/Shougo/vimproc.vim.git
+    - https://github.com/SirVer/ultisnips.git
+    - https://github.com/Soares/butane.vim.git
+    - https://github.com/taku-o/vim-copypath.git
+    - https://github.com/terryma/vim-multiple-cursors.git
+    - https://github.com/tmhedberg/matchit.git
+    - https://github.com/tpope/vim-abolish
+    - https://github.com/tpope/vim-commentary.git
+    - https://github.com/tpope/vim-fugitive.git
+    - https://github.com/tpope/vim-rails.git
+    - https://github.com/tpope/vim-surround.git
+    - https://github.com/tsukkee/unite-help.git
+    - https://github.com/Valloric/MatchTagAlways.git
+    - https://github.com/Valloric/YouCompleteMe.git
+    - https://github.com/Yggdroot/indentLine.git
+    - https://github.com/Shougo/vimshell.vim.git
+    - https://github.com/junegunn/vim-after-object.git
+    - https://github.com/nelstrom/vim-textobj-rubyblock.git
+    - https://github.com/mhinz/vim-startify.git
+    - https://github.com/keith/tmux.vim.git
+    - https://github.com/morhetz/gruvbox.git
+    - https://github.com/AndrewRadev/switch.vim.git
+    - https://github.com/wellle/tmux-complete.vim.git
+    - https://github.com/tommcdo/vim-exchange.git
+    - https://github.com/sjl/gundo.vim.git
+    - https://github.com/aaronbieber/vim-quicktask.git
+
+post-install:
+    https://github.com/Valloric/YouCompleteMe.git:
+        - git submodule update --init --recursive
+        - ./install.sh
+    https://github.com/Shougo/vimproc.vim.git:
+        - make -f make_mac.mak
+    https://github.com/maksimr/vim-jsbeautify.git:
+        - git submodule update --init --recursive
+        - npm install . -d
+    https://github.com/marijnh/tern_for_vim.git:
+        - npm install . -d
+    https://github.com/jimmyhchan/dustjs.vim.git:
+        - rm -rfv snippets
+
+urls-obsolete:
+    - https://github.com/kien/ctrlp.vim.git
+    - https://github.com/jpalardy/vim-slime.git
+    - https://github.com/vim-scripts/FuzzyFinder.git
+    - https://github.com/vim-scripts/L9.git
+
+    # - https://github.com/mbbill/undotree.git
+    # - https://github.com/junegunn/goyo.vim.git
+    # - https://github.com/vim-ruby/vim-ruby.git
+    # - https://github.com/walm/jshint.vim.git
+    # - https://github.com/sjl/gundo.vim.git
+    # - https://github.com/sjl/badwolf.git
+    # - https://github.com/Shougo/unite-outline.git
+    # - https://github.com/scrooloose/nerdcommenter.git
+    # - https://github.com/elzr/vim-json.git
+    # - https://github.com/Lokaltog/vim-distinguished.git
+    # - https://github.com/29decibel/vim-stringify.git
+    # - https://github.com/michaelavila/selecta.vim.git
+    # - https://github.com/chriskempson/base16-vim.git
+    # - https://github.com/rking/ag.vim.git
+    # - https://github.com/vim-scripts/BufOnly.vim.git
+    # - https://github.com/bruno-/vim-vertical-move.git
+
+    # - https://github.com/vim-scripts/camelcasemotion.git
+    # - https://github.com/gabesoft/vim-coloresque.git
+    # - https://github.com/hail2u/vim-css3-syntax.git
+    # - https://github.com/wavded/vim-stylus.git
+    # - https://github.com/majutsushi/tagbar.git
+    # - https://github.com/chip/vim-fat-finger.git
+    # - https://github.com/bling/vim-bufferline.git
+    # - https://github.com/Lokaltog/powerline.git
+    # - https://github.com/spolu/dwm.vim.git
+    # - https://github.com/roman/golden-ratio.git
+    # - https://github.com/zhaocai/GoldenView.Vim.git
+    # - https://github.com/kana/vim-arpeggio.git
+    # - https://github.com/terryma/vim-expand-region.git
+    # - https://github.com/wellle/targets.vim.git
+    # - https://github.com/dyng/ctrlsf.vim.git
+    # - https://github.com/pangloss/vim-javascript.git
+    # - https://github.com/rhysd/clever-f.vim.git
+    # - https://github.com/krisajenkins/vim-pipe.git
+    # - https://github.com/terryma/vim-smooth-scroll.git
+    # - https://github.com/yonchu/accelerated-smooth-scroll.git
+    # - https://github.com/haya14busa/vim-easyoperator-line.git
+    # - https://github.com/junegunn/seoul256.vim.git
+    # - https://github.com/Xuyuanp/nerdtree-git-plugin

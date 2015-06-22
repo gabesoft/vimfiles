@@ -1,0 +1,144 @@
+#!/bin/bash
+
+# -----------------------------------------------------------------------------
+# author:   Gabriel Adomnicai <gabesoft@gmail.com>
+# purpose:  Vim bundles setup script
+# -----------------------------------------------------------------------------
+
+DIR=`dirname $0`
+VIM_DIR=$HOME/.vim
+BUNDLES_FILE=$VIM_DIR/bundle.yml
+BUNDLE_DIR=$VIM_DIR/bundle
+URLS=$(cat $BUNDLES_FILE | grep -e "^    -" | awk '{ print $2 }' | tr "\n" " ")
+URLS=($URLS)
+declare -a SELECTED
+
+usage() {
+  echo "Usage: `basename $0` {install <bundle1, ..> | delete <bundle1, ...> | refresh <bundle1, ...> }"
+}
+
+print_info() {
+  echo -e "${COLOR_PURPLE}$1${COLOR_NC}"
+}
+
+print_install() {
+  echo -e "${COLOR_BRIGHT_GREEN}✔ ${COLOR_BLUE}installing bundle ${COLOR_GREEN}$1${COLOR_NC}"
+}
+
+print_post_install() {
+  echo -e "${COLOR_BRIGHT_GREEN}✔ ${COLOR_BLUE}$1${COLOR_NC}"
+}
+
+print_delete() {
+  echo -e "${COLOR_RED}✘ ${COLOR_BLUE}deleting bundle ${COLOR_GREEN}$1${COLOR_NC}"
+}
+
+install_selected() {
+  mkdir -p $BUNDLE_DIR
+
+  pushd . > /dev/null
+  cd $BUNDLE_DIR
+
+  for url in "${SELECTED[@]}"; do
+    print_install $url
+    git clone $url
+    post_install_actions $url
+  done
+
+  popd > /dev/null
+}
+
+post_install_actions() {
+  url="$1"
+  path=$(basename "$url")
+  bundle_path="$BUNDLE_DIR/${path%.*}"
+
+  pushd . > /dev/null
+  cd $bundle_path
+
+  in_post_install=0
+  in_match=0
+  is_cmd_line=0
+  while read line; do
+    if [[ $line =~ ^post-install ]]; then
+      in_post_install=1
+      in_match=0
+    fi
+    if [[ $line =~ ^- ]]; then
+      is_cmd_line=1
+    else
+      is_cmd_line=0
+      in_match=0
+    fi
+    if [[ $line =~ $url ]]; then
+      in_match=1
+    fi
+    if [[ $in_post_install == 1 && $in_match == 1 && $is_cmd_line == 1 ]]; then
+      pre='- '
+      cmd="${line#$pre}"
+
+      print_post_install "$cmd"
+      eval "$cmd"
+    fi
+  done < $BUNDLES_FILE
+
+  popd > /dev/null
+}
+
+delete_selected() {
+  for url in "${SELECTED[@]}"; do
+    path=$(basename "$url")
+    bundle_path="$BUNDLE_DIR/${path%.*}"
+
+    print_delete $bundle_path
+    rm -rfv $bundle_path
+  done
+}
+
+selected_urls() {
+  for url in ${URLS[@]}; do
+    if [[ -z "$1" ]]; then
+      SELECTED=("${SELECTED[@]}" "$url")
+    else
+      for arg in "${@}"; do
+        a=$(echo $url | tr '[:upper:]' '[:lower:]')
+        b=$(echo $arg | tr '[:upper:]' '[:lower:]')
+        if [[ $a =~ $b ]]; then
+          SELECTED=("${SELECTED[@]}" "$url")
+        fi
+      done
+    fi
+  done
+}
+
+install() {
+  selected_urls "${@}"
+  install_selected
+}
+
+delete() {
+  selected_urls "${@}"
+  delete_selected
+}
+
+refresh() {
+  selected_urls "${@}"
+  delete_selected
+  install_selected
+}
+
+case "$1" in
+  install|ins|add)
+    install "${@:2}"
+    ;;
+  delete|del|rem|remove)
+    delete "${@:2}"
+    ;;
+  refresh|update)
+    refresh "${@:2}"
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
