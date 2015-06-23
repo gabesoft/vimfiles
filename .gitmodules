@@ -26,3 +26,6 @@
 [submodule "bundle/vim-unimpaired"]
     path = bundle/vim-unimpaired
     url = https://github.com/gabesoft/vim-unimpaired.git
+[submodule "bundle/vim-ags"]
+    path = bundle/vim-ags
+    url = git@github.com:gabesoft/vim-ags.git
