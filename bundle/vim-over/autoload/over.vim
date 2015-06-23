@@ -24,7 +24,7 @@ function! over#vital()
 endfunction
 
 function! over#revital()
-	call vital#of("over").unload()
+	call s:V.unload()
 	unlet! s:V
 	call over#vital()
 endfunction
@@ -133,7 +133,7 @@ function! s:restore_options()
 	let &incsearch = s:old_incsearch
 	let &hlsearch  = s:old_hlsearch
 	if g:over_enable_auto_nohlsearch
-" 		call s:silent_feedkeys(":nohlsearch\<CR>", "nohlsearch", 'n')
+		call s:silent_feedkeys(":nohlsearch\<CR>", "nohlsearch", 'n')
 		call feedkeys("\<Plug>(over-restore-nohlsearch)")
 	endif
 	execute "normal \<Plug>(over-restore-search-pattern)"
