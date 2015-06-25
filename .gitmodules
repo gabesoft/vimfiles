@@ -35,3 +35,6 @@
 [submodule "bundle/vim-jdaddy"]
 	path = bundle/vim-jdaddy
 	url = https://github.com/tpope/vim-jdaddy.git
+[submodule "bundle/lightline.vim"]
+	path = bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
