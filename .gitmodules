@@ -47,3 +47,6 @@
 [submodule "bundle/DidYouMean"]
 	path = bundle/DidYouMean
 	url = https://github.com/EinfachToll/DidYouMean.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
