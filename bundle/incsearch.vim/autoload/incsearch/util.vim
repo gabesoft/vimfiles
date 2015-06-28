@@ -52,6 +52,8 @@ let s:functions = [
 \   , 'sort_pos'
 \   , 'count_pattern'
 \   , 'silent_feedkeys'
+\   , 'deepextend'
+\   , 'dictfunction'
 \ ]
 
 
@@ -106,18 +108,22 @@ endfunction
 " parameter: pattern, from, to
 function! s:count_pattern(pattern, ...) abort
   let w = winsaveview()
-  let [from, to] = s:sort_pos([
+  let [from, to] = [
   \   get(a:, 1, [1, 1]),
   \   get(a:, 2, [line('$'), s:get_max_col('$')])
-  \ ])
+  \ ]
+  let ignore_at_cursor_pos = get(a:, 3, 0)
+  " direction flag
+  let d_flag = s:compare_pos(from, to) > 0 ? 'b' : ''
   call cursor(from)
   let cnt = 0
+  let base_flag = d_flag . 'W'
   try
     " first: accept a match at the cursor position
-    let pos = searchpos(a:pattern, 'cW')
-    while (pos != [0, 0] && s:is_pos_less_equal(pos, to))
+    let pos = searchpos(a:pattern, (ignore_at_cursor_pos ? '' : 'c' ) . base_flag)
+    while (pos != [0, 0] && s:compare_pos(pos, to) isnot# (d_flag is# 'b' ? -1 : 1))
       let cnt += 1
-      let pos = searchpos(a:pattern, 'W')
+      let pos = searchpos(a:pattern, base_flag)
     endwhile
   finally
     call winrestview(w)
@@ -126,6 +132,7 @@ function! s:count_pattern(pattern, ...) abort
 endfunction
 
 " NOTE: support vmap?
+" It doesn't handle feedkeys() on incsert or command-line mode
 function! s:silent_feedkeys(expr, name, ...) abort
   " Ref:
   " https://github.com/osyo-manga/vim-over/blob/d51b028c29661d4a5f5b79438ad6d69266753711/autoload/over.vim#L6
@@ -145,6 +152,41 @@ function! s:silent_feedkeys(expr, name, ...) abort
     call feedkeys(printf("\<Plug>(%s)", name))
   endif
 endfunction
+
+" deepextend (nest: 1)
+function! s:deepextend(expr1, expr2) abort
+  let expr2 = copy(a:expr2)
+  for [k, V] in items(a:expr1)
+    if (type(V) is type({}) || type(V) is type([])) && has_key(expr2, k)
+      let a:expr1[k] = extend(a:expr1[k], expr2[k])
+      unlet expr2[k]
+    endif
+    unlet V
+  endfor
+  return extend(a:expr1, expr2)
+endfunction
+
+let s:funcmanage = {}
+function! s:funcmanage() abort
+  return s:funcmanage
+endfunction
+
+function! s:dictfunction(dictfunc, dict) abort
+  let funcname = '_' . matchstr(string(a:dictfunc), '\d\+')
+  let s:funcmanage[funcname] = {
+  \   'func': a:dictfunc,
+  \   'dict': a:dict
+  \ }
+  let prefix = '<SNR>' . s:SID() . '_'
+  let fm = printf("%sfuncmanage()['%s']", prefix, funcname)
+  execute join([
+  \   printf("function! s:%s(...) abort", funcname),
+  \   printf("  return call(%s['func'], a:000, %s['dict'])", fm, fm),
+  \          "endfunction"
+  \ ], "\n")
+  return function(printf('%s%s', prefix, funcname))
+endfunction
+
 
 " Restore 'cpoptions' {{{
 let &cpo = s:save_cpo
