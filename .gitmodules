@@ -56,3 +56,6 @@
 [submodule "bundle/vim-java"]
 	path = bundle/vim-java
 	url = https://github.com/gabesoft/vim-java.git
+[submodule "bundle/tmux-complete.vim"]
+	path = bundle/tmux-complete.vim
+	url = https://github.com/wellle/tmux-complete.vim.git
