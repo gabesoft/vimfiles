@@ -120,16 +120,17 @@ function! s:unite_settings()
     setlocal number
 endfunction
 
-nnoremap <silent><C-l> :<C-u>Unite -no-split -buffer-name=files-async -start-insert -no-resize file_rec/async:!<CR>
-nnoremap <silent><C-g> :<C-u>Unite -no-split -buffer-name=files-git   -start-insert -no-resize file_rec/git<CR>
-nnoremap <silent><C-f> :<C-u>Unite -no-split -buffer-name=files-new   -start-insert -no-resize -resume file/new<CR>
-nnoremap <silent><C-b> :<C-u>Unite -no-split -buffer-name=files-mru   -start-insert -no-resize buffer file_mru<CR>
+nnoremap <silent><C-l> : <C-u>Unite -no-split -buffer-name=files-async -start-insert -no-resize file_rec/async:!<CR>
+nnoremap <silent><C-g> : <C-u>Unite -no-split -buffer-name=files-git   -start-insert -no-resize file_rec/git<CR>
+nnoremap <silent><C-f> : <C-u>Unite -no-split -buffer-name=files-new   -start-insert -no-resize -resume file/new<CR>
+nnoremap <silent><C-b> : <C-u>Unite -no-split -buffer-name=files-mru   -start-insert -no-resize buffer file_mru<CR>
 
-nnoremap <silent><C-j> :<C-u>Unite -no-split -buffer-name=line     -start-insert -no-resize line:forward:wrap<CR>
-nnoremap <silent><C-h> :<C-u>Unite -no-split -buffer-name=history  -start-insert -no-resize history/yank<CR>
-nnoremap <silent><C-k> :<C-u>Unite -no-split -buffer-name=mappings -start-insert -no-resize mapping<CR>
-nnoremap <silent><C-t> :<C-u>Unite -no-split -buffer-name=tmux     -start-insert -no-resize tmuxcomplete<CR>
-nnoremap <silent><F1>  :<C-u>Unite -no-split -buffer-name=help     -start-insert -no-resize help<CR>
+nnoremap <silent><C-j> : <C-u>Unite -no-split -buffer-name=line     -start-insert -no-resize line:forward:wrap<CR>
+nnoremap <silent><C-h> : <C-u>Unite -no-split -buffer-name=history  -start-insert -no-resize history/yank<CR>
+nnoremap <silent><C-k> : <C-u>Unite -no-split -buffer-name=mappings -start-insert -no-resize mapping<CR>
+nnoremap <silent><C-t> : <C-u>Unite -no-split -buffer-name=tmux     -start-insert -no-resize tmuxcomplete<CR>
+nnoremap <silent><F1>  : <C-u>Unite -no-split -buffer-name=help     -start-insert -no-resize help<CR>
+nnoremap <CR>          : <C-u>Unite -no-split -buffer-name=command  -start-insert -no-resize history/command command<CR>
 " }}}
 
 " vim-smartchr {{{
