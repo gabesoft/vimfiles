@@ -25,6 +25,11 @@ function! s:OnColorSchemeChange()
 endfunction
 " }}}
 
+" Highlight word under cursor {{{
+" --------------------------------------------------------------------------------
+autocmd CursorMoved * exe printf('match Underlined /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" }}}
+
 " Change cursor color based on mode {{{
 " --------------------------------------------------------------------------------
 augroup CursorColorMode
