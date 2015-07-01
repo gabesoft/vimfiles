@@ -28,6 +28,7 @@ endfunction
 " Highlight word under cursor {{{
 " --------------------------------------------------------------------------------
 autocmd CursorMoved * exe printf('match Underlined /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd BufLeave,BufWinLeave,WinLeave * exe printf('match Normal /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 " }}}
 
 " Change cursor color based on mode {{{
