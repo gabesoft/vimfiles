@@ -26,6 +26,7 @@ endfunction
 " }}}
 
 " Highlight word under cursor {{{
+" Notes: use Underlined or SpellLocal
 " --------------------------------------------------------------------------------
 autocmd CursorMoved * exe printf('match Underlined /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 autocmd BufLeave,BufWinLeave,WinLeave * exe printf('match Normal /\V\<%s\>/', escape(expand('<cword>'), '/\'))
