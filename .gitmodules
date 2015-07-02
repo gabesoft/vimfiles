@@ -65,3 +65,6 @@
 [submodule "bundle/vim-unite-history"]
 	path = bundle/vim-unite-history
 	url = https://github.com/thinca/vim-unite-history.git
+[submodule "bundle/vim-visual-increment"]
+	path = bundle/vim-visual-increment
+	url = https://github.com/triglav/vim-visual-increment.git
