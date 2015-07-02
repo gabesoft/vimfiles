@@ -30,41 +30,42 @@
     path = bundle/vim-ags
     url = git@github.com:gabesoft/vim-ags.git
 [submodule "bundle/javascript-libraries-syntax.vim"]
-	path = bundle/javascript-libraries-syntax.vim
-	url = https://github.com/othree/javascript-libraries-syntax.vim.git
+    path = bundle/javascript-libraries-syntax.vim
+    url = https://github.com/othree/javascript-libraries-syntax.vim.git
 [submodule "bundle/vim-jdaddy"]
-	path = bundle/vim-jdaddy
-	url = https://github.com/tpope/vim-jdaddy.git
+    path = bundle/vim-jdaddy
+    url = https://github.com/tpope/vim-jdaddy.git
 [submodule "bundle/lightline.vim"]
-	path = bundle/lightline.vim
-	url = https://github.com/itchyny/lightline.vim.git
+    path = bundle/lightline.vim
+    url = https://github.com/itchyny/lightline.vim.git
 [submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+    path = bundle/syntastic
+    url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+    path = bundle/vim-fugitive
+    url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/DidYouMean"]
-	path = bundle/DidYouMean
-	url = https://github.com/EinfachToll/DidYouMean.git
+    path = bundle/DidYouMean
+    url = https://github.com/EinfachToll/DidYouMean.git
 [submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
+    path = bundle/ultisnips
+    url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle/incsearch.vim"]
-	path = bundle/incsearch.vim
-	url = https://github.com/haya14busa/incsearch.vim.git
+    path = bundle/incsearch.vim
+    url = https://github.com/haya14busa/incsearch.vim.git
 [submodule "bundle/vim-java"]
-	path = bundle/vim-java
-	url = https://github.com/gabesoft/vim-java.git
+    path = bundle/vim-java
+    url = https://github.com/gabesoft/vim-java.git
 [submodule "bundle/tmux-complete.vim"]
-	path = bundle/tmux-complete.vim
-	url = https://github.com/wellle/tmux-complete.vim.git
+    path = bundle/tmux-complete.vim
+    url = https://github.com/wellle/tmux-complete.vim.git
 [submodule "bundle/vim-javacomplete2"]
-	path = bundle/vim-javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2.git
+    path = bundle/vim-javacomplete2
+    url = https://github.com/artur-shaik/vim-javacomplete2.git
 [submodule "bundle/vim-unite-history"]
-	path = bundle/vim-unite-history
-	url = https://github.com/thinca/vim-unite-history.git
+    path = bundle/vim-unite-history
+    url = https://github.com/thinca/vim-unite-history.git
 [submodule "bundle/vim-visual-increment"]
-	path = bundle/vim-visual-increment
-	url = https://github.com/triglav/vim-visual-increment.git
+    path = bundle/vim-visual-increment
+    url = https://github.com/triglav/vim-visual-increment.git
+    ignore = dirty
