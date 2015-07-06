@@ -209,7 +209,7 @@ nmap gk k
 
 " Ctrlp - https://github.com/kien/ctrlp.vim {{{
 " --------------------------------------------------------------------------------
-let g:ctrlp_map = '<LEADER>p'
+let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$' }
@@ -230,9 +230,9 @@ let NERDTreeHighlightCursorline = 1
 let NERDTreeAutoDeleteBuffer=1
 let g:NERDCustomDelimiters = { 'dustjs': { 'left': '{!', 'right': '!}' } }
 
-nnoremap <LEADER>nt :NERDTreeToggle<CR>
-nnoremap <LEADER>nf :NERDTreeFind<CR>
-nnoremap <LEADER>nc :NERDTreeClose<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
+nnoremap <Leader>nc :NERDTreeClose<CR>
 " }}}
 
 " NERDCommenter {{{
@@ -261,13 +261,13 @@ noremap <leader>bc :Bclose<CR>
 " CopyPath - https://github.com/vim-scripts/copypath.vim {{{
 " --------------------------------------------------------------------------------
 let g:copypath_copy_to_unnamed_register = 1
-nnoremap <LEADER>cp :CopyPath<CR>
-nnoremap <LEADER>cf :CopyFileName<CR>
+nnoremap <Leader>cp :CopyPath<CR>
+nnoremap <Leader>cf :CopyFileName<CR>
 " }}}
 
 " EasyMotion - https://github.com/Lokaltog/vim-easymotion {{{
 " --------------------------------------------------------------------------------
-let g:EasyMotion_leader_key = '<SPACE>'
+let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz,.ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_off_screen_search = 0
@@ -291,14 +291,14 @@ let g:surround_indent = 1
 
 " FuzzyFinder - https://github.com/vim-scripts/FuzzyFinder {{{
 " --------------------------------------------------------------------------------
-nnoremap <LEADER>fb :FufBuffer<CR>
-nnoremap <LEADER>ff :FufFile<CR>
+nnoremap <Leader>fb :FufBuffer<CR>
+nnoremap <Leader>ff :FufFile<CR>
 " }}}
 
 " Grep - https://github.com/vim-scripts/grep.vim" {{{
 " --------------------------------------------------------------------------------
-nnoremap <LEADER>sf :Rgrep<CR>
-nnoremap <LEADER>sb :Bgrep<CR>
+nnoremap <Leader>sf :Rgrep<CR>
+nnoremap <Leader>sb :Bgrep<CR>
 " }}}
 
 " YouCompleteMe {{{
@@ -314,9 +314,9 @@ let g:ycm_semantic_triggers =  {
 
 " Vim-Over - https://github.com/osyo-manga/vim-over {{{
 " --------------------------------------------------------------------------------
-nnoremap <LEADER>sr :OverCommandLine<CR> %s/\<<C-R><C-W>\>//g<LEFT><LEFT>
-nnoremap <LEADER>ss :OverCommandLine<CR> %s/
-nnoremap <LEADER>su :OverCommandLine<CR> %S/
+nnoremap <Leader>sr :OverCommandLine<CR> %s/\<<C-R><C-W>\>//g<Left><Left>
+nnoremap <Leader>ss :OverCommandLine<CR> %s/
+nnoremap <Leader>su :OverCommandLine<CR> %S/
 " }}}
 
 " Abolish {{{
@@ -353,7 +353,7 @@ let g:slime_no_mappings = 1
 " Displays the undo tree
 " --------------------------------------------------------------------------------
 " ,u        - toggle undo tree
-nnoremap <LEADER>u :GundoToggle<CR>
+nnoremap <Leader>u :GundoToggle<CR>
 " }}}
 
 " Ags (The Silver Searcher) {{{
@@ -363,8 +363,8 @@ let g:ags_no_stats = 1
 let g:ags_stats_max_ln = 10000
 
 command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX' <f-args>
-nnoremap <LEADER>a :Ags<SPACE>
-nnoremap <LEADER><LEADER>a :AgsQuit<CR>
+nnoremap <Leader>a :Ags<Space>
+nnoremap <Leader><Leader>a :AgsQuit<CR>
 " }}}
 
 " Tabularize {{{
@@ -754,8 +754,8 @@ function! s:terminal_settings()
     inoremap <silent><buffer><expr> j<Space>
                 \ vimshell#term_mappings#send_key('j')
 
-    iunmap <buffer> <ESC><ESC>
-    imap <buffer> <ESC> <Plug>(vimshell_term_send_escape)
+    iunmap <buffer> <Esc><Esc>
+    imap <buffer> <Esc> <Plug>(vimshell_term_send_escape)
 endfunction
 
 let g:vimshell_escape_colors = [

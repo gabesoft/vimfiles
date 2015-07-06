@@ -26,7 +26,7 @@ xnoremap $ $h
 
 " find merge conflict markers {{{
 " --------------------------------------------------------------------------------
-nmap <LEADER>fc /\v^[<\|=>]{7}( .*\|$)<CR>
+nmap <Leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 " }}}
 
 " close all buffers and quit vim {{{
@@ -36,14 +36,14 @@ nmap ZZ :xa<CR>
 
 " buffer operations {{{
 " --------------------------------------------------------------------------------
-noremap <C-TAB> :bnext<CR>
-noremap <S-C-TAB> :bprev<CR>
-noremap <LEADER>bl :ls<CR>
-noremap <LEADER>bt :b#<CR>
-noremap <LEADER>bn :bnext<CR>
-noremap <LEADER>bp :bprev<CR>
-noremap <LEADER>bd :bd<CR>
-noremap <LEADER>bw :w<CR>
+noremap <C-Tab> :bnext<CR>
+noremap <S-C-Tab> :bprev<CR>
+noremap <Leader>bl :ls<CR>
+noremap <Leader>bt :b#<CR>
+noremap <Leader>bn :bnext<CR>
+noremap <Leader>bp :bprev<CR>
+noremap <Leader>bd :bd<CR>
+noremap <Leader>bw :w<CR>
 " }}}
 
 " indentation {{{
@@ -61,9 +61,9 @@ if has('clipboard')
 endif
 " }}}
 
-" Map <LEADER>fs to display all lines with keyword under cursor and ask which one to jump to {{{
+" Map <Leader>fs to display all lines with keyword under cursor and ask which one to jump to {{{
 " --------------------------------------------------------------------------------
-nmap <LEADER>fs [I:let nr = input("Which one: ")<bar>exe "normal " . nr ."[\t"<CR>
+nmap <Leader>fs [I:let nr = input("Which one: ")<bar>exe "normal " . nr ."[\t"<CR>
 " }}}
 
 " make Y consistent with C and D {{{
@@ -155,7 +155,7 @@ map <F11> <Plug>HiLinkTrace
 " - ,space : toggle all folds
 " --------------------------------------------------------------------------------
 "nnoremap <space> zA
-"nnoremap <LEADER><space> zi
+"nnoremap <Leader><space> zi
 " }}}
 
 " horizontal scrolling {{{
