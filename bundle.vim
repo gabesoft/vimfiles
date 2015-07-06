@@ -17,6 +17,11 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
+function! s:config_easyfuzzymotion(...) abort
+    return { 'converters' : [incsearch#config#fuzzy#converter()] }
+endfunction
+
+noremap <silent><expr> z/ incsearch#go(<SID>config_easyfuzzymotion())
 " }}}
 
 " Goyo {{{

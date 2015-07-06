@@ -70,3 +70,6 @@
     path = bundle/vim-visual-increment
     url = https://github.com/triglav/vim-visual-increment.git
     ignore = dirty
+[submodule "bundle/incsearch-fuzzy.vim"]
+	path = bundle/incsearch-fuzzy.vim
+	url = https://github.com/haya14busa/incsearch-fuzzy.vim.git
