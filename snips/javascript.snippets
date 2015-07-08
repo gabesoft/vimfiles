@@ -188,4 +188,53 @@ snippet ust "use strict"
 'use strict';$0
 endsnippet
 
+# JSDoc snippets
+
+snippet /* "A JSDoc comment" b
+/**
+ * ${1:${VISUAL}}$0
+ */
+endsnippet
+
+snippet @au "@author email (First Last)"
+@author ${1:`!v g:snips_author`} [${2:`!v g:snips_author_email`}]
+endsnippet
+
+snippet @li "@license Description"
+@license ${1:MIT}$0
+endsnippet
+
+snippet @ver "@version Semantic version"
+@version ${1:0.1.0}$0
+endsnippet
+
+snippet @fileo "@fileoverview Description" b
+/**
+ * @fileoverview ${1:${VISUAL:A description of the file}}$0
+ */
+endsnippet
+
+snippet @ct "@constructor"
+@constructor
+endsnippet
+
+snippet @p "@param {Type} varname Description"
+@param {${1:Type}} ${2:varname} ${3:Description}
+endsnippet
+
+snippet @re "@return {Type} Description"
+@return {${1:Type}} ${2:Description}
+endsnippet
+
+snippet @pr "@private"
+@private
+endsnippet
+
+snippet @over "@override"
+@override
+endsnippet
+
+snippet @pro "@protected"
+@protected
+endsnippet
 # vim:ft=snippets:
