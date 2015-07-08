@@ -42,6 +42,11 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 " }}}
 
+" JsDoc {{{
+" --------------------------------------------------------------------------------
+let g:jsdoc_default_mapping = 0
+" }}}
+
 " Goyo {{{
 " --------------------------------------------------------------------------------
 let g:goyo_linenr = 1
