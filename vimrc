@@ -48,6 +48,11 @@ execute pathogen#infect()
 execute pathogen#helptags()
 " }}}
 
+" initialize yankstack {{{
+" --------------------------------------------------------------------------------
+call yankstack#setup()
+" }}}
+
 " gui options {{{
 " --------------------------------------------------------------------------------
 if has("gui_running")
