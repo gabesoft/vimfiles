@@ -44,13 +44,9 @@ endif
 
 " initialize bundles {{{
 " --------------------------------------------------------------------------------
-execute pathogen#infect()
-execute pathogen#helptags()
-" }}}
-
-" initialize yankstack {{{
-" --------------------------------------------------------------------------------
-call yankstack#setup()
+source $VIMHOME/plug.vim
+" execute pathogen#infect()
+" execute pathogen#helptags()
 " }}}
 
 " gui options {{{
