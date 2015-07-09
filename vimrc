@@ -45,8 +45,6 @@ endif
 " initialize bundles {{{
 " --------------------------------------------------------------------------------
 source $VIMHOME/plug.vim
-" execute pathogen#infect()
-" execute pathogen#helptags()
 " }}}
 
 " gui options {{{
