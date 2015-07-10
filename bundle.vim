@@ -283,6 +283,8 @@ let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz,.ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_off_screen_search = 0
+nmap <C-Space> <Plug>(easymotion-sol-bd-jk)
+nmap <M-Space> <Plug>(easymotion-s2)
 " }}}
 
 " Fugitive - https://github.com/tpope/vim-fugitive {{{
