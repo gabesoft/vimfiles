@@ -57,3 +57,4 @@ Abolish scirpt script
 Abolish {,}clipbard{,} {,}clipboard{,}
 Abolish {,}seciton {,}section
 Abolish {,}clipaord{,} {,}clipboard{,}
+Abolish {,}sholud{,} {,}should{,}
