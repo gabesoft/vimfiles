@@ -37,7 +37,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kchmck/vim-coffee-script'
 Plug 'keith/tmux.vim'
 Plug 'kshenoy/vim-signature'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'machakann/vim-columnmove'
 Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive \| npm install . -d' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install . -d' }

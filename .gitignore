@@ -1,3 +1,4 @@
 tmp
 vimrc.local
+autoload/plug.vim.old
 plugs/*
