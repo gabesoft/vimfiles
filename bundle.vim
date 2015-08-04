@@ -42,6 +42,12 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 " }}}
 
+" Vim-Sneak {{{
+" --------------------------------------------------------------------------------
+hi link SneakPluginTarget Special
+hi link SneakPluginScope  Comment
+" }}}
+
 " Goyo {{{
 " --------------------------------------------------------------------------------
 let g:goyo_linenr = 1

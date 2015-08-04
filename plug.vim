@@ -30,6 +30,7 @@ Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'Julian/vim-textobj-variable-segment'
 Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-peekaboo'
+Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-niceblock'
 Plug 'kana/vim-smartchr'
 Plug 'kana/vim-textobj-indent'
