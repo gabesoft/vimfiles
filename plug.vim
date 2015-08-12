@@ -80,6 +80,7 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'Valloric/YouCompleteMe', { 'do': 'git submodule update  --init --recursive \| ./install.sh'}
 Plug 'wellle/tmux-complete.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'unblevable/quick-scope'
 
 Plug 'jpalardy/vim-slime'
 Plug 'kien/ctrlp.vim'
