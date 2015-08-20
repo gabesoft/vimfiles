@@ -44,27 +44,8 @@ noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 " Quick-Scope {{{
 " --------------------------------------------------------------------------------
-let g:qs_enable = 0
-let g:qs_enable_char_list = [ 'f', 'F', 't', 'T' ]
-
-function! s:Quick_scope_selective(movement)
-    let needs_disabling = 0
-    if !g:qs_enable
-        QuickScopeToggle
-        redraw!
-        let needs_disabling = 1
-    endif
-    let letter = nr2char(getchar())
-    if needs_disabling
-        QuickScopeToggle
-    endif
-    return a:movement . letter
-endfunction
-
-" quick_scope maps, operator-pending mode included (can do 'df' with hint)
-for i in g:qs_enable_char_list
-    execute 'noremap <expr> <silent>' . i . " <SID>Quick_scope_selective('". i . "')"
-endfor
+let g:qs_enable = 1
+let g:qs_highlight_on_keys = [ 'f', 'F', 't', 'T' ]
 " }}}
 
 " Vim-Sneak {{{
