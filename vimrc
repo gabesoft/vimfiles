@@ -6,7 +6,7 @@
 " identify platform {{{
 " --------------------------------------------------------------------------------
 silent function! OSX()
-return has('macunix')
+return  has('macunix')
 endfunction
 
 silent function! LINUX()

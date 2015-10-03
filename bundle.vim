@@ -115,14 +115,14 @@ let g:unite_source_file_mru_filename_format = ':~:.'
 let g:unite_source_file_mru_time_format = ''
 
 if executable('pt')
-    let g:unite_source_rec_async_command = 'pt --nogroup --nocolor -l ""'
+    let g:unite_source_rec_async_command = [ 'pt', '--nogroup', '--nocolor', '-l', '' ]
     let g:unite_source_rec_command = 'pt --nogroup --nocolor -l ""'
     let g:unite_source_grep_command = 'pt'
     let g:unite_source_grep_default_opts = '--nogroup --nocolor'
     let g:unite_source_grep_recursive_opt = ''
     let g:unite_source_grep_encoding = 'utf-8'
 elseif executable('ag')
-    let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --hidden -g ""'
+    let g:unite_source_rec_async_command = [ 'ag', '--nocolor', '--nogroup', '--hidden', '-g', '' ]
     let g:unite_source_rec_command = 'ag --nocolor --nogroup --hidden --ignore ".git" --ignore "node_modules" --ignore "tmp" --ignore "bower_components" -g ""'
     let g:unite_source_grep_command='ag'
     let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
