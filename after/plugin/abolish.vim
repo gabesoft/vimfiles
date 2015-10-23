@@ -17,7 +17,7 @@ Abolish despara{te,tely,tion}                 despera{}
 Abolish destionation{,s}                      destination{}
 Abolish d{e,i}screp{e,a}nc{y,ies}             d{i}screp{a}nc{}
 Abolish euphamis{m,ms,tic,tically}            euphemis{}
-Abolish height                                heigth
+Abolish {,}heigth{,}                          {,}height{,}
 Abolish hense                                 hence
 Abolish improvment{,s}                        improvement{}
 Abolish inherant{,ly}                         inherent{}
