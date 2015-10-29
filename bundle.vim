@@ -615,27 +615,25 @@ let g:rbpt_hi_links = [
             \ 'Type'
             \ ]
 
-let s:rainbow_whitelist = [
-            \ 'css',
-            \ 'java',
-            \ 'javascript',
-            \ 'less',
-            \ 'lisp',
-            \ 'rails',
-            \ 'ruby',
-            \ 'scheme',
-            \ 'scss',
-            \ 'sh',
-            \ 'vim'
+ let s:rainbow_whitelist = [
+             \ 'css',
+             \ 'java',
+             \ 'javascript',
+             \ 'less',
+             \ 'lisp',
+             \ 'rails',
+             \ 'ruby',
+             \ 'scheme',
+             \ 'scss',
+             \ 'sh',
+             \ 'vim'
             \ ]
 
 augroup rainbow_parenthesis
     autocmd!
-    autocmd VimEnter * RainbowParenthesesToggle
+    autocmd VimEnter * RainbowParentheses!!
     for type in s:rainbow_whitelist
-        exe 'autocmd Syntax '.type.' RainbowParenthesesLoadRound'
-        exe 'autocmd Syntax '.type.' RainbowParenthesesLoadSquare'
-        exe 'autocmd Syntax '.type.' RainbowParenthesesLoadBraces'
+        exe 'autocmd Syntax '.type.' RainbowParentheses'
     endfor
 augroup END
 " }}}
