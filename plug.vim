@@ -27,6 +27,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'Julian/vim-textobj-variable-segment'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-peekaboo'
