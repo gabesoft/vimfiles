@@ -396,13 +396,6 @@ set splitbelow
 set splitright
 " }}}
 
-" encryption method {{{
-" --------------------------------------------------------------------------------
-if has('cryptv')
-    set cryptmethod=blowfish2
-endif
-" }}}
-
 " source additional settings {{{
 " --------------------------------------------------------------------------------
 source $VIMHOME/align.vim         " alignment functions
