@@ -3,5 +3,7 @@ vimrc.local
 autoload/plug.vim.old
 plugs/*
 shada/*
+eclim/*
+plugin/*
 .vim
 init.vim
