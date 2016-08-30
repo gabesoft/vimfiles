@@ -32,11 +32,7 @@ endif
 
 " vim directory path {{{
 " --------------------------------------------------------------------------------
-if has('nvim')
-    let $VIMHOME=expand('<sfile>:p:h')
-else
-    let $VIMHOME=expand('<sfile>:p:h:h')
-endif
+let $VIMHOME=expand('<sfile>:p:h:h')
 
 if WINDOWS()
     let $VIMHOME=expand('$VIMHOME/vimfiles')
