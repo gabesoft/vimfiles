@@ -61,7 +61,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/vimshell.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
