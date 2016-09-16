@@ -417,7 +417,7 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
 let g:lightline = {
-            \ 'colorscheme': 'solarized_' . &background,
+            \ 'colorscheme': 'solarized',
             \ 'mode_map': { 'c': 'NORMAL' },
             \ 'component': {
             \   'lineinfo': '⭡ %3l:%-2v',
@@ -450,7 +450,7 @@ augroup LightLineColorScheme
 augroup END
 
 function! s:lightline_update()
-    let g:lightline.colorscheme = 'solarized_' . &background
+    let g:lightline.colorscheme = 'solarized'
     call lightline#init()
     call lightline#colorscheme()
     call lightline#update()
