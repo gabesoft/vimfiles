@@ -440,8 +440,8 @@ let g:lightline = {
             \   'fileencoding' : 'FileencodingStatusLine',
             \   'mode'         : 'ModeStatusLine'
             \ },
-            \ 'separator'    : { 'left': '⮀', 'right': '⮂' },
-            \ 'subseparator' : { 'left': '⮁', 'right': '⮃' }
+            \ 'separator'    : { 'left': '', 'right': '' },
+            \ 'subseparator' : { 'left': '', 'right': '' }
             \ }
 
 augroup LightLineColorScheme
