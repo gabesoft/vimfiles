@@ -3,6 +3,7 @@ urls:
     - https://github.com/airblade/vim-gitgutter.git
     - https://github.com/altercation/vim-colors-solarized.git
     - https://github.com/briancollins/vim-jst.git
+    - https://github.com/dag/vim-fish.git
     - https://github.com/digitaltoad/vim-jade.git
     - https://github.com/duff/vim-scratch.git
     - https://github.com/EinfachToll/DidYouMean.git
