@@ -6,7 +6,7 @@ urls:
     - https://github.com/digitaltoad/vim-jade.git
     - https://github.com/duff/vim-scratch.git
     - https://github.com/EinfachToll/DidYouMean.git
-    - https://github.com/evanmiller/nginx-vim-syntax.git
+    - https://github.com/chr4/nginx.vim.git
     - https://github.com/gabesoft/rainbow_parentheses.vim.git
     - https://github.com/gabesoft/splitjoin.vim.git
     - https://github.com/gabesoft/vim-ags.git
