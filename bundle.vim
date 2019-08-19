@@ -168,61 +168,6 @@ nnoremap <silent><F1>  : <C-u>Unite -no-split -buffer-name=help     -start-inser
 nnoremap <CR>          : <C-u>Unite -no-split -buffer-name=command  -start-insert -no-resize history/command command<CR>
 " }}}
 
-" vim-smartchr {{{
-" --------------------------------------------------------------------------------
-autocmd FileType vim
-            \ inoremap <buffer> <expr> = smartchr#loop('=', ' = ', ' =~ ', ' == ', ' ==# ') |
-            \ inoremap <buffer> <expr> ! smartchr#loop('!', ' != ') |
-            \ inoremap <buffer> <expr> . smartchr#one_of('.', ' . ', '...') |
-            \ inoremap <buffer> <expr> + smartchr#one_of('+', ' + ') |
-            \ inoremap <buffer> <expr> - smartchr#one_of('-', ' - ') |
-            \ inoremap <buffer> <expr> , smartchr#one_of(', ', ',')
-
-autocmd FileType scss
-            \ inoremap <buffer> <expr> : smartchr#one_of(': ',  ':') |
-            \ inoremap <buffer> <expr> & smartchr#loop('&:', '&.', '&', '&&') |
-            \ inoremap <buffer> <expr> + smartchr#one_of('+',  ' + ') |
-            \ inoremap <buffer> <expr> , smartchr#one_of(', ',  ',') |
-            \ inoremap <buffer> <expr> { smartchr#one_of(' {}<Esc>i<CR><CR><Esc>kS',  '{') |
-            \ inoremap <buffer> <expr> - smartchr#one_of('-',  ' - ')
-
-autocmd FileType javascript
-            \ inoremap <buffer> <expr> = smartchr#loop(' = ', ' === ', ' == ', '=') |
-            \ inoremap <buffer> <expr> ! smartchr#loop('!', ' !== ', ' != ') |
-            \ inoremap <buffer> <expr> <bar> smartchr#one_of(' \|\| ', ' \| ', '\|') |
-            \ inoremap <buffer> <expr> + smartchr#one_of(' + ', '+') |
-            \ inoremap <buffer> <expr> - smartchr#one_of('-', ' - ') |
-            \ inoremap <buffer> <expr> ? smartchr#one_of(' ? ', '?') |
-            \ inoremap <buffer> <expr> : smartchr#one_of(' : ', ':') |
-            \ inoremap <buffer> <expr> , smartchr#one_of(', ', ',') |
-            \ inoremap <buffer> <expr> & smartchr#one_of(' && ', ' & ', '&')
-
-autocmd FileType ruby,rails
-            \ inoremap <buffer> <expr> = smartchr#loop(' = ', ' => ', ' == ', '=') |
-            \ inoremap <buffer> <expr> ! smartchr#loop('!', ' != ') |
-            \ inoremap <buffer> <expr> , smartchr#one_of(', ', ',')
-
-autocmd FileType eruby,erb
-            \ inoremap <buffer> <expr> > smartchr#loop('>', '%>') |
-            \ inoremap <buffer> <expr> < smartchr#loop('<', '<%', '<%=') |
-            \ inoremap <buffer> <expr> = smartchr#loop('=', ' = ', ' => ', ' == ') |
-            \ inoremap <buffer> <expr> , smartchr#one_of(', ', ',')
-
-autocmd FileType java
-            \ inoremap <buffer> <expr> + smartchr#one_of(' + ', '++', ' += ', '+') |
-            \ inoremap <buffer> <expr> < smartchr#one_of(' < ', ' <= ',  ' << ', '<') |
-            \ inoremap <buffer> <expr> > smartchr#one_of(' > ', ' >= ', ' >> ', '>') |
-            \ inoremap <buffer> <expr> - smartchr#one_of(' - ', '-1', ' -= ', '--', '-') |
-            \ inoremap <buffer> <expr> = smartchr#one_of(' = ', ' == ', '=') |
-            \ inoremap <buffer> <expr> <bar> smartchr#one_of(' \|\| ', ' \| ', '\|') |
-            \ inoremap <buffer> <expr> & smartchr#one_of(' && ', ' & ', '&') |
-            \ inoremap <buffer> <expr> ! smartchr#one_of('!', ' != ') |
-            \ inoremap <buffer> <expr> % smartchr#one_of(' % ', '%') |
-            \ inoremap <buffer> <expr> / smartchr#one_of(' / ', '/') |
-            \ inoremap <buffer> <expr> * smartchr#one_of(' * ', '*') |
-            \ inoremap <buffer> <expr> , smartchr#one_of(', ', ',')
-" }}}
-
 " accelerated-jk {{{
 " --------------------------------------------------------------------------------
 nmap <silent>j <Plug>(accelerated_jk_gj)
