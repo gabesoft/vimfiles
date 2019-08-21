@@ -30,7 +30,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'Julian/vim-textobj-variable-segment'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-after-object'
@@ -54,15 +54,12 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-over'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'Raimondi/delimitMate'
 Plug 'rhysd/accelerated-jk'
 Plug 'rhysd/committia.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/neomru.vim'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/vimshell.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'Soares/butane.vim'
@@ -81,9 +78,10 @@ Plug 'triglav/vim-visual-increment'
 Plug 'tsukkee/unite-help'
 Plug 'unblevable/quick-scope'
 Plug 'Valloric/MatchTagAlways'
-Plug 'Valloric/YouCompleteMe', { 'do': 'git submodule update  --init --recursive \| ./install.sh'}
+" Plug 'Valloric/YouCompleteMe', { 'do': 'git submodule update  --init --recursive \| ./install.sh'}
 Plug 'wellle/tmux-complete.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'zxqfl/tabnine-vim'
 
 Plug 'jpalardy/vim-slime'
 Plug 'kien/ctrlp.vim'

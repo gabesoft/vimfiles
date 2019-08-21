@@ -278,7 +278,7 @@ set ruler
 set showcmd
 set wildmenu
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*rbc,*.class,.svn,vendor/gems/*,node_modules
+set wildignore+=*.o,*.obj,.git,*rbc,*.class,.svn,vendor/gems/*,node_modules,*/tmp/*
 set showmode
 set statusline=%F%m%r%h%w\ %n:%{&ff}:%Y\ L=%04l/%L[%p%%]\ C=%04c/%{len(getline(line(\".\")))}\ %{&wrap?'w':'\ '}\ %{&diff?'d':'\ '}
 
@@ -395,6 +395,14 @@ set hidden          " allow hide unsaved buffers
 set equalalways
 set splitbelow
 set splitright
+" }}}
+
+" grep {{{
+" --------------------------------------------------------------------------------
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
 " }}}
 
 " source additional settings {{{

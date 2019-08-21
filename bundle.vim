@@ -70,102 +70,59 @@ let g:startify_change_to_dir = 0
 let g:startify_custom_indices = [ 'a', 'c', 'd', 'f', 'g', 'm', 'n', 'o', 'p', 'r' ]
 " }}}
 
-" Neomru {{{
+" FZF {{{
 " --------------------------------------------------------------------------------
-let g:neomru#do_validate = 1
-let g:neomru#update_interval = 300
-let g:neomru#file_mru_limit = 2000
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --hidden --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+" command! -bang -nargs=* Rg
+"   \ call fzf#vim#grep(
+"   \   'rg --column --line-number --hidden --ignore-case --no-heading --color=never '.shellescape(<q-args>), 1,
+"   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+"   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+"   \   <bang>0)
+
+nnoremap <silent><c-f> :Files<CR>
+nnoremap <silent><c-g> :GFiles<CR>
+nnoremap <silent><c-b> :Buffers<CR>
+nnoremap <silent><c-l> :Lines<CR>
+nnoremap <silent><c-s> :Rg<CR>
+nnoremap <silent><c-h> :History:<CR>
+
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+" imap <c-x><c-l> <plug>(fzf-complete-line)
 " }}}
 
-" Unite - https://github.com/Shougo/unite.vim {{{
+" Prettier {{{
 " --------------------------------------------------------------------------------
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_start_insert = 1
-let g:unite_prompt = '» '
-let g:unite_source_file_mru_long_limit = 7000
-let g:unite_source_file_rec_max_cache_files = 200
-let g:unite_source_file_rec_min_cache_files = 100
-let g:unite_source_history_yank_enable = 1
-let g:unite_source_rec_max_cache_files = 7000
-let g:unite_source_rec_unit = 2500
-let g:unite_cursor_line_highlight = 'TabLineSel'
-let g:unite_cursor_line_time="0.10"
-
-let g:unite_source_file_mru_limit = 300
-let g:unite_source_file_mru_filename_format = ':~:.'
-let g:unite_source_file_mru_time_format = ''
-
-if executable('pt')
-    let g:unite_source_rec_async_command = [ 'pt', '--nogroup', '--nocolor', '-l', '' ]
-    let g:unite_source_rec_command = 'pt --nogroup --nocolor -l ""'
-    let g:unite_source_grep_command = 'pt'
-    let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-    let g:unite_source_grep_recursive_opt = ''
-    let g:unite_source_grep_encoding = 'utf-8'
-elseif executable('ag')
-    let g:unite_source_rec_async_command = [ 'ag', '--nocolor', '--nogroup', '--hidden', '-g', '' ]
-    let g:unite_source_rec_command = 'ag --nocolor --nogroup --hidden --ignore ".git" --ignore "node_modules" --ignore "tmp" --ignore "bower_components" -g ""'
-    let g:unite_source_grep_command='ag'
-    let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
-    let g:unite_source_grep_recursive_opt=''
-endif
-
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_selecta'])
-
-call unite#custom#profile('default',  'context',  { 'cursor_line_highlight' : 'TabLineSel' })
-call unite#custom#source('file_mru', 'ignore_pattern', 'COMMIT_EDITMSG')
-call unite#custom#source(
-            \ 'file,file_mru,neomru/file,file_rec,file_rec/async,file_rec/git,buffer',
-            \ 'matchers', [ 'converter_relative_word', 'matcher_project_files', 'matcher_fuzzy' ])
-call unite#custom#source(
-            \ 'file,file_mru,neomru/file,file_rec,file_rec/async,file_rec/git,buffer',
-            \'sorters', [ 'sorter_selecta'])
-call unite#custom#source(
-            \ 'file,file_mru,neomru/file,file_rec,file_rec/async,file_rec/git,buffer',
-            \ 'max_candidates', 50)
-call unite#custom#source(
-            \ 'file,file_mru,neomru/file,file_rec,file_rec/async,file_rec/git',
-            \ 'required_pattern_length', 2)
-call unite#custom#source('buffer', 'required_pattern_length', 0)
-call unite#custom#source(
-            \ 'neomru/file', 'matchers',
-            \ ['matcher_project_files', 'matcher_fuzzy'])
-call unite#custom#source('file_rec,file_rec/async', 'required_pattern_length', 1)
-
-call unite#custom#source('history/yank,history/unite,line', 'matchers', [ 'matcher_fuzzy' ])
-call unite#custom#source('history/yank,history/unite,line', 'sorters', [ 'sorter_selecta'])
-call unite#custom#source('grep', 'matchers', [ 'matcher_fuzzy' ])
-call unite#custom#source('grep', 'sorters', [ 'sorter_selecta'])
-
-augroup Unite
-    autocmd!
-    autocmd FileType unite call s:unite_settings()
-    autocmd BufLeave * if &ft ==# 'unite' | :highlight! default link CursorLine CursorLine | endif
-augroup END
-
-function! s:unite_settings()
-    imap <buffer> <C-j> <Plug>(unite_select_next_line)
-    imap <buffer> <C-k> <Plug>(unite_select_previous_line)
-    imap <buffer> <Tab> <Plug>(unite_complete)
-    imap <buffer> <C-x> <Plug>(unite_exit)
-    nmap <buffer> <C-x> <Plug>(unite_exit)
-    nmap <buffer> <Esc> <Plug>(unite_exit)
-    highlight! default link CursorLine TabLineSel
-    setlocal number
-endfunction
-
-nnoremap <silent><C-l> : <C-u>Unite -no-split -buffer-name=files-async -start-insert -no-resize file_rec/async:!<CR>
-nnoremap <silent><C-g> : <C-u>Unite -no-split -buffer-name=files-git   -start-insert -no-resize file_rec/git<CR>
-nnoremap <silent><C-f> : <C-u>Unite -no-split -buffer-name=files-new   -start-insert -no-resize -resume file/new<CR>
-nnoremap <silent><C-b> : <C-u>Unite -no-split -buffer-name=files-mru   -start-insert -no-resize buffer file_mru<CR>
-
-nnoremap <silent><C-j> : <C-u>Unite -no-split -buffer-name=line     -start-insert -no-resize line:forward:wrap<CR>
-nnoremap <silent><C-h> : <C-u>Unite -no-split -buffer-name=history  -start-insert -no-resize history/yank<CR>
-nnoremap <silent><C-k> : <C-u>Unite -no-split -buffer-name=mappings -start-insert -no-resize mapping<CR>
-nnoremap <silent><C-t> : <C-u>Unite -no-split -buffer-name=tmux     -start-insert -no-resize tmuxcomplete<CR>
-nnoremap <silent><F1>  : <C-u>Unite -no-split -buffer-name=help     -start-insert -no-resize help<CR>
-nnoremap <CR>          : <C-u>Unite -no-split -buffer-name=command  -start-insert -no-resize history/command command<CR>
+let g:prettier#exec_cmd_path = '~/quip/node_modules/prettier'
+nmap <leader>py <Plug>(Prettier)
 " }}}
 
 " accelerated-jk {{{
@@ -182,7 +139,7 @@ let g:ctrlp_map = '<Leader>tt'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$' }
-let g:ctrlp_user_command =[ '.git', 'cd %s && git ls-files . -co --exclude-standard | sort | uniq', 'ag %s -l --nocolor --hidden -g ""' ]
+let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 let g:ctrlp_use_caching = 0
 " }}}
 
@@ -235,6 +192,12 @@ nnoremap <Leader>cf :CopyFileName<CR>
 " }}}
 
 " EasyMotion - https://github.com/Lokaltog/vim-easymotion {{{
+" <leader>f      - move to char
+" <leader>w      - word motion forward
+" <leader>ge     - word motion backward
+" <leader>k      - jump to line up
+" <leader>j      - jump to line down
+" <ctrl>-<space> - jump to line
 " --------------------------------------------------------------------------------
 let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz,.ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -656,81 +619,6 @@ autocmd BufEnter,BufWinEnter *.hbs,*.erb nmap <buffer> % :MtaJumpToOtherTag<cr>
 " Vim after object {{{
 " --------------------------------------------------------------------------------
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
-" }}}
-
-" VimShell {{{
-" --------------------------------------------------------------------------------
-let g:vimshell_enable_transient_user_prompt = 1
-let g:vimshell_force_overwrite_statusline = 0
-let g:vimshell_interactive_update_time = 400
-let g:vimshell_max_command_history = 100000 " default is 1000
-let g:vimshell_prompt =  '$ '
-let g:vimshell_scrollback_limit = 4000
-let g:vimshell_split_command = 'split'
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-
-autocmd FileType vimshell call s:vimshell_settings()
-
-function! s:vimshell_settings()
-    let g:vimshell_external_history_path = expand('~/.bash_history')
-
-    let g:vimshell_execute_file_list = {}
-    let g:vimshell_execute_file_list['zip'] = 'zipinfo'
-    let g:vimshell_execute_file_list['rb'] = 'ruby'
-    let g:vimshell_execute_file_list['pl'] = 'perl'
-    let g:vimshell_execute_file_list['py'] = 'python'
-
-    call vimshell#set_execute_file('txt,vim,c,h,cpp,d,xml,java', 'vim')
-    call vimshell#set_execute_file('html,xhtml', 'gexe firefox')
-    call vimshell#set_execute_file('bmp, jpg, png, gif',  'gexe eog')
-    call vimshell#set_execute_file('mp3, m4a, ogg',  'gexe amarok')
-    call vimshell#set_execute_file('tgz, gz',  'gzcat')
-    call vimshell#set_execute_file('tbz, bz2',  'bzcat')
-
-    inoremap <buffer><expr>'  pumvisible() ? "\<C-y>" : "'"
-
-    imap <buffer><C-h>  <Plug>(vimshell_another_delete_backward_char)
-    imap <buffer><C-k>  <Plug>(vimshell_zsh_complete)
-    imap <buffer><C-g>  <Plug>(vimshell_history_neocomplete)
-
-    nmap <buffer> j <Plug>(vimshell_next_prompt)
-    nmap <buffer> k <Plug>(vimshell_previous_prompt)
-    xmap <buffer> y <Plug>(operator-concealedyank)
-
-    call vimshell#altercmd#define('u', 'cdup')
-    call vimshell#altercmd#define('g', 'git')
-    call vimshell#altercmd#define('i', 'iexe')
-    call vimshell#altercmd#define('t', 'texe')
-    call vimshell#set_alias('l.', 'ls -d .*')
-    call vimshell#set_alias('gvim', 'gexe gvim')
-    call vimshell#set_galias('L', 'ls -l')
-    call vimshell#set_alias('.', 'source')
-
-    call vimshell#set_alias('j', ':Unite -buffer-name=files
-                \ -default-action=lcd -no-split -input=$$args directory_mru')
-endfunction
-
-autocmd FileType int-* call s:vimshell_iexe()
-function! s:vimshell_iexe()
-    nmap <buffer> j <Plug>(vimshell_int_next_prompt)
-    nmap <buffer> k <Plug>(vimshell_int_previous_prompt)
-endfunction
-
-autocmd FileType term-* call s:terminal_settings()
-function! s:terminal_settings()
-    inoremap <silent><buffer><expr> <Plug>(vimshell_term_send_semicolon)
-                \ vimshell#term_mappings#send_key(';')
-    inoremap <silent><buffer><expr> j<Space>
-                \ vimshell#term_mappings#send_key('j')
-
-    iunmap <buffer> <Esc><Esc>
-    imap <buffer> <Esc> <Plug>(vimshell_term_send_escape)
-endfunction
-
-let g:vimshell_escape_colors = [
-            \ "#262626", "#ff3333", "#5f8700", "#b58900", "#268bd2", "#cc0066", "#2aa198", "#cccccc",
-            \ "#003333", "#cc3300", "#4e4e4e", "#666666", "#999999", "#5f5faf", "#999999", "#ffffff"
-            \ ]
 " }}}
 
 " Switch {{{
