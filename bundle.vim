@@ -98,7 +98,7 @@ command! -bang -nargs=* Rg
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
- 
+
 nnoremap <silent><c-f> :Files<CR>
 nnoremap <silent><c-g> :GFiles<CR>
 nnoremap <silent><c-b> :Buffers<CR>
