@@ -146,7 +146,6 @@ catch /E185:/
 endtry
 
 if has('gui_running')
-    set transparency=0
     let g:solarized_termcolors=256
     let g:solarized_termtrans=0
     let g:solarized_contrast="normal"
