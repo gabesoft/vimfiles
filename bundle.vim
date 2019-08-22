@@ -92,20 +92,20 @@ let g:fzf_colors =
 " previous-history instead of down and up.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+" command! -bang -nargs=* Rg
+"   \ call fzf#vim#grep(
+"   \   'rg --column --line-number --hidden --no-heading --color=always --smart-case --ignore-file=./.ignore '.shellescape(<q-args>), 1,
+"   \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+"   \   <bang>0)
+
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --hidden --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always --ignore-file=.ignore '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
-
-" command! -bang -nargs=* Rg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --hidden --ignore-case --no-heading --color=never '.shellescape(<q-args>), 1,
-"   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-"   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
-"   \   <bang>0)
-
+ 
 nnoremap <silent><c-f> :Files<CR>
 nnoremap <silent><c-g> :GFiles<CR>
 nnoremap <silent><c-b> :Buffers<CR>
