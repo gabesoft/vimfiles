@@ -130,9 +130,9 @@ set tags=tags
 " update the system clipboard on copy/paste {{{
 " --------------------------------------------------------------------------------
 if has('unnamedplus')
-    set clipboard& clipboard+=unnamedplus
+    set clipboard=unnamedplus
 else
-    set clipboard& clipboard+=unnamed
+    set clipboard=unnamed
 endif
 " }}}
 
