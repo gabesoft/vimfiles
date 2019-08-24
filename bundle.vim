@@ -172,11 +172,6 @@ let g:syntastic_auto_loc_list = 0                 " don't display the error list
 let g:syntastic_always_populate_loc_list = 1      " update the location list when running the syntax checkers
 " }}}
 
-" Butane - https://github.com/Soares/butane.vim {{{
-" --------------------------------------------------------------------------------
-noremap <leader>bc :Bclose<CR>
-" }}}
-
 " CopyPath - https://github.com/vim-scripts/copypath.vim {{{
 " --------------------------------------------------------------------------------
 let g:copypath_copy_to_unnamed_register = 1
@@ -276,13 +271,6 @@ let g:argumentobject_force_toplevel = 0
 let g:slime_no_mappings = 1
 " }}}
 
-" Gundo {{{
-" Displays the undo tree
-" --------------------------------------------------------------------------------
-" ,u        - toggle undo tree
-nnoremap <Leader>u :GundoToggle<CR>
-" }}}
-
 " Ags (The Silver Searcher) {{{
 " --------------------------------------------------------------------------------
 let g:ags_edit_show_line_numbers = 1
@@ -294,7 +282,8 @@ let g:ags_enable_async = 1
 let g:ags_agargs = {
   \ '--column'         : ['', ''],
   \ '--line-number'    : ['', ''],
-  \ '--context'        : ['g:ags_agcontext', '-C'],
+  \ '--before-context' : ['1', '-B'],
+  \ '--after-context'  : ['2', '-A'],
   \ '--max-count'      : ['g:ags_agmaxcount', ''],
   \ '--heading'        : ['',''],
   \ '--smart-case'     : ['','-S'],
@@ -386,8 +375,6 @@ function! ModeStatusLine()
     let fname = expand('%:t')
     return fname == '__Tagbar__' ? 'Tagbar' :
                 \ fname == 'ControlP' ? 'CtrlP' :
-                \ fname == '__Gundo__' ? 'Gundo' :
-                \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
                 \ fname =~ 'NERD_tree' ? 'NERDTree' :
                 \ &ft == 'unite' ? 'Unite' :
                 \ &ft == 'vimfiler' ? 'VimFiler' :
@@ -552,11 +539,6 @@ augroup rainbow_parenthesis
 augroup END
 " }}}
 
-" Delimitmate -https://github.com/Raimondi/delimitMate.git {{{
-" --------------------------------------------------------------------------------
-let delimitMate_autoclose = 1
-" }}}
-
 " SplitJoin {{{
 " --------------------------------------------------------------------------------
 let g:splitjoin_normalize_whitespace = 1
@@ -627,32 +609,9 @@ autocmd BufEnter,BufWinEnter *.hbs,*.erb nmap <buffer> % :MtaJumpToOtherTag<cr>
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 " }}}
 
-" Switch {{{
-" --------------------------------------------------------------------------------
-let g:switch_mapping = "<leader>-"
-let s:switch_defs = {
-            \ 'js_eq': [ '===', '!=='],
-            \ 'js_item_comma': {
-            \   '^\(\s\{-}\), \(.*\)': '\1  \2',
-            \   '^\(\s\{-}\)\s\s\([^, ].*\)': '\1, \2'
-            \ }
-            \ }
-autocmd FileType javascript let b:switch_custom_definitions =
-            \ [
-            \ s:switch_defs.js_eq,
-            \ s:switch_defs.js_item_comma
-            \ ]
-
-" }}}
-
 " Tmux-Complete {{{
 " --------------------------------------------------------------------------------
 let g:tmuxcomplete#trigger = 'omnifunc'
-" }}}
-
-" Quicktask {{{
-" --------------------------------------------------------------------------------
-let g:quicktask_no_mappings = 1
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
