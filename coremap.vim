@@ -138,6 +138,11 @@ vnoremap <F6> <ESC>gg=Ggvzz
 nnoremap <F7> :%!python -m json.tool<CR>''zz<CR>
 " }}}
 
+" F9: cd to the git root directory {{{
+" --------------------------------------------------------------------------------
+nnoremap <F9> :execute 'cd' fnameescape(fnamemodify(finddir('.git', escape(expand('%:p:h'), ' ') . ';'), ':h'))<CR>:pwd<CR>
+"}}}
+
 " F10: compress empty lines (open folds before executing) {{{
 " --------------------------------------------------------------------------------
 nnoremap <F10> :call CompressEmptyLines()<CR>

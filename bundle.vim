@@ -242,8 +242,8 @@ let g:ags_agexe = 'rg'
 let g:ags_agargs = {
   \ '--column'         : ['', ''],
   \ '--line-number'    : ['', ''],
-  \ '--before-context' : ['1', '-B'],
-  \ '--after-context'  : ['2', '-A'],
+  \ '--before-context' : ['0', '-B'],
+  \ '--after-context'  : ['1', '-A'],
   \ '--max-count'      : ['g:ags_agmaxcount', ''],
   \ '--heading'        : ['',''],
   \ '--smart-case'     : ['','-S'],
