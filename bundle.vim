@@ -288,6 +288,19 @@ nnoremap <Leader>u :GundoToggle<CR>
 let g:ags_edit_show_line_numbers = 1
 let g:ags_no_stats = 1
 let g:ags_stats_max_ln = 10000
+let g:ags_agexe = 'rg'
+let g:ags_enable_async = 1
+
+let g:ags_agargs = {
+  \ '--column'         : ['', ''],
+  \ '--line-number'    : ['', ''],
+  \ '--context'        : ['g:ags_agcontext', '-C'],
+  \ '--max-count'      : ['g:ags_agmaxcount', ''],
+  \ '--heading'        : ['',''],
+  \ '--smart-case'     : ['','-S'],
+  \ '--color'          : ['always',''],
+  \ '--colors'         : ['"match:fg:green" --colors="match:bg:black" --colors="match:style:nobold" --colors="path:fg:red" --colors="path:style:bold" --colors="line:fg:black" --colors="line:style:bold"',''],
+  \ }
 
 command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX' <f-args>
 nnoremap <Leader>a :Ags<Space>
