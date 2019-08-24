@@ -173,7 +173,6 @@ augroup omnicomplete
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType scss setlocal omnifunc=scsscomplete#CompleteSCSS
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=tern#Complete
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags

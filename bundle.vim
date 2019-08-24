@@ -42,12 +42,6 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 " }}}
 
-" Quick-Scope {{{
-" --------------------------------------------------------------------------------
-let g:qs_enable = 1
-let g:qs_highlight_on_keys = [ 'f', 'F', 't', 'T' ]
-" }}}
-
 " Vim-Sneak {{{
 " --------------------------------------------------------------------------------
 hi link SneakPluginTarget Special
@@ -116,24 +110,6 @@ nnoremap <silent><c-h> :History:<CR>
 " --------------------------------------------------------------------------------
 let g:prettier#exec_cmd_path = '~/quip/node_modules/prettier'
 nmap <leader>py <Plug>(Prettier)
-" }}}
-
-" accelerated-jk {{{
-" --------------------------------------------------------------------------------
-nmap <silent>j <Plug>(accelerated_jk_gj)
-nmap gj j
-nmap <silent>k <Plug>(accelerated_jk_gk)
-nmap gk k
-" }}}
-
-" Ctrlp - https://github.com/kien/ctrlp.vim {{{
-" --------------------------------------------------------------------------------
-let g:ctrlp_map = '<Leader>tt'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = { 'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$' }
-let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-let g:ctrlp_use_caching = 0
 " }}}
 
 " NERDTree {{{
@@ -211,19 +187,13 @@ let g:surround_{char2nr('^')} = "/^\r$/"
 let g:surround_indent = 1
 " }}}
 
-" FuzzyFinder - https://github.com/vim-scripts/FuzzyFinder {{{
-" --------------------------------------------------------------------------------
-nnoremap <Leader>fb :FufBuffer<CR>
-nnoremap <Leader>ff :FufFile<CR>
-" }}}
-
 " Grep - https://github.com/vim-scripts/grep.vim" {{{
 " --------------------------------------------------------------------------------
 nnoremap <Leader>sf :Rgrep<CR>
 nnoremap <Leader>sb :Bgrep<CR>
 " }}}
 
-" YouCompleteMe {{{
+" YouCompleteMe/TabNine {{{
 " --------------------------------------------------------------------------------
 let g:acp_enableAtStartup = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -261,24 +231,14 @@ let g:UltiSnipsSnippetDirectories = [ 'snips' ]
 let g:argumentobject_force_toplevel = 0
 " }}}
 
-" Slime {{{
-" To use link screen in a shell window
-" > screen -S <name>
-" > run repl
-" --------------------------------------------------------------------------------
-" C-c, C-c  - send selection to buffer (VISUAL MODE)
-" C-c, v    - reconfigure options      (NORMAL MODE)
-let g:slime_no_mappings = 1
-" }}}
-
-" Ags (The Silver Searcher) {{{
+" Ags {{{
 " --------------------------------------------------------------------------------
 let g:ags_edit_show_line_numbers = 1
 let g:ags_no_stats = 1
 let g:ags_stats_max_ln = 10000
-let g:ags_agexe = 'rg'
 let g:ags_enable_async = 1
 
+let g:ags_agexe = 'rg'
 let g:ags_agargs = {
   \ '--column'         : ['', ''],
   \ '--line-number'    : ['', ''],
@@ -376,7 +336,6 @@ function! ModeStatusLine()
     return fname == '__Tagbar__' ? 'Tagbar' :
                 \ fname == 'ControlP' ? 'CtrlP' :
                 \ fname =~ 'NERD_tree' ? 'NERDTree' :
-                \ &ft == 'unite' ? 'Unite' :
                 \ &ft == 'vimfiler' ? 'VimFiler' :
                 \ &ft == 'vimshell' ? 'VimShell' :
                 \ &ft == 'agsv' ? 'AgsView' :
@@ -387,7 +346,6 @@ endfunction
 function! FilenameStatusLine()
     return ('' != ReadonlyStatusLine() ? ReadonlyStatusLine() . ' ' : '') .
                 \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-                \  &ft == 'unite' ? unite#get_status_string() :
                 \  &ft == 'vimshell' ? vimshell#get_status_string() :
                 \  &ft == 'agsv' ? ags#get_status_string() :
                 \  &ft == 'agse' ? '' :
@@ -425,6 +383,7 @@ endfunction
 " --------------------------------------------------------------------------------
 let g:indentLine_noConcealCursor = 1
 let g:indentLine_enabled = 1
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 if &background == 'dark'
     let g:indentLine_color_gui = '#073642'
@@ -454,21 +413,6 @@ let g:indentLine_color_tty_light = 7
 let g:indentLine_color_tty_dark  = 1
 let g:indentLine_fileType = [ 'agsv', 'eruby', 'html', 'html.handlebars', 'java', 'javascript', 'json', 'rails', 'ruby', 'scss', 'sh', 'vim', 'yaml' ]
 let g:indentLine_fileTypeExclude = [ 'text', 'gitcommit' ]
-" }}}
-
-" Tern {{{
-" Install the tern server:
-"   - cd bundle/tern_for_vim
-"   - npm install
-" Commands
-" - TernDef    : Jump to the definition of the thing under the cursor.
-" - TernType   : Find the type of the thing under the cursor.
-" - TernDoc    : Look up the documentation of something.
-" - TernRefs   : Show all references to the variable or property under the cursor.
-" - TernRename : Rename the variable under the cursor.
-" --------------------------------------------------------------------------------
-let g:tern_show_argument_hints='no'
-let g:tern_show_signature_in_pum=1
 " }}}
 
 " Solarized (moved to .vimrc) {{{
@@ -607,11 +551,6 @@ autocmd BufEnter,BufWinEnter *.hbs,*.erb nmap <buffer> % :MtaJumpToOtherTag<cr>
 " Vim after object {{{
 " --------------------------------------------------------------------------------
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
-" }}}
-
-" Tmux-Complete {{{
-" --------------------------------------------------------------------------------
-let g:tmuxcomplete#trigger = 'omnifunc'
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0

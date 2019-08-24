@@ -60,9 +60,9 @@ if has("gui_running")
     if WINDOWS()
         set guifont=Monaco:h10:cANSI
     elseif OSX()
-        set guifont=Source\ Code\ Pro:h14
+        set guifont=Source\ Code\ Pro:h12
     else
-        set guifont=Monaco\ 12
+        set guifont=Camingo\ Code\ 12
     endif
 else
     if &term == 'xterm' || &term == 'screen'
@@ -216,7 +216,7 @@ set shiftwidth=4
 
 " number formats and shift round {{{
 " --------------------------------------------------------------------------------
-set nrformats-=octal
+set nrformats=alpha,octal,bin,hex
 set shiftround
 " }}}
 
