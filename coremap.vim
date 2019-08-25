@@ -140,7 +140,7 @@ nnoremap <F7> :%!python -m json.tool<CR>''zz<CR>
 
 " F9: cd to the git root directory {{{
 " --------------------------------------------------------------------------------
-nnoremap <F9> :execute 'cd' fnameescape(fnamemodify(finddir('.git', escape(expand('%:p:h'), ' ') . ';'), ':h'))<CR>:pwd<CR>
+" see bundle.vim
 "}}}
 
 " F10: compress empty lines (open folds before executing) {{{

@@ -85,10 +85,21 @@ let g:fzf_colors =
 " CTRL-N and CTRL-P will be automatically bound to next-history and
 " previous-history instead of down and up.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+let s:fzf_grep_cmd = 'rg
+            \ --column
+            \ --line-number
+            \ --hidden
+            \ --ignore-case
+            \ --no-heading
+            \ --color=always
+            \ --ignore-file=.ignore
+            \ --colors="match:fg:red"
+            \ --colors="match:bg:black"
+            \ --smart-case '
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always --ignore-file=.ignore '.shellescape(<q-args>), 1,
+  \   s:fzf_grep_cmd.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
@@ -173,7 +184,9 @@ nmap <M-Space> <Plug>(easymotion-s2)
 
 " Fugitive - https://github.com/tpope/vim-fugitive {{{
 " add to status line: set statusline+=%{fugitive#statusline()}
+" F9: cd to the git root directory
 " --------------------------------------------------------------------------------
+nnoremap <F9> :Gcd<CR>:pwd<CR>
 " }}}
 
 " Surround - https://github.com/tpope/vim-surround {{{
