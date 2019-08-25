@@ -48,11 +48,6 @@ hi link SneakPluginTarget Special
 hi link SneakPluginScope  Comment
 " }}}
 
-" Goyo {{{
-" --------------------------------------------------------------------------------
-let g:goyo_linenr = 1
-" }}}
-
 " Vim-Peekaboo {{{
 " --------------------------------------------------------------------------------
 let g:peekaboo_window = 'vertical botright 50new'
