@@ -93,8 +93,12 @@ let s:fzf_grep_cmd = 'rg
             \ --no-heading
             \ --color=always
             \ --ignore-file=.ignore
-            \ --colors="match:fg:red"
+            \ --colors="match:fg:yellow"
             \ --colors="match:bg:black"
+            \ --colors="path:fg:magenta"
+            \ --colors="path:style:nobold"
+            \ --colors="line:fg:green"
+            \ --colors="line:style:nobold"
             \ --smart-case '
 
 command! -bang -nargs=* Rg
