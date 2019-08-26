@@ -234,7 +234,7 @@ set ignorecase
 set incsearch
 set smartcase
 set nogdefault
-set nohlsearch
+set hlsearch
 " }}}
 
 " insert mode completion {{{
