@@ -1,6 +1,7 @@
 call plug#begin(expand('$VIMHOME/plugs'))
 
 Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/bufferize.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'briancollins/vim-jst'

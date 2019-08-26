@@ -42,6 +42,12 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 " }}}
 
+" Bufferize https://github.com/AndrewRadev/bufferize.vim {{{
+" --------------------------------------------------------------------------------
+nnoremap <leader>me :Bufferize messages<CR>
+nnoremap <leader>ma :Bufferize map<CR>
+" }}}
+
 " Vim-Sneak {{{
 " --------------------------------------------------------------------------------
 hi link Sneak Search
