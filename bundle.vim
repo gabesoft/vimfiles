@@ -44,7 +44,7 @@ noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 " Vim-Sneak {{{
 " --------------------------------------------------------------------------------
-hi link Sneak Comment
+hi link Sneak Search
 hi link SneakLabel Label
 hi link SneakScope Special
 " }}}
