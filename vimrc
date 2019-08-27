@@ -60,7 +60,7 @@ if has("gui_running")
     if WINDOWS()
         set guifont=Monaco:h10:cANSI
     elseif OSX()
-        set guifont=Source\ Code\ Pro:h12
+        set guifont=Source\ Code\ Pro:h14
     else
         set guifont=Camingo\ Code\ 12
     endif
