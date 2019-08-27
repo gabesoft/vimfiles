@@ -152,6 +152,12 @@ nnoremap <Leader>nc :NERDTreeClose<CR>
 let NERDSpaceDelims = 1
 " }}}
 
+" Vim-Javascript {{{
+" --------------------------------------------------------------------------------
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+" }}}
+
 " Syntastic {{{
 " requires jsl for javascript
 "     - download from http://www.javascriptlint.com/download.htm
