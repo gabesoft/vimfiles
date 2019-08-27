@@ -125,7 +125,7 @@ nnoremap <silent><c-h> :History:<CR>
 
 " Prettier {{{
 " --------------------------------------------------------------------------------
-let g:prettier#exec_cmd_path = '~/quip/node_modules/prettier'
+let g:prettier#exec_cmd_path = 'node_modules/prettier'
 nmap <leader>py <Plug>(Prettier)
 " }}}
 
