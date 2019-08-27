@@ -3,6 +3,7 @@ call plug#begin(expand('$VIMHOME/plugs'))
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/bufferize.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'briancollins/vim-jst'
 Plug 'dag/vim-fish'
