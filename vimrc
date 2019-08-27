@@ -140,7 +140,7 @@ endif
 " --------------------------------------------------------------------------------
 try
     set background=dark
-    colorscheme solarized
+    colorscheme solarized8
 catch /E185:/
     colorscheme default
 endtry
