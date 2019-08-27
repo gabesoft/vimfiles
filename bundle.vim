@@ -292,7 +292,7 @@ vmap <Leader>tm :Tabularize /,\zs<CR>
 " Lightline {{{
 " --------------------------------------------------------------------------------
 set noshowmode
-set fillchars+=stl:\ ,stlnc:\
+set fillchars+=stl:\ ,stlnc:\ ,vert:\ 
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
