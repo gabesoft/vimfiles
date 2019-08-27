@@ -140,7 +140,11 @@ endif
 " --------------------------------------------------------------------------------
 try
     set background=dark
-    colorscheme solarized8
+    if has('gui_running')
+        colorscheme solarized8
+    else
+        colorscheme solarized
+    endif
 catch /E185:/
     colorscheme default
 endtry
