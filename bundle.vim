@@ -278,6 +278,7 @@ let g:ags_agargs = {
 
 command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX' <f-args>
 nnoremap <Leader>a :Ags<Space>
+nnoremap <Leader>s :Ags<Space><c-r>=expand('<cword>')<CR>
 nnoremap <Leader><Leader>a :AgsQuit<CR>
 " }}}
 
