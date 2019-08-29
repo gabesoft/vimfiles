@@ -276,9 +276,10 @@ let g:ags_agargs = {
   \ '--colors'         : ['"match:fg:green" --colors="match:bg:black" --colors="match:style:nobold" --colors="path:fg:red" --colors="path:style:bold" --colors="line:fg:black" --colors="line:style:bold"',''],
   \ }
 
-command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX' <f-args>
+command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX\|HACK' <f-args>
 nnoremap <Leader>a :Ags<Space>
-nnoremap <Leader>s :Ags<Space><c-r>=expand('<cword>')<CR>
+nnoremap <Leader>s :Ags<Space><C-R>=expand('<cword>')<CR><CR>
+vnoremap <Leader>s y:Ags<Space><C-R>='"' . escape(@", '"*?()[]{}.') . '"'<CR><CR>
 nnoremap <Leader><Leader>a :AgsQuit<CR>
 " }}}
 
