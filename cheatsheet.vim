@@ -16,6 +16,8 @@
 " ------------------------------------------------------------------------------
 " gg=G or F6  : format entire file
 " =<motion>   : format according to motion (eg =ip to format a paragraph)
+" [count]==   : format <count> lines
+" {Visual}=   : format the visual selection
 
 " navigation
 " ------------------------------------------------------------------------------
