@@ -113,7 +113,7 @@ command! -bang -nargs=* Rg
 nnoremap <silent><c-f> :Files<CR>
 nnoremap <silent><c-g> :GFiles<CR>
 nnoremap <silent><c-b> :Buffers<CR>
-nnoremap <silent><c-l> :Lines<CR>
+nnoremap <silent><c-l> :BLines<CR>
 nnoremap <silent><c-s> :Rg<CR>
 nnoremap <silent><c-h> :History:<CR>
 
