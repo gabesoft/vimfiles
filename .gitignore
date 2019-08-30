@@ -7,3 +7,4 @@ eclim/*
 plugin/*
 .vim
 init.vim
+Highlight test
