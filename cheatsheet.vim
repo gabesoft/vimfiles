@@ -14,7 +14,8 @@
 
 " file formatting
 " ------------------------------------------------------------------------------
-" gg=G or F6
+" gg=G or F6  : format entire file
+" =<motion>   : format according to motion (eg =ip to format a paragraph)
 
 " navigation
 " ------------------------------------------------------------------------------
