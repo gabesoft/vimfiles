@@ -110,6 +110,11 @@ inoremap <C-T> <ESC>hxpa
 nnoremap <NL> i<CR><ESC>
 " }}}
 
+" F1: fuzzy help (defined in bundle.vim) {{{
+" --------------------------------------------------------------------------------
+" nnoremap <F1> :Helptags<CR>
+" }}}
+
 " F3: insert timestamp {{{
 " --------------------------------------------------------------------------------
 nnoremap <F3> a<C-R>=strftime("%m/%d/%Y %I:%M %p")<CR><Esc>
@@ -138,9 +143,9 @@ vnoremap <F6> <ESC>gg=Ggvzz
 nnoremap <F7> :%!python -m json.tool<CR>''zz<CR>
 " }}}
 
-" F9: cd to the git root directory {{{
+" F9: cd to the git root directory (defined in bundle.vim) {{{
 " --------------------------------------------------------------------------------
-" see bundle.vim
+" nnoremap <F9> :Gcd<CR>:pwd<CR>
 "}}}
 
 " F10: compress empty lines (open folds before executing) {{{

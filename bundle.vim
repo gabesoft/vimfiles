@@ -12,9 +12,9 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 map n  <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
 map N  <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
-map *  <Plug>(asterisk-z*)<Plug>(incsearch-nohl)
+map *  <Plug>(asterisk-z*)<Plug>(incsearch-nohl)<Plug>(anzu-star)
 map g* <Plug>(asterisk-*)<Plug>(incsearch-nohl)
-map #  <Plug>(asterisk-z#)<Plug>(incsearch-nohl)
+map #  <Plug>(asterisk-z#)<Plug>(incsearch-nohl)<Plug>(anzu-sharp)
 map g# <Plug>(asterisk-#)<Plug>(incsearch-nohl)
 
 function! s:config_easyfuzzymotion(...) abort
@@ -40,6 +40,11 @@ noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
 noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+
+augroup vim-anzu
+  autocmd!
+  autocmd CursorHold,CursorHoldI,WinLeave,TabLeave * call anzu#clear_search_status()
+augroup END
 " }}}
 
 " Bufferize https://github.com/AndrewRadev/bufferize.vim {{{
@@ -133,12 +138,13 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-nnoremap <silent><c-f> :Files<CR>
-nnoremap <silent><c-g> :GFiles<CR>
-nnoremap <silent><c-b> :Buffers<CR>
-nnoremap <silent><c-l> :BLines<CR>
-nnoremap <silent><c-s> :Rg<CR>
-nnoremap <silent><c-h> :History:<CR>
+nnoremap <silent><C-F> :Files<CR>
+nnoremap <silent><C-G> :GFiles<CR>
+nnoremap <silent><C-B> :Buffers<CR>
+nnoremap <silent><C-L> :BLines<CR>
+nnoremap <silent><C-S> :Rg<CR>
+nnoremap <silent><C-H> :History<CR>
+nnoremap <F1> :Helptags<CR>
 " }}}
 
 " Prettier {{{
@@ -287,6 +293,15 @@ nnoremap <Leader>a :Ags<Space>
 nnoremap <Leader><Leader>a :AgsQuit<CR>
 " }}}
 
+" Vim-Operator-Flashy https://github.com/haya14busa/vim-operator-flashy {{{
+" --------------------------------------------------------------------------------
+let g:operator#flashy#flash_time = 200
+
+hi link Flashy CursorLine
+
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
+" }}}
 
 " Abolish {{{
 " --------------------------------------------------------------------------------
@@ -338,7 +353,7 @@ let g:lightline = {
             \   'lineinfo': '⭡ %3l:%-2v',
             \ },
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+            \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'fugitive', 'relativepath', 'anzu' ] ]
             \ },
             \ 'inactive': {
             \   'left': [ [ 'absolutepath', 'winnum' ] ]
@@ -353,11 +368,13 @@ let g:lightline = {
             \   'fileformat'   : 'FileformatStatusLine',
             \   'filetype'     : 'FiletypeStatusLine',
             \   'fileencoding' : 'FileencodingStatusLine',
-            \   'mode'         : 'ModeStatusLine'
+            \   'mode'         : 'ModeStatusLine',
+            \   'anzu'         : 'anzu#search_status'
             \ },
             \ 'separator'    : { 'left': '', 'right': '' },
             \ 'subseparator' : { 'left': '', 'right': '' }
             \ }
+let g:lightline.component_function = { 'anzu': 'anzu#search_status' }
 
 augroup LightLineColorScheme
     autocmd!
