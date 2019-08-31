@@ -296,12 +296,12 @@ let g:ags_agargs = {
   \ '--heading'        : ['',''],
   \ '--smart-case'     : ['','-S'],
   \ '--color'          : ['always',''],
-  \ '--colors'         : ['"match:fg:green" --colors="match:bg:black" --colors="match:style:nobold" --colors="path:fg:red" --colors="path:style:bold" --colors="line:fg:black" --colors="line:style:bold"',''],
+  \ '--colors'         : [['match:fg:green', 'match:bg:black', 'match:style:nobold', 'path:fg:red', 'path:style:bold', 'line:fg:black', 'line:style:bold'] ,''],
   \ }
 
 command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX\|HACK' <f-args>
 nnoremap <Leader>s :Ags<Space><C-R>=expand('<cword>')<CR><CR>
-vnoremap <Leader>s y:Ags<Space><C-R>='"' . escape(@", '"*?()[]{}.') . '"'<CR><CR>
+vnoremap <Leader>s y:Ags<Space><C-R>='"' . escape(@", '"*?()[]{}.-') . '"'<CR><CR>
 nnoremap <Leader>a :Ags<Space>
 nnoremap <Leader><Leader>a :AgsQuit<CR>
 " }}}
@@ -377,6 +377,7 @@ let g:lightline = {
             \   'fugitive'     : 'FugitiveStatusLine',
             \   'filename'     : 'FilenameStatusLine',
             \   'absolutepath' : 'AbsolutepathStatusLine',
+            \   'relativepath' : 'RelativepathStatusLine',
             \   'winnum'       : 'WinnrStatusLine',
             \   'fileformat'   : 'FileformatStatusLine',
             \   'filetype'     : 'FiletypeStatusLine',
@@ -387,7 +388,6 @@ let g:lightline = {
             \ 'separator'    : { 'left': '', 'right': '' },
             \ 'subseparator' : { 'left': '', 'right': '' }
             \ }
-let g:lightline.component_function = { 'anzu': 'anzu#search_status' }
 
 augroup LightLineColorScheme
     autocmd!
@@ -423,6 +423,17 @@ function! ModeStatusLine()
                 \ &ft == 'agsv' ? 'AgsView' :
                 \ &ft == 'agse' ? 'AgsEdit' :
                 \ winwidth(0) > 30 ? lightline#mode() : ''
+endfunction
+
+function! RelativepathStatusLine()
+    return ('' != ReadonlyStatusLine() ? ReadonlyStatusLine() . ' ' : '') .
+                \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+                \  &ft == 'vimshell' ? vimshell#get_status_string() :
+                \  &ft == 'agsv' ? ags#get_status_string() :
+                \  &ft == 'agse' ? '' :
+                \  &ft == 'nerdtree' ? '' :
+                \ '' != expand('%:f') ? expand('%:f') : '[No Name]') .
+                \ ('' != ModifiedStatusLine() ? ' ' . ModifiedStatusLine() : '')
 endfunction
 
 function! FilenameStatusLine()

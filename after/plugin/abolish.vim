@@ -54,6 +54,9 @@ Abolish htis this
 Abolish ojbect object
 Abolish iths this
 Abolish scirpt script
+Abolish spae space
+Abolish {,}seach {,}search
+Abolish {,}serach {,}search
 Abolish {,}clipbard{,} {,}clipboard{,}
 Abolish {,}seciton {,}section
 Abolish {,}clipaord{,} {,}clipboard{,}
