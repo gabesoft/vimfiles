@@ -1,4 +1,5 @@
 " --------------------------------------------------------------------------------
+"
 " maintainer:   Gabriel Adomnicai <gabesoft@gmail.com>
 " purpose:      vim plugin settings
 " --------------------------------------------------------------------------------
@@ -55,6 +56,8 @@ nnoremap <leader>ma :Bufferize map<CR>
 
 " Vim-Sneak {{{
 " --------------------------------------------------------------------------------
+let g:sneak#s_next = 1
+
 hi link Sneak Search
 hi link SneakLabel Label
 hi link SneakScope Incsearch
@@ -143,7 +146,8 @@ nnoremap <silent><C-G> :GFiles<CR>
 nnoremap <silent><C-B> :Buffers<CR>
 nnoremap <silent><C-L> :BLines<CR>
 nnoremap <silent><C-S> :Rg<CR>
-nnoremap <silent><C-H> :History<CR>
+nnoremap <silent><C-M> :History<CR>
+nnoremap <silent><C-H> :Commands<CR>
 nnoremap <F1> :Helptags<CR>
 " }}}
 
@@ -169,6 +173,15 @@ let g:NERDCustomDelimiters = { 'dustjs': { 'left': '{!', 'right': '!}' } }
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>nc :NERDTreeClose<CR>
+" }}}
+
+" Dirvish https://github.com/justinmk/vim-dirvish {{{
+" When using the fish shell the commands should be run with ':sh %' instead of ':!%'
+" --------------------------------------------------------------------------------
+let g:loaded_netrwPlugin = 1
+command! -nargs=? -complete=dir Explore Dirvish <args>
+command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
 " }}}
 
 " NERDCommenter {{{
