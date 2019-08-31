@@ -63,7 +63,30 @@ let g:peekaboo_window = 'vertical botright 50new'
 " Vim-Startify {{{
 " --------------------------------------------------------------------------------
 let g:startify_change_to_dir = 0
-let g:startify_custom_indices = [ 'a', 'c', 'd', 'f', 'g', 'm', 'n', 'o', 'p', 'r' ]
+let g:startify_change_to_vcs_root = 1
+let g:startify_files_number = 20
+let g:startify_session_dir = '~/.vim/session'
+let g:startify_custom_indices = [ 'a', 'c', 'd', 'f', 'g', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+let g:startify_lists = [
+        \ { 'type': 'files',     'header': ['   MRU']            },
+        \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+        \ { 'type': 'sessions',  'header': ['   Sessions']       },
+        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+        \ { 'type': 'commands',  'header': ['   Commands']       },
+        \ ]
+let g:startify_custom_header = [
+            \ '                ___                       ___      ',
+            \ '               /\__\          ___        /\__\     ',
+            \ '              /:/  /         /\  \      /::|  |    ',
+            \ '             /:/  /          \:\  \    /:|:|  |    ',
+            \ '            /:/__/  ___      /::\__\  /:/|:|__|__  ',
+            \ '            |:|  | /\__\  __/:/\/__/ /:/ |::::\__\ ',
+            \ '            |:|  |/:/  / /\/:/  /    \/__/~~/:/  / ',
+            \ '            |:|__/:/  /  \::/__/           /:/  /  ',
+            \ '             \::::/__/    \:\__\          /:/  /   ',
+            \ '              ~~~~         \/__/         /:/  /    ',
+            \ '                                         \/__/     ',
+            \ ]
 " }}}
 
 " FZF {{{
