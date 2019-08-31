@@ -3,7 +3,7 @@
 " purpose:      vim plugin settings
 " --------------------------------------------------------------------------------
 
-" Incsearch + Anzu {{{
+" Incsearch + Anzu + Asterisk {{{
 " --------------------------------------------------------------------------------
 let g:incsearch#auto_nohlsearch = 1
 
@@ -12,10 +12,10 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 map n  <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
 map N  <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
+map *  <Plug>(asterisk-z*)<Plug>(incsearch-nohl)
+map g* <Plug>(asterisk-*)<Plug>(incsearch-nohl)
+map #  <Plug>(asterisk-z#)<Plug>(incsearch-nohl)
+map g# <Plug>(asterisk-#)<Plug>(incsearch-nohl)
 
 function! s:config_easyfuzzymotion(...) abort
     return extend(copy({
@@ -139,11 +139,6 @@ nnoremap <silent><c-b> :Buffers<CR>
 nnoremap <silent><c-l> :BLines<CR>
 nnoremap <silent><c-s> :Rg<CR>
 nnoremap <silent><c-h> :History:<CR>
-
-" imap <c-x><c-k> <plug>(fzf-complete-word)
-" imap <c-x><c-f> <plug>(fzf-complete-path)
-" imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-" imap <c-x><c-l> <plug>(fzf-complete-line)
 " }}}
 
 " Prettier {{{

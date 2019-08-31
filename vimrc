@@ -233,6 +233,7 @@ set ttimeoutlen=200
 " }}}
 
 " search behavior {{{
+" this behavior is mostly determined by the incsearch plugin
 " --------------------------------------------------------------------------------
 set ignorecase
 set incsearch

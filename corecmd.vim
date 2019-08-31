@@ -33,6 +33,15 @@ endfunction
 " autocmd BufLeave,BufWinLeave,WinLeave * exe printf('match Normal /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 " }}}
 
+" Incremental search + search highlight {{{
+" --------------------------------------------------------------------------------
+" augroup vimrc-incsearch-highlight
+"   autocmd!
+"   autocmd CmdlineEnter [/\?] :set hlsearch
+"   autocmd CmdlineLeave [/\?] :set nohlsearch
+" augroup END
+"  }}}
+
 " Change cursor color based on mode {{{
 " --------------------------------------------------------------------------------
 augroup CursorColorMode
