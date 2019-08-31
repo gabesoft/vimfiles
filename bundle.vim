@@ -249,29 +249,15 @@ let g:ycm_semantic_triggers =  {
 
 " Vim-Over - https://github.com/osyo-manga/vim-over {{{
 " --------------------------------------------------------------------------------
+let g:over_enable_auto_nohlsearch = 1
+let g:over_enable_cmd_window = 1
+let g:over#command_line#search#enable_incsearch = 1
+let g:over#command_line#search#enable_move_cursor = 0
+let g:over#command_line#substitute#replace_pattern_visually = 1
+
 nnoremap <Leader>sr :OverCommandLine<CR> %s/\<<C-R><C-W>\>//g<Left><Left>
 nnoremap <Leader>ss :OverCommandLine<CR> %s/
 nnoremap <Leader>su :OverCommandLine<CR> %S/
-" }}}
-
-" Abolish {{{
-" --------------------------------------------------------------------------------
-let g:abolish_save_file = expand($VIMHOME) . '/after/plugin/abolish.vim'
-" }}}
-
-" UltiSnips - https://github.com/SirVer/ultisnips/tree/master/UltiSnips {{{
-" --------------------------------------------------------------------------------
-let g:UltiSnipsExpandTrigger = '<C-J>'
-let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-let g:UltiSnipsListSnippets = '<C-Q>'
-let g:UltiSnipsSnippetsDir = expand($VIMHOME) . '/snips'
-let g:UltiSnipsSnippetDirectories = [ 'snips' ]
-" }}}
-
-" ArgTextObj - https://github.com/vim-scripts/argtextobj.vim {{{
-" --------------------------------------------------------------------------------
-let g:argumentobject_force_toplevel = 0
 " }}}
 
 " Ags {{{
@@ -299,6 +285,27 @@ nnoremap <Leader>s :Ags<Space><C-R>=expand('<cword>')<CR><CR>
 vnoremap <Leader>s y:Ags<Space><C-R>='"' . escape(@", '"*?()[]{}.') . '"'<CR><CR>
 nnoremap <Leader>a :Ags<Space>
 nnoremap <Leader><Leader>a :AgsQuit<CR>
+" }}}
+
+
+" Abolish {{{
+" --------------------------------------------------------------------------------
+let g:abolish_save_file = expand($VIMHOME) . '/after/plugin/abolish.vim'
+" }}}
+
+" UltiSnips - https://github.com/SirVer/ultisnips/tree/master/UltiSnips {{{
+" --------------------------------------------------------------------------------
+let g:UltiSnipsExpandTrigger = '<C-J>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+let g:UltiSnipsListSnippets = '<C-Q>'
+let g:UltiSnipsSnippetsDir = expand($VIMHOME) . '/snips'
+let g:UltiSnipsSnippetDirectories = [ 'snips' ]
+" }}}
+
+" ArgTextObj - https://github.com/vim-scripts/argtextobj.vim {{{
+" --------------------------------------------------------------------------------
+let g:argumentobject_force_toplevel = 0
 " }}}
 
 " Tabularize {{{

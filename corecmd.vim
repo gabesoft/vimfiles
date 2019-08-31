@@ -26,14 +26,14 @@ endfunction
 " }}}
 
 " Highlight word under cursor {{{
-" Notes: use Underlined or SpellLocal
-" Disabled in favor of * + hlsearch
+" Disabled in favor of vim-asterisk
 " --------------------------------------------------------------------------------
 " autocmd CursorMoved * exe printf('match Underlined /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 " autocmd BufLeave,BufWinLeave,WinLeave * exe printf('match Normal /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 " }}}
 
 " Incremental search + search highlight {{{
+" Disabled in favor of incsearch
 " --------------------------------------------------------------------------------
 " augroup vimrc-incsearch-highlight
 "   autocmd!
