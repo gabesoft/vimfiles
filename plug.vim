@@ -54,7 +54,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'rhysd/committia.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmhedberg/matchit'

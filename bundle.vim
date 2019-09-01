@@ -200,19 +200,6 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 " }}}
 
-" Syntastic {{{
-" requires jsl for javascript
-"     - download from http://www.javascriptlint.com/download.htm
-" or  - brew install jslint
-" or  - node install jshint -g
-"       the config for jshint is at ~/.jshintrc, see http://www.jshint.com/docs/#options
-" navigate errors with :lnext, :lprev (or [l, ]l via unimpaired)
-" --------------------------------------------------------------------------------
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 0                 " don't display the error list at the bottom
-let g:syntastic_always_populate_loc_list = 1      " update the location list when running the syntax checkers
-" }}}
-
 " EasyMotion - https://github.com/Lokaltog/vim-easymotion {{{
 "   easymotion leader = <Leader><Leader>
 "   <Leader>f{char}      | Find {char} to the right. See |f|.
