@@ -220,7 +220,7 @@ set shiftwidth=4
 
 " number formats and shift round {{{
 " --------------------------------------------------------------------------------
-set nrformats=alpha,octal,bin,hex
+set nrformats=octal,bin,hex
 set shiftround
 " }}}
 
