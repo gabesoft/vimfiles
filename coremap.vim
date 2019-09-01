@@ -65,6 +65,8 @@ nnoremap gV `[v`]
 " moving lines {{{
 " <CTRL-ALT-j> move line or selected block down
 " <CTRL-ALT-k> move line or selected block up
+" Can also be done via vim-unimpaired [e and ]e but
+" the selection is not preserved in that case.
 " --------------------------------------------------------------------------------
 nnoremap <C-A-j> :m+<CR>==
 nnoremap <C-A-k> :m-2<CR>==
@@ -158,6 +160,14 @@ cnoremap <C-w> <S-Right>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-y> <C-r>*
+" }}}
+
+" Copy the path or name of the current buffer to unnamedplus {{{
+" --------------------------------------------------------------------------------
+"  copy path
+nnoremap <Leader>cp :let @+=expand("%:p")<CR>
+" copy file name
+nnoremap <Leader>cf :let @+=expand("%:t")<CR>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0

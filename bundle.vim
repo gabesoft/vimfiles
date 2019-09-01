@@ -57,6 +57,7 @@ nnoremap <leader>ma :Bufferize map<CR>
 " Vim-Sneak {{{
 " --------------------------------------------------------------------------------
 let g:sneak#s_next = 1
+let g:sneak#use_ic_scs = 1
 
 hi link Sneak Search
 hi link SneakLabel Label
@@ -212,15 +213,8 @@ let g:syntastic_auto_loc_list = 0                 " don't display the error list
 let g:syntastic_always_populate_loc_list = 1      " update the location list when running the syntax checkers
 " }}}
 
-" CopyPath - https://github.com/vim-scripts/copypath.vim {{{
-" --------------------------------------------------------------------------------
-let g:copypath_copy_to_unnamed_register = 1
-nnoremap <Leader>cp :CopyPath<CR>
-nnoremap <Leader>cf :CopyFileName<CR>
-" }}}
-
 " EasyMotion - https://github.com/Lokaltog/vim-easymotion {{{
-"   default leader = <Leader><Leader>
+"   easymotion leader = <Leader><Leader>
 "   <Leader>f{char}      | Find {char} to the right. See |f|.
 "   <Leader>F{char}      | Find {char} to the left. See |F|.
 "   <Leader>t{char}      | Till before the {char} to the right. See |t|.
@@ -267,6 +261,7 @@ let g:surround_indent = 1
 let g:acp_enableAtStartup = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_key_detailed_diagnostics = ''
 let g:ycm_semantic_triggers =  {
             \ 'css'  : ['    ', '@', ':',  ': ', '!'],
             \ 'scss' : ['    ', '@', ':',  ': ', '!']
@@ -590,13 +585,6 @@ let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
 nnoremap gJ :silent SplitjoinJoin<CR>
 nnoremap gS :silent SplitjoinSplit<CR>
-" }}}
-
-" Clever-f {{{
-" --------------------------------------------------------------------------------
-nmap <F12> <Plug>(clever-f-reset)
-let g:clever_f_repeat_last_char_inputs = ["\<CR>", "\<Tab>"]
-let g:clever_f_across_no_line=0
 " }}}
 
 " Committia {{{
