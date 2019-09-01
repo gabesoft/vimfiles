@@ -148,6 +148,7 @@ nnoremap <silent><C-L> :BLines<CR>
 nnoremap <silent><C-S> :Rg<CR>
 nnoremap <silent><C-M> :History<CR>
 nnoremap <silent><C-H> :Commands<CR>
+nnoremap <silent><leader>g :BCommits<CR>
 nnoremap <F1> :Helptags<CR>
 " }}}
 
@@ -249,12 +250,6 @@ let g:surround_{char2nr('^')} = "/^\r$/"
 let g:surround_indent = 1
 " }}}
 
-" Grep - https://github.com/vim-scripts/grep.vim" {{{
-" --------------------------------------------------------------------------------
-nnoremap <Leader>sf :Rgrep<CR>
-nnoremap <Leader>sb :Bgrep<CR>
-" }}}
-
 " YouCompleteMe/TabNine {{{
 " --------------------------------------------------------------------------------
 let g:acp_enableAtStartup = 0
@@ -300,10 +295,10 @@ let g:ags_agargs = {
   \ }
 
 command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX\|HACK' <f-args>
-nnoremap <Leader>s :Ags<Space><C-R>=expand('<cword>')<CR><CR>
-vnoremap <Leader>s y:Ags<Space><C-R>='"' . escape(@", '"*?()[]{}.-') . '"'<CR><CR>
-nnoremap <Leader>a :Ags<Space>
-nnoremap <Leader><Leader>a :AgsQuit<CR>
+nnoremap <Leader>as :Ags<Space><C-R>=expand('<cword>')<CR><CR>
+vnoremap <Leader>as y:Ags<Space><C-R>='"' . escape(@", '"*?()[]{}.-') . '"'<CR><CR>
+nnoremap <Leader>aa :Ags<Space>
+nnoremap <Leader>aq :AgsQuit<CR>
 " }}}
 
 " Vim-Operator-Flashy https://github.com/haya14busa/vim-operator-flashy {{{
