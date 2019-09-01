@@ -339,17 +339,18 @@ let g:argumentobject_force_toplevel = 0
 " }}}
 
 " Tabularize {{{
+" TODO maybe replace with https://github.com/junegunn/vim-easy-align
 " --------------------------------------------------------------------------------
-nmap <Leader>te :Tabularize /^[^=]*\zs=<CR>
-vmap <Leader>te :Tabularize /^[^=]*\zs=<CR>
+nmap <Leader>t= :Tabularize /^[^=]*\zs=<CR>
+vmap <Leader>t= :Tabularize /^[^=]*\zs=<CR>gv
 nmap <Leader>tE :Tabularize /^[^=]*\zs=/r0c0l0<CR>
-vmap <Leader>tE :Tabularize /^[^=]*\zs=/r0c0l0<CR>
-nmap <Leader>tc :Tabularize /^[^:]*\zs:<CR>
-vmap <Leader>tc :Tabularize /^[^:]*\zs:<CR>
+vmap <Leader>tE :Tabularize /^[^=]*\zs=/r0c0l0<CR>gv
+nmap <Leader>t: :Tabularize /^[^:]*\zs:<CR>
+vmap <Leader>t: :Tabularize /^[^:]*\zs:<CR>gv
 nmap <Leader>tC :Tabularize /^[^:]*\zs:/r0c0l0<CR>
-vmap <Leader>tC :Tabularize /^[^:]*\zs:/r0c0l0<CR>
-nmap <Leader>tm :Tabularize /,\zs<CR>
-vmap <Leader>tm :Tabularize /,\zs<CR>
+vmap <Leader>tC :Tabularize /^[^:]*\zs:/r0c0l0<CR>gv
+nmap <Leader>t/ :Tabularize /,\zs<CR>
+vmap <Leader>t/ :Tabularize /,\zs<CR>gv
 " }}}
 
 " Lightline {{{
