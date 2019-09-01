@@ -83,7 +83,7 @@ endif
 
 " leader {{{
 " --------------------------------------------------------------------------------
-let mapleader=","
+let mapleader="\<Space>"
 " }}}
 
 " source utility functions {{{

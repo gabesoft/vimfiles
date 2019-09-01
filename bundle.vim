@@ -141,14 +141,17 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-nnoremap <silent><C-F> :Files<CR>
-nnoremap <silent><C-G> :GFiles<CR>
-nnoremap <silent><C-B> :Buffers<CR>
-nnoremap <silent><C-L> :BLines<CR>
-nnoremap <silent><C-S> :Rg<CR>
-nnoremap <silent><C-M> :History<CR>
-nnoremap <silent><C-H> :Commands<CR>
-nnoremap <silent><leader>g :BCommits<CR>
+nnoremap <silent><Leader>ff :Files<CR>
+nnoremap <silent><Leader>fg :GFiles<CR>
+nnoremap <silent><Leader>fb :Buffers<CR>
+nnoremap <silent><Leader>fl :BLines<CR>
+nnoremap <silent><Leader>fr :Rg<CR>
+nnoremap <silent><Leader>fu :History<CR>
+nnoremap <silent><Leader>fh :History:<CR>
+nnoremap <silent><Leader>fc :Commands<CR>
+nnoremap <silent><Leader>fo :BCommits<CR>
+nnoremap <silent><Leader>fm :Maps<CR>
+nnoremap <silent><Leader>ft :Filetypes<CR>
 nnoremap <F1> :Helptags<CR>
 " }}}
 
@@ -217,19 +220,28 @@ nnoremap <Leader>cf :CopyFileName<CR>
 " }}}
 
 " EasyMotion - https://github.com/Lokaltog/vim-easymotion {{{
-" <leader>f      - move to char
-" <leader>w      - word motion forward
-" <leader>ge     - word motion backward
-" <leader>k      - jump to line up
-" <leader>j      - jump to line down
-" <ctrl>-<space> - jump to line
+"   default leader = <Leader><Leader>
+"   <Leader>f{char}      | Find {char} to the right. See |f|.
+"   <Leader>F{char}      | Find {char} to the left. See |F|.
+"   <Leader>t{char}      | Till before the {char} to the right. See |t|.
+"   <Leader>T{char}      | Till after the {char} to the left. See |T|.
+"   <Leader>w            | Beginning of word forward. See |w|.
+"   <Leader>W            | Beginning of WORD forward. See |W|.
+"   <Leader>b            | Beginning of word backward. See |b|.
+"   <Leader>B            | Beginning of WORD backward. See |B|.
+"   <Leader>e            | End of word forward. See |e|.
+"   <Leader>E            | End of WORD forward. See |E|.
+"   <Leader>ge           | End of word backward. See |ge|.
+"   <Leader>gE           | End of WORD backward. See |gE|.
+"   <Leader>j            | Line downward. See |j|.
+"   <Leader>k            | Line upward. See |k|.
+"   <Leader>n            | Jump to latest "/" or "?" forward. See |n|.
+"   <Leader>N            | Jump to latest "/" or "?" backward. See |N|.
+"   <Leader>s            | Find(Search) {char} forward and backward.
 " --------------------------------------------------------------------------------
-let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz,.ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_off_screen_search = 0
-nmap <C-Space> <Plug>(easymotion-sol-bd-jk)
-nmap <M-Space> <Plug>(easymotion-s2)
 " }}}
 
 " Fugitive - https://github.com/tpope/vim-fugitive {{{
