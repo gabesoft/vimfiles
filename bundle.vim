@@ -506,12 +506,6 @@ let g:indentLine_fileTypeExclude = [ 'text', 'gitcommit' ]
 "let g:solarized_visibility="normal"
 " }}}
 
-" Vim-Signify https://github.com/mhinz/vim-signify {{{
-" --------------------------------------------------------------------------------
-let g:signify_vcs_list = ['git']
-let g:signify_sign_show_text = 1
-" }}}
-
 " Vim-Rails - https://github.com/tpope/vim-rail://github.com/tpope/vim-rails {{{
 " --------------------------------------------------------------------------------
 let g:rubycomplete_buffer_loading = 1
