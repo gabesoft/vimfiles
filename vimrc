@@ -236,7 +236,7 @@ set timeoutlen=5000
 " Time vim will wait for different parts of a terminal key codes.
 " This should be a small value since the keycodes are sent by the
 " terminal all at once.
-set ttimeoutlen=100
+set ttimeoutlen=300
 " }}}
 
 " search behavior {{{

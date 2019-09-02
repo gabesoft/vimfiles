@@ -506,13 +506,10 @@ let g:indentLine_fileTypeExclude = [ 'text', 'gitcommit' ]
 "let g:solarized_visibility="normal"
 " }}}
 
-" Git Gutter - https://github.com/airblade/vim-gitgutter {{{
+" Vim-Signify https://github.com/mhinz/vim-signify {{{
 " --------------------------------------------------------------------------------
-let g:gitgutter_map_keys = 0
-let g:gitgutter_sign_added='+'
-let g:gitgutter_sign_removed='-'
-let g:gitgutter_sign_modified='|'
-let g:gitgutter_sign_modified_removed='|'
+let g:signify_vcs_list = ['git']
+let g:signify_sign_show_text = 1
 " }}}
 
 " Vim-Rails - https://github.com/tpope/vim-rail://github.com/tpope/vim-rails {{{

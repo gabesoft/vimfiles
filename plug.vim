@@ -1,6 +1,5 @@
 call plug#begin(expand('$VIMHOME/plugs'))
 
-Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/bufferize.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
@@ -47,6 +46,7 @@ Plug 'keith/tmux.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive \| npm install . -d' }
 Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-signify'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'othree/javascript-libraries-syntax.vim'
