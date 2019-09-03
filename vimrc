@@ -227,11 +227,11 @@ set shiftround
 " key timeout {{{
 " --------------------------------------------------------------------------------
 " Timeout on Vim entered key codes.
-set timeout
+set notimeout
 " Timeout on terminal entered key codes.
 set ttimeout
 " Time Vim will wait for successive Vim keycodes which are entered
-" manually by the user.
+" manually by the user. This is only relevant if timeout is enabled.
 set timeoutlen=5000
 " Time vim will wait for different parts of a terminal key codes.
 " This should be a small value since the keycodes are sent by the
