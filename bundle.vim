@@ -14,9 +14,9 @@ map g/ <Plug>(incsearch-stay)
 map n  <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
 map N  <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
 map *  <Plug>(asterisk-z*)<Plug>(incsearch-nohl)<Plug>(anzu-star)
-map g* <Plug>(asterisk-*)<Plug>(incsearch-nohl)
+map g* <Plug>(asterisk-g*)<Plug>(incsearch-nohl)
 map #  <Plug>(asterisk-z#)<Plug>(incsearch-nohl)<Plug>(anzu-sharp)
-map g# <Plug>(asterisk-#)<Plug>(incsearch-nohl)
+map g# <Plug>(asterisk-g#)<Plug>(incsearch-nohl)
 
 function! s:config_easyfuzzymotion(...) abort
     return extend(copy({
