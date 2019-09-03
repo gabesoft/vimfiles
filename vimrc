@@ -227,7 +227,7 @@ set shiftround
 " key timeout {{{
 " --------------------------------------------------------------------------------
 " Timeout on Vim entered key codes.
-set notimeout
+set timeout
 " Timeout on terminal entered key codes.
 set ttimeout
 " Time Vim will wait for successive Vim keycodes which are entered
@@ -318,8 +318,7 @@ set keywordprg=:help
 " --------------------------------------------------------------------------------
 set noerrorbells
 set visualbell
-set t_vb=
-set tm=500
+set vb t_vb=
 " }}}
 
 " diff should split vertically {{{
