@@ -196,8 +196,8 @@ let NERDSpaceDelims = 1
 
 " Vim-Javascript {{{
 " --------------------------------------------------------------------------------
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_jsdoc = 0
+let g:javascript_plugin_ngdoc = 0
 " }}}
 
 " EasyMotion - https://github.com/Lokaltog/vim-easymotion {{{
