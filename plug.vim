@@ -49,7 +49,6 @@ Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive 
 Plug 'mhinz/vim-startify'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'rhysd/committia.vim'
