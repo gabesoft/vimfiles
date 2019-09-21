@@ -75,6 +75,7 @@ endif
 " --------------------------------------------------------------------------------
 if OSX() && has("gui")
     set macmeta                     "enable the alt key
+    set macligatures                "enable ligatures for supported fonts
 endif
 if OSX()
     let g:Grep_Xargs_Options='-0'   "disable xargs
