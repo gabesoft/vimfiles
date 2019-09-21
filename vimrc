@@ -54,15 +54,15 @@ set path+=**
 " }}}
 
 " gui options {{{
+" select via the font chooser with :set guifont=*
 " --------------------------------------------------------------------------------
 if has("gui_running")
-    set lines=40
     if WINDOWS()
         set guifont=Monaco:h10:cANSI
     elseif OSX()
-        set guifont=Source\ Code\ Pro:h14
+        set guifont=iosevka:h14,Source\ Code\ Pro:h14
     else
-        set guifont=Camingo\ Code\ 12
+        set guifont=iosevka\ 12,Camingo\ Code\ 12
     endif
 else
     if &term == 'xterm' || &term == 'screen'
