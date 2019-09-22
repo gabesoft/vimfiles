@@ -263,7 +263,7 @@ let g:over#command_line#search#enable_incsearch = 1
 let g:over#command_line#search#enable_move_cursor = 0
 let g:over#command_line#substitute#replace_pattern_visually = 1
 
-nnoremap <Leader>sr :OverCommandLine<CR> %s/\<<C-R><C-W>\>//g<Left><Left>
+nnoremap <Leader>sr :OverCommandLine<CR> %s/\<<C-R>=expand('<cword>')<CR>\>//g<Left><Left>
 nnoremap <Leader>ss :OverCommandLine<CR> %s/
 nnoremap <Leader>su :OverCommandLine<CR> %S/
 " }}}
