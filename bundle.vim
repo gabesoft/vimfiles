@@ -621,4 +621,10 @@ autocmd BufEnter,BufWinEnter *.hbs,*.erb nmap <buffer> % :MtaJumpToOtherTag<cr>
 autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 " }}}
 
+" JSON Syntax {{{
+" --------------------------------------------------------------------------------
+let g:vim_json_conceal = 0
+let g:vim_json_warnings = 0
+" }}}
+
 " vim:foldmethod=marker:foldlevel=0
