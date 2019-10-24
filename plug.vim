@@ -2,7 +2,6 @@ call plug#begin(expand('$VIMHOME/plugs'))
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/bufferize.vim'
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'briancollins/vim-jst'
 Plug 'chr4/nginx.vim'
 Plug 'dag/vim-fish'
