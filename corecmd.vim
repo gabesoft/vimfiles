@@ -25,6 +25,15 @@ function! s:OnColorSchemeChange()
 endfunction
 " }}}
 
+" Remember folds {{{
+" --------------------------------------------------------------------------------
+augroup RememberFolds
+  autocmd!
+  autocmd BufWinLeave *.ts,*.js,*.vim,*.java,*.py mkview
+  autocmd BufWinEnter *.ts,*.js,*.vim,*.java,*.py silent! loadview
+augroup END
+" }}}
+
 " Highlight word under cursor {{{
 " Disabled in favor of vim-asterisk
 " --------------------------------------------------------------------------------

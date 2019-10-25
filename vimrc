@@ -303,12 +303,14 @@ endif
 set guioptions=
 set showtabline=0
 set title
-set foldenable
-set foldmethod=manual
+set nofoldenable
+set foldmethod=indent
+set foldlevel=2
+set foldnestmax=2
 set nocursorline
 set nocursorcolumn
-set modeline
 set modelines=1
+set modeline
 set virtualedit=block
 set shortmess=filmnrxoOtT
 set keywordprg=:help

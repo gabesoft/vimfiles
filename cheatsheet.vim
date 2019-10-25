@@ -138,6 +138,8 @@
 " zc          : closes a fold
 " zm          : increases the foldlevel by one
 " zM          : closes all open folds
+" zn          : open all folds
+" zN          : reset folds to previous state (reverse of zn)
 " zr          : decreases the foldlevel by one
 " zR          : decreases the foldlevel to zero -- all folds will be open
 " zd          : deletes the fold at the cursor
