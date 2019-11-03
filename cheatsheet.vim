@@ -434,3 +434,8 @@
 " v    : open in vertical split
 " gv   : open in vertical split silently
 " q    : close the quickfix window
+
+" Search
+" --------------------------------------------------------------------------------
+" ggn  : go to the first match
+" G$N  : go to the last match
