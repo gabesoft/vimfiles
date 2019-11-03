@@ -247,6 +247,7 @@ set incsearch
 set smartcase
 set nogdefault
 set hlsearch
+set nowrapscan
 " }}}
 
 " insert mode completion {{{
