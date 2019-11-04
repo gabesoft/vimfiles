@@ -308,7 +308,7 @@ set nofoldenable
 set foldmethod=indent
 set foldlevel=2
 set foldnestmax=2
-set nocursorline
+set cursorline
 set nocursorcolumn
 set modelines=1
 set modeline
