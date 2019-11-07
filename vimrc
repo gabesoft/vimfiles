@@ -18,6 +18,11 @@ return  (has('win16') || has('win32') || has('win64'))
 endfunction
 " }}}
 
+" Force loading python3 if available
+" --------------------------------------------------------------------------------
+if has('python3')
+endif
+
 " enable syntax and filetype settings {{{
 " --------------------------------------------------------------------------------
 set nocompatible
