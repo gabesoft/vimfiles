@@ -18,7 +18,7 @@ return  (has('win16') || has('win32') || has('win64'))
 endfunction
 " }}}
 
-" Force loading python3 if available
+" Force loading python3
 " --------------------------------------------------------------------------------
 if has('python3')
 endif
