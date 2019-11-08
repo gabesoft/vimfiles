@@ -627,4 +627,14 @@ let g:vim_json_conceal = 0
 let g:vim_json_warnings = 0
 " }}}
 
+" Typescript mappings {{{
+" <C-]>      <Plug>(TsuquyomiDefinition)
+" <C-W>]     <Plug>(TsuquyomiSplitDefinition)
+" <C-W><C-]> <Plug>(TsuquyomiSplitDefinition)
+" <C-t>      <Plug>(TsuquyomiGoBack)
+" <C-^>      <Plug>(TsuquyomiReferences)
+" --------------------------------------------------------------------------------
+autocmd Filetype typescript,typescript.tsx nnoremap <buffer> gd :TsuDefinition<CR>
+" }}}
+
 " vim:foldmethod=marker:foldlevel=0
