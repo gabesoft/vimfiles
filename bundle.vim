@@ -616,11 +616,6 @@ highlight default link MatchTag Underlined
 autocmd BufEnter,BufWinEnter *.hbs,*.erb nmap <buffer> % :MtaJumpToOtherTag<cr>
 " }}}
 
-" Vim after object {{{
-" --------------------------------------------------------------------------------
-autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
-" }}}
-
 " JSON Syntax {{{
 " --------------------------------------------------------------------------------
 let g:vim_json_conceal = 0
