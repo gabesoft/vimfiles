@@ -24,6 +24,13 @@ xnoremap $ $h
 " nmap <Leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 " }}}
 
+" Prevent default behavior for some keys {{{
+" --------------------------------------------------------------------------------
+"  Manual key
+nnoremap K <nop>
+vnoremap K <nop>
+" }}}
+
 " close all buffers and quit vim {{{
 " --------------------------------------------------------------------------------
 nmap <Leader>xa :xa<CR>
@@ -169,5 +176,38 @@ nnoremap <Leader>cp :let @+=expand("%:p")<CR>
 " copy file name
 nnoremap <Leader>cf :let @+=expand("%:t")<CR>
 " }}}
+
+" Additional text objects mappings that navigate to the relevant region first {{{
+" --------------------------------------------------------------------------------
+"  <motion>f<c> would go to the next <c> and perform the motion
+"  <motion>F<c> would go to the previous <c> and perform the motion
+"  for example dif( would delete the contents of the next () pair
+
+onoremap af :<C-U>call <SID>NextTextObject('a', 'f')<CR>
+xnoremap af :<C-U>call <SID>NextTextObject('a', 'f')<CR>
+onoremap if :<C-U>call <SID>NextTextObject('i', 'f')<CR>
+xnoremap if :<C-U>call <SID>NextTextObject('i', 'f')<CR>
+onoremap aF :<C-U>call <SID>NextTextObject('a', 'F')<CR>
+xnoremap aF :<C-U>call <SID>NextTextObject('a', 'F')<CR>
+onoremap iF :<C-U>call <SID>NextTextObject('i', 'F')<CR>
+xnoremap iF :<C-U>call <SID>NextTextObject('i', 'F')<CR>
+
+function! s:NextTextObject(motion, dir)
+    let c = nr2char(getchar())
+
+    if c ==# "b"
+        let c = "("
+    elseif c ==# "B"
+        let c = "{"
+    elseif c ==# "a"
+        let c = "<"
+    elseif c ==# "r"
+        let c = "["
+    endif
+
+    exe "normal! ".a:dir.c."v".a:motion.c
+endfunction
+
+"  }}}
 
 " vim:foldmethod=marker:foldlevel=0
