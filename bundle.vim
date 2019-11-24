@@ -40,7 +40,7 @@ endfunction
 noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
 noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
-noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+noremap <silent><expr> <leader><leader>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 augroup vim-anzu
   autocmd!
@@ -291,7 +291,7 @@ let g:ags_agargs = {
 command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX\|HACK' <f-args>
 nnoremap <Leader>as :Ags<Space><C-R>=expand('<cword>')<CR><CR>
 vnoremap <Leader>as y:Ags<Space><C-R>='"' . escape(@", '"%#*?()[]{}.-') . '"'<CR><CR>
-nnoremap <Leader>aa :Ags<Space>
+nnoremap <Leader>/ :Ags<Space>
 nnoremap <Leader>ac :Ags --context 5<Space>
 nnoremap <Leader>aq :AgsQuit<CR>
 " }}}
