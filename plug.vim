@@ -1,14 +1,18 @@
 call plug#begin(expand('$VIMHOME/plugs'))
 
-" typescript
+" web development
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-
-" javascript
 Plug 'pangloss/vim-javascript'
 Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive \| npm install . -d' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'groenewege/vim-less'
+Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'briancollins/vim-jst'
+Plug 'chr4/nginx.vim'
 
 " colorscheme
 Plug 'altercation/vim-colors-solarized'
@@ -46,25 +50,33 @@ Plug 'zxqfl/tabnine-vim'
 Plug 'tmhedberg/matchit'
 Plug 'Valloric/MatchTagAlways'
 
-" template languages
-Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'Glench/Vim-Jinja2-Syntax'
-
 " git
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
+Plug 'rhysd/committia.vim'
 
 " ruby/rails
 Plug 'tpope/vim-rails'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
-Plug 'AndrewRadev/bufferize.vim'
-Plug 'briancollins/vim-jst'
-Plug 'chr4/nginx.vim'
+" text objects
+" https://codeinthehole.com/tips/vim-text-objects/
+Plug 'glts/vim-textobj-comment'
+Plug 'Julian/vim-textobj-variable-segment'
+Plug 'kana/vim-niceblock'
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user'
+Plug 'tpope/vim-surround'
+
+" terminal
 Plug 'dag/vim-fish'
+Plug 'ericpruitt/tmux.vim'
+
+Plug 'AndrewRadev/bufferize.vim'
 Plug 'derekwyatt/vim-scala'
-Plug 'digitaltoad/vim-jade'
 Plug 'duff/vim-scratch'
 Plug 'gabesoft/splitjoin.vim'
 Plug 'gabesoft/vim-haml'
@@ -73,26 +85,16 @@ Plug 'gabesoft/vim-twm'
 Plug 'gabesoft/vim-unimpaired'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'godlygeek/tabular'
-Plug 'groenewege/vim-less'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'itchyny/lightline.vim'
-Plug 'Julian/vim-textobj-variable-segment'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'kana/vim-niceblock'
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-user'
-Plug 'kchmck/vim-coffee-script'
-Plug 'keith/tmux.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
-Plug 'rhysd/committia.vim'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-surround'
 Plug 'triglav/vim-visual-increment'
 Plug 'Yggdroot/indentLine'
 

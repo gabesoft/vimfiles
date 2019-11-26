@@ -465,9 +465,9 @@ endfunction
 
 " IndentLine {{{
 " --------------------------------------------------------------------------------
-let g:indentLine_noConcealCursor = 1
+let g:indentLine_concealcursor = ''
 let g:indentLine_enabled = 1
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['|']
 
 if &background == 'dark'
     let g:indentLine_color_gui = '#073642'
@@ -495,8 +495,8 @@ endfunction
 
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_tty_dark  = 1
-let g:indentLine_fileType = [ 'agsv', 'eruby', 'html', 'html.handlebars', 'java', 'javascript', 'json', 'rails', 'ruby', 'scss', 'sh', 'vim', 'yaml' ]
-let g:indentLine_fileTypeExclude = [ 'text', 'gitcommit' ]
+let g:indentLine_fileType = [ 'agsv', 'eruby', 'html', 'html.handlebars', 'java', 'javascript', 'json', 'less', 'python', 'rails', 'ruby', 'scss', 'sh', 'vim', 'yaml' ]
+let g:indentLine_fileTypeExclude = [ 'text', 'gitcommit', 'agsv', 'agse' ]
 " }}}
 
 " Solarized (moved to .vimrc) {{{

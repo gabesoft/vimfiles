@@ -136,9 +136,10 @@ autocmd InsertLeave,TextChanged,TextChangedI *
 autocmd FocusGained,BufEnter,BufWinEnter * :silent checktime
 " }}}
 
-" Coffee settings {{{
+" Tab width settings {{{
 " --------------------------------------------------------------------------------
 autocmd FileType coffee set tabstop=2 | set softtabstop=2 | set shiftwidth=2
+autocmd FileType jinja set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 " }}}
 
 " Git settings {{{
