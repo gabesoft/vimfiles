@@ -49,6 +49,7 @@ Plug 'Valloric/MatchTagAlways'
 " template languages
 Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " git
 Plug 'tpope/vim-rhubarb'
