@@ -276,6 +276,16 @@
 " - it : inner tag block (html tag)
 " - a> : a single tag
 " - i> : inner single tag
+" builtin objects:
+" w : word
+" W : WORD
+" t : html/xml tag
+" s : sentence
+" p : paragraph
+" l : line (via kana/vim-textobj-line)
+" e : entire buffer (via kana/vim-textobj-entire)
+" i : an indented block (via kana/vim-textobj-indent)
+" c : an comment block (via glts/vim-textobj-comment)
 
 " ex editor commands (multiple can be separated by |)
 " ------------------------------------------------------------------------------
