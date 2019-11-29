@@ -169,11 +169,14 @@ let NERDTreeWinPos = 'right'
 let NERDTreeWinSize = 35
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers = 1
-let NERDTreeShowHidden = 0
+let NERDTreeShowHidden = 1
 let NERDTreeChristmasTree = 1
 let NERDTreeHighlightCursorline = 1
 let NERDTreeAutoDeleteBuffer=1
 let g:NERDCustomDelimiters = { 'dustjs': { 'left': '{!', 'right': '!}' } }
+
+" The default menu mapping is 'm' which interferes with setting marks
+let g:NERDTreeMapMenu = 'M'
 
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
