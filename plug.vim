@@ -60,7 +60,6 @@ Plug 'tpope/vim-rails'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
 " text objects
-" https://codeinthehole.com/tips/vim-text-objects/
 Plug 'glts/vim-textobj-comment'
 Plug 'Julian/vim-textobj-variable-segment'
 Plug 'kana/vim-niceblock'
