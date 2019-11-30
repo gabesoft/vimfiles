@@ -450,4 +450,10 @@ endif
 set secure
 " }}}
 
+" Html syntax {{{
+" --------------------------------------------------------------------------------
+let html_no_rendering=1
+" }}}
+
+
 " vim:foldmethod=marker:foldlevel=0
