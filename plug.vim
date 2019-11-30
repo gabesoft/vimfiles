@@ -10,9 +10,9 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'groenewege/vim-less'
 Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'briancollins/vim-jst'
 Plug 'chr4/nginx.vim'
+Plug 'gabesoft/vim-templatehtml'
 
 " colorscheme
 Plug 'altercation/vim-colors-solarized'

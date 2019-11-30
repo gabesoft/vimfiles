@@ -133,15 +133,15 @@ vnoremap <F6> <ESC>gg=Ggvzz
 nnoremap <F7> :%!python -m json.tool<CR>''zz<CR>
 " }}}
 
-" F9: cd to the git root directory (defined in bundle.vim) {{{
+" F9: output all highlight groups {{{
 " --------------------------------------------------------------------------------
-" nnoremap <F9> :Gcd<CR>:pwd<CR>
-"}}}
-
-" F10: compress empty lines (open folds before executing) {{{
-" --------------------------------------------------------------------------------
-" nnoremap <F10> :call CompressEmptyLines()<CR>
+nnoremap <F9> :so $VIMRUNTIME/syntax/hitest.vim<CR>
 " }}}
+
+" F10: cd to the git root directory (defined in bundle.vim) {{{
+" --------------------------------------------------------------------------------
+" nnoremap <F10> :Gcd<CR>:pwd<CR>
+"}}}
 
 " F11: info about the highlight group for the word under cursor {{{
 " --------------------------------------------------------------------------------

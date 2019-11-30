@@ -230,9 +230,9 @@ let g:EasyMotion_off_screen_search = 0
 
 " Fugitive - https://github.com/tpope/vim-fugitive {{{
 " add to status line: set statusline+=%{fugitive#statusline()}
-" F9: cd to the git root directory
+" F10: cd to the git root directory
 " --------------------------------------------------------------------------------
-nnoremap <F9> :Gcd<CR>:pwd<CR>
+nnoremap <F10> :Gcd<CR>:pwd<CR>
 " }}}
 
 " Surround - https://github.com/tpope/vim-surround {{{
