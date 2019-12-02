@@ -136,10 +136,11 @@ autocmd InsertLeave,TextChanged,TextChangedI *
 autocmd FocusGained,BufEnter,BufWinEnter * :silent checktime
 " }}}
 
-" Tab width settings {{{
+" Overwrite tab width settings for some languages {{{
+" The default tab settings are in vimrc
 " --------------------------------------------------------------------------------
 autocmd FileType coffee set tabstop=2 | set softtabstop=2 | set shiftwidth=2
-autocmd FileType jinja set tabstop=2 | set softtabstop=2 | set shiftwidth=2
+autocmd FileType templatehtml set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 " }}}
 
 " Git settings {{{
