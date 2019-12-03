@@ -292,7 +292,7 @@ let g:ags_agargs = {
   \ }
 
 command! -nargs=? -complete=file Todo execute "Ags" 'TODO\|FIXME\|XXX\|HACK' <f-args>
-nnoremap <Leader>as :Ags<Space><C-R>=expand('<cword>')<CR><CR>
+nnoremap <Leader>as :<C-U>let cmd="Ags " . expand('<cword>') <bar> call histadd("cmd", cmd) <bar> execute cmd<CR>
 vnoremap <Leader>as y:Ags<Space><C-R>='"' . escape(@", '"%#*?()[]{}.-') . '"'<CR><CR>
 nnoremap <Leader>/ :Ags<Space>
 nnoremap <Leader>ac :Ags --context 5<Space>
