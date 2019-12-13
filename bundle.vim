@@ -572,38 +572,6 @@ nnoremap gJ :silent SplitjoinJoin<CR>
 nnoremap gS :silent SplitjoinSplit<CR>
 " }}}
 
-" Committia {{{
-" --------------------------------------------------------------------------------
-let g:committia_open_only_vim_starting = 1
-let g:committia_min_window_width = 120
-let g:committia_use_singlecolumn = 'fallback'
-let g:committia_hooks = {}
-function! g:committia_hooks.edit_open(info)
-    setlocal spell
-    setlocal number
-    setlocal relativenumber
-
-    if a:info.vcs ==# 'git' && getline(1) ==# ''
-        startinsert
-    endif
-
-    imap <buffer> <C-n> <Plug>(committia-scroll-diff-down-half)
-    nmap <buffer> <C-n> <Plug>(committia-scroll-diff-down-half)
-    imap <buffer> <C-p> <Plug>(committia-scroll-diff-up-half)
-    nmap <buffer> <C-p> <Plug>(committia-scroll-diff-up-half)
-endfunction
-
-function! g:committia_hooks.status_open(info)
-    setlocal number
-    setlocal relativenumber
-endfunction
-
-function! g:committia_hooks.diff_open(info)
-    setlocal number
-    setlocal relativenumber
-endfunction
-" }}}
-
 " MatchTagAlways {{{
 " --------------------------------------------------------------------------------
 let g:mta_use_matchparen_group = 0

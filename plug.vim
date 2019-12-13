@@ -53,7 +53,7 @@ Plug 'Valloric/MatchTagAlways'
 " git
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
-Plug 'rhysd/committia.vim'
+Plug 'junegunn/gv.vim'
 
 " ruby/rails
 Plug 'tpope/vim-rails'

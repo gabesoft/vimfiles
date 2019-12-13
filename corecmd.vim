@@ -147,6 +147,8 @@ autocmd FileType templatehtml set tabstop=2 | set softtabstop=2 | set shiftwidth
 " --------------------------------------------------------------------------------
 autocmd BufNewFile,BufRead .gitconfig.local setf gitconfig
 
+autocmd FileType gitcommit set spell
+
 if has("gui_running")
     autocmd FileType gitcommit set background=light
     autocmd FileType gitcommit colorscheme solarized
