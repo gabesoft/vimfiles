@@ -500,7 +500,7 @@ endfunction
 
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_tty_dark  = 1
-let g:indentLine_fileType = [ 'agsv', 'eruby', 'html', 'html.handlebars', 'java', 'javascript', 'json', 'less', 'python', 'rails', 'ruby', 'scss', 'sh', 'templatehtml', 'vim', 'yaml' ]
+let g:indentLine_fileType = [ 'agsv', 'eruby', 'html', 'html.handlebars', 'java', 'javascript', 'json', 'less', 'nix', 'python', 'rails', 'ruby', 'scss', 'sh', 'templatehtml', 'vim', 'yaml' ]
 let g:indentLine_fileTypeExclude = [ 'text', 'gitcommit', 'agsv', 'agse' ]
 " }}}
 
