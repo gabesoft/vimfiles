@@ -143,6 +143,13 @@ autocmd FileType coffee set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 autocmd FileType templatehtml set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 " }}}
 
+" Keep clipboard contents on exit {{{
+" --------------------------------------------------------------------------------
+if !has('gui_running')
+    autocmd VimLeave * call system("xsel -ib", getreg('+'))
+endif
+" }}}
+
 " Git settings {{{
 " --------------------------------------------------------------------------------
 autocmd BufNewFile,BufRead .gitconfig.local setf gitconfig
