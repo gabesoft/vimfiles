@@ -73,7 +73,7 @@ Plug 'tpope/vim-surround'
 " terminal
 Plug 'dag/vim-fish'
 Plug 'ericpruitt/tmux.vim'
-Plug 'lambdalisue/vim-pager'
+Plug 'gabesoft/vim-pager'
 
 Plug 'AndrewRadev/bufferize.vim'
 Plug 'derekwyatt/vim-scala'
