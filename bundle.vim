@@ -519,50 +519,6 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 0
 " }}}
 
-" Rainbow Parentheses - https://github.com/gabesoft/rainbow_parentheses.vim.git {{{
-" --------------------------------------------------------------------------------
-let g:rbpt_hi_links = [
-            \ 'vimCmdSep',
-            \ 'Title',
-            \ 'gitCommitUnmerged',
-            \ 'Constant',
-            \ 'Identifier',
-            \ 'Statement',
-            \ 'Type',
-            \ 'Underlined',
-            \ 'Question',
-            \ 'vimCmdSep',
-            \ 'Title',
-            \ 'gitCommitUnmerged',
-            \ 'Constant',
-            \ 'Identifier',
-            \ 'Statement',
-            \ 'Type'
-            \ ]
-
- let s:rainbow_whitelist = [
-             \ 'css',
-             \ 'java',
-             \ 'javascript',
-             \ 'less',
-             \ 'lisp',
-             \ 'rails',
-             \ 'ruby',
-             \ 'scheme',
-             \ 'scss',
-             \ 'sh',
-             \ 'vim'
-            \ ]
-
-augroup rainbow_parenthesis
-    autocmd!
-    autocmd VimEnter * RainbowParentheses!!
-    for type in s:rainbow_whitelist
-        exe 'autocmd Syntax '.type.' RainbowParentheses'
-    endfor
-augroup END
-" }}}
-
 " SplitJoin {{{
 " --------------------------------------------------------------------------------
 let g:splitjoin_normalize_whitespace = 1
