@@ -145,8 +145,10 @@ autocmd FileType templatehtml set tabstop=2 | set softtabstop=2 | set shiftwidth
 
 " Keep clipboard contents on exit {{{
 " --------------------------------------------------------------------------------
-if  !has("gui_running") && executable("xsel")
-    autocmd VimLeave * call system("xsel -ib", getreg('+'))
+if executable("pbcopy")
+    autocmd VimLeave * call system("echo -n " . shellescape(getreg("+")) . " | pbcopy")
+elseif  !has("gui_running") && executable("xsel")
+    autocmd VimLeave * call system("xsel -ib", getreg("+"))
 endif
 " }}}
 
