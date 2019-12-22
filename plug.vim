@@ -59,6 +59,9 @@ Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-rails'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
+" rust
+Plug 'rust-lang/rust.vim'
+
 " text objects
 Plug 'glts/vim-textobj-comment'
 Plug 'Julian/vim-textobj-variable-segment'

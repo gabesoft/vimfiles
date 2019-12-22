@@ -296,6 +296,7 @@ nnoremap <Leader>as :<C-U>let cmd="Ags " . expand('<cword>') <bar> call histadd(
 vnoremap <Leader>as y:Ags<Space><C-R>='"' . escape(@", '"%#*?()[]{}.-') . '"'<CR><CR>
 nnoremap <Leader>/ :Ags<Space>
 nnoremap <Leader>ac :Ags --context 5<Space>
+nnoremap <Leader>at :Ags --glob '*.<type>'<Space>
 nnoremap <Leader>aq :AgsQuit<CR>
 " }}}
 
