@@ -192,9 +192,9 @@ command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
 " }}}
 
-" NERDCommenter {{{
+" tcomment_vim {{{
 " --------------------------------------------------------------------------------
-let NERDSpaceDelims = 1
+autocmd VimEnter * nmap <expr>  gcc   v:count? ":<c-u>.,.+".(v:count-1)."TComment<CR>" : ":TComment<CR>"
 " }}}
 
 " Vim-Javascript {{{

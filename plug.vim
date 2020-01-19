@@ -95,9 +95,10 @@ Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'triglav/vim-visual-increment'
 Plug 'Yggdroot/indentLine'
+Plug 'tomtom/tcomment_vim'
 
 call plug#end()
