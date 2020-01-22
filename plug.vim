@@ -58,9 +58,16 @@ Plug 'junegunn/gv.vim'
 " ruby/rails
 Plug 'tpope/vim-rails'
 Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'gabesoft/vim-haml'
 
 " rust
 Plug 'rust-lang/rust.vim'
+
+" scala
+Plug 'derekwyatt/vim-scala'
+
+" java
+Plug 'gabesoft/vim-java'
 
 " text objects
 Plug 'glts/vim-textobj-comment'
@@ -72,6 +79,7 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-surround'
+Plug 'haya14busa/vim-operator-flashy'
 
 " terminal
 Plug 'dag/vim-fish'
@@ -79,26 +87,24 @@ Plug 'ericpruitt/tmux.vim'
 Plug 'gabesoft/vim-pager'
 
 Plug 'AndrewRadev/bufferize.vim'
-Plug 'derekwyatt/vim-scala'
 Plug 'duff/vim-scratch'
 Plug 'gabesoft/splitjoin.vim'
-Plug 'gabesoft/vim-haml'
-Plug 'gabesoft/vim-java'
 Plug 'gabesoft/vim-twm'
 Plug 'gabesoft/vim-unimpaired'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'godlygeek/tabular'
-Plug 'haya14busa/vim-operator-flashy'
 Plug 'itchyny/lightline.vim'
-Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-abolish'
-" Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'triglav/vim-visual-increment'
 Plug 'Yggdroot/indentLine'
 Plug 'tomtom/tcomment_vim'
+
+" no longer used or replaced
+" Plug 'kshenoy/vim-signature'
+" Plug 'tpope/vim-commentary' - replaced with tomtom/tcomment_vim
 
 call plug#end()
