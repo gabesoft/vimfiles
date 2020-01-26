@@ -68,6 +68,7 @@ if has("gui_running")
         set guifont=iosevka:h14,Source\ Code\ Pro:h14
     else
         set guifont=iosevka\ 12,Camingo\ Code\ 12
+        " set guifont=JetBrains\ Mono\ 11
     endif
 else
     if &term == 'xterm' || &term == 'screen'
