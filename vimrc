@@ -65,10 +65,11 @@ if has("gui_running")
     if WINDOWS()
         set guifont=Monaco:h10:cANSI
     elseif OSX()
-        set guifont=iosevka:h14,Source\ Code\ Pro:h14
+        " set guifont=iosevka:h14,Source\ Code\ Pro:h14
+        set guifont=JetBrainsMono-Regular:h12
     else
-        set guifont=iosevka\ 12,Camingo\ Code\ 12
-        " set guifont=JetBrains\ Mono\ 11
+        " set guifont=iosevka\ 12,Camingo\ Code\ 12
+        set guifont=JetBrains\ Mono\ 11
     endif
 else
     if &term == 'xterm' || &term == 'screen'
