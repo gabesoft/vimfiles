@@ -101,10 +101,9 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-endwise'
 Plug 'triglav/vim-visual-increment'
 Plug 'Yggdroot/indentLine'
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
+Plug 'kshenoy/vim-signature'
 
 " no longer used or replaced
-" Plug 'kshenoy/vim-signature'
-" Plug 'tpope/vim-commentary' - replaced with tomtom/tcomment_vim
 
 call plug#end()
