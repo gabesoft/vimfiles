@@ -192,11 +192,6 @@ command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
 " }}}
 
-" tcomment_vim {{{
-" --------------------------------------------------------------------------------
-autocmd VimEnter * nmap <expr>  gcc   v:count? ":<c-u>.,.+".(v:count-1)."TComment<CR>" : ":TComment<CR>"
-" }}}
-
 " Vim-Javascript {{{
 " --------------------------------------------------------------------------------
 let g:javascript_plugin_jsdoc = 0
