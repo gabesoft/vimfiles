@@ -135,7 +135,7 @@ nnoremap <F7> :%!python -m json.tool<CR>''zz<CR>
 
 " F9: output all highlight groups {{{
 " --------------------------------------------------------------------------------
-nnoremap <F9> :so $VIMRUNTIME/syntax/hitest.vim<CR>
+" nnoremap <F9> :so $VIMRUNTIME/syntax/hitest.vim<CR>
 " }}}
 
 " F10: cd to the git root directory (defined in bundle.vim) {{{
