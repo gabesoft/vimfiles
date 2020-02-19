@@ -180,6 +180,12 @@ autocmd InsertCharPre * call <SID>CapitalizeFirstLetter()
 autocmd FileType dustjs let b:match_words = '<:>,<\(\w\w*\):</\1,{:}'
 " }}}
 
+" Typescript settings {{{
+" - make vim-commentary work properly in typescript.tsx files
+" --------------------------------------------------------------------------------
+autocmd FileType typescript.tsx setlocal commentstring=//\ %s
+" }}}
+
 " Scss settings {{{
 " --------------------------------------------------------------------------------
 autocmd FileType scss setlocal iskeyword+=-
