@@ -186,6 +186,11 @@ autocmd FileType dustjs let b:match_words = '<:>,<\(\w\w*\):</\1,{:}'
 autocmd FileType typescript.tsx setlocal commentstring=//\ %s
 " }}}
 
+" Proto settings {{{
+" --------------------------------------------------------------------------------
+autocmd FileType proto setlocal commentstring=//\ %s
+" }}}
+
 " Scss settings {{{
 " --------------------------------------------------------------------------------
 autocmd FileType scss setlocal iskeyword+=-
