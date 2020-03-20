@@ -171,7 +171,7 @@ function! s:CapitalizeFirstLetter()
     endif
 endfunction
 
-autocmd InsertCharPre * call <SID>CapitalizeFirstLetter()
+" autocmd InsertCharPre * call <SID>CapitalizeFirstLetter()
 " }}}
 
 " Dust settings {{{
