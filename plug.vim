@@ -69,6 +69,9 @@ Plug 'derekwyatt/vim-scala'
 " java
 Plug 'gabesoft/vim-java'
 
+"groovy
+Plug 'martinda/Jenkinsfile-vim-syntax'
+
 " text objects
 Plug 'glts/vim-textobj-comment'
 Plug 'Julian/vim-textobj-variable-segment'
