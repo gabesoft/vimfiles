@@ -283,6 +283,7 @@ let g:ags_agargs = {
   \ '--heading'        : ['',''],
   \ '--smart-case'     : ['','-S'],
   \ '--color'          : ['always',''],
+  \ '--ignore-file'    : ['.ignore',''],
   \ '--colors'         : [['match:fg:green', 'match:bg:black', 'match:style:nobold', 'path:fg:red', 'path:style:bold', 'line:fg:black', 'line:style:bold'] ,''],
   \ }
 
