@@ -105,7 +105,7 @@ Plug 'tpope/vim-endwise'
 Plug 'triglav/vim-visual-increment'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
-Plug 'kshenoy/vim-signature'
+" Plug 'kshenoy/vim-signature'
 
 " no longer used or replaced
 
