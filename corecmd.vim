@@ -127,8 +127,22 @@ autocmd FileType help setlocal nospell | setlocal number
 
 " Auto save on text changed {{{
 " --------------------------------------------------------------------------------
-autocmd InsertLeave,TextChanged,TextChangedI *
-            \ if strlen(expand('%')) != 0 && strlen(&buftype) == 0 | update | endif
+function! s:AutoSave()
+    if strlen(expand('%')) == 0 || strlen(&buftype) != 0
+        return
+    endif
+
+    " Save the session to preserve any existing marks
+    let w:winview = winsaveview()
+
+    update
+
+    if exists('w:winview')
+        call winrestview(w:winview)
+    endif
+endfunction
+
+autocmd InsertLeave,TextChanged,TextChangedI * call <SID>AutoSave()
 " }}}
 
 " Autoread (works with set autoread) {{{

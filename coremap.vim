@@ -36,6 +36,20 @@ vnoremap K <nop>
 nmap <Leader>xa :xa<CR>
 " }}}
 
+" Keep the cursor position after indentation {{{
+" https://vi.stackexchange.com/a/12372/23625
+" --------------------------------------------------------------------------------
+nnoremap = m'=
+onoremap <expr> ap v:operator =~ '=' ? 'ap``' : 'ap'
+onoremap <expr> ip v:operator =~ '=' ? 'ip``' : 'ip'
+onoremap <expr> a} v:operator =~ '=' ? 'a}``' : 'a}'
+onoremap <expr> i} v:operator =~ '=' ? 'i}``' : 'i}'
+onoremap <expr> aB v:operator =~ '=' ? 'aB``' : 'aB'
+onoremap <expr> iB v:operator =~ '=' ? 'iB``' : 'iB'
+onoremap <expr> a] v:operator =~ '=' ? 'a]``' : 'a]'
+onoremap <expr> i] v:operator =~ '=' ? 'i]``' : 'i]'
+"  }}}
+
 " buffer operations {{{
 " --------------------------------------------------------------------------------
 noremap <Leader>bn :bnext<CR>

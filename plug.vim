@@ -6,7 +6,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'pangloss/vim-javascript'
 Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive \| npm install . -d' }
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'groenewege/vim-less'
 Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'mustache/vim-mustache-handlebars'

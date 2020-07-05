@@ -158,8 +158,23 @@ nnoremap <F1> :Helptags<CR>
 
 " Prettier {{{
 " --------------------------------------------------------------------------------
-let g:prettier#exec_cmd_path = 'node_modules/prettier'
-nmap <leader>py <Plug>(Prettier)
+" let g:prettier#exec_cmd_path = 'node_modules/prettier'
+
+" Prettier misbehaves in several ways
+" - it clears all marks in all files
+" - it fills the default register with 'x', see https://github.com/prettier/vim-prettier/issues/244
+" function! RunPrettier()
+"     " Save the session to preserve any existing marks
+"     let w:winview = winsaveview()
+
+"     silent Prettier
+
+"     if exists('w:winview')
+"         call winrestview(w:winview)
+"     endif
+" endfunction
+
+" nmap <leader>py :call RunPrettier()<CR>
 " }}}
 
 " NERDTree {{{
