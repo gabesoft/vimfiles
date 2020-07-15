@@ -329,13 +329,17 @@ let g:abolish_save_file = expand($VIMHOME) . '/after/plugin/abolish.vim'
 " UltiSnips - https://github.com/SirVer/ultisnips/tree/master/UltiSnips {{{
 " Edit   :UltiSnipsEdit
 " Reload :call UltiSnips#RefreshSnippets()
+" List   :call UltiSnips#ListSnippets()
 "--------------------------------------------------------------------------------
 let g:UltiSnipsExpandTrigger = '<C-J>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 let g:UltiSnipsListSnippets = '<C-Q>'
 let g:UltiSnipsSnippetsDir = expand($VIMHOME) . '/snips'
-let g:UltiSnipsSnippetDirectories = [ 'snips' ]
+let g:UltiSnipsSnippetDirectories = [ expand($VIMHOME) . '/snips' ]
+
+autocmd FileType typescript.tsx UltiSnipsAddFiletypes javascript
+autocmd FileType typescript UltiSnipsAddFiletypes javascript
 " }}}
 
 " ArgTextObj - https://github.com/vim-scripts/argtextobj.vim {{{
