@@ -191,7 +191,7 @@ let NERDTreeAutoDeleteBuffer=1
 let g:NERDCustomDelimiters = { 'dustjs': { 'left': '{!', 'right': '!}' } }
 
 " The default menu mapping is 'm' which interferes with setting marks
-let g:NERDTreeMapMenu = 'M'
+let g:NERDTreeMapMenu = 'D'
 
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
