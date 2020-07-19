@@ -147,7 +147,7 @@ endif
 " colors and transparency {{{
 " --------------------------------------------------------------------------------
 try
-    set background=dark
+    set background=light
     if has('gui_running')
         colorscheme solarized8
     else
