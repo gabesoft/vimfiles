@@ -157,29 +157,29 @@ catch /E185:/
     colorscheme default
 endtry
 
-" if has('gui_running')
-"     let g:solarized_termcolors=256
-"     let g:solarized_termtrans=0
-"     let g:solarized_contrast="normal"
-"     let g:solarized_visibility="normal"
-" else
-"     let g:solarized_termcolors=16
-"     let g:solarized_termtrans=1
-"     let g:solarized_contrast="high"
-"     let g:solarized_visibility="high"
+if has('gui_running')
+    let g:solarized_termcolors=256
+    let g:solarized_termtrans=0
+    let g:solarized_contrast="normal"
+    let g:solarized_visibility="normal"
+else
+    let g:solarized_termcolors=16
+    let g:solarized_termtrans=1
+    let g:solarized_contrast="high"
+    let g:solarized_visibility="high"
 
-"     if $TERM_PROGRAM == 'Apple_Terminal'
-"         let g:solarized_termcolors=&t_Co
+    if $TERM_PROGRAM == 'Apple_Terminal'
+        let g:solarized_termcolors=&t_Co
 
-"         if exists('$TERM_THEME') && $TERM_THEME == 'solarized_light'
-"             set background=light
-"         endif
+        if exists('$TERM_THEME') && $TERM_THEME == 'solarized_light'
+            set background=light
+        endif
 
-"         if g:colors_name == 'solarized' && &background == 'dark'
-"             hi Visual term=reverse cterm=reverse ctermfg=10 ctermbg=7
-"         endif
-"     endif
-" endif
+        if g:colors_name == 'solarized' && &background == 'dark'
+            hi Visual term=reverse cterm=reverse ctermfg=10 ctermbg=7
+        endif
+    endif
+endif
 " }}}
 
 " spacing and indenting {{{
