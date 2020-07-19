@@ -48,7 +48,18 @@ onoremap <expr> aB v:operator =~ '=' ? 'aB``' : 'aB'
 onoremap <expr> iB v:operator =~ '=' ? 'iB``' : 'iB'
 onoremap <expr> a] v:operator =~ '=' ? 'a]``' : 'a]'
 onoremap <expr> i] v:operator =~ '=' ? 'i]``' : 'i]'
-"  }}}
+" }}}
+
+" Indent entire buffer using formatprg {{{
+" --------------------------------------------------------------------------------
+function! PreserveCursor(command)
+    let view = winsaveview()
+    execute a:command
+    call winrestview(view)
+endfunction
+
+nmap <Leader>py :call PreserveCursor("normal gggqG")<CR>
+" }}}
 
 " buffer operations {{{
 " --------------------------------------------------------------------------------
