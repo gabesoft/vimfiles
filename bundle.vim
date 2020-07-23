@@ -432,7 +432,7 @@ function! s:lightline_update()
 endfunction
 
 function! ReadonlyStatusLine()
-    return &readonly || &ft == 'agsv' ? 'RO' : ''
+    return &readonly || &ft == 'agsv' ? 'read-only' : ''
 endfunction
 
 function! FugitiveStatusLine()
