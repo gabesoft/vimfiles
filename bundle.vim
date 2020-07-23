@@ -432,13 +432,12 @@ function! s:lightline_update()
 endfunction
 
 function! ReadonlyStatusLine()
-    return &readonly ? '⭤' : ''
+    return &readonly ? 'RO' : ''
 endfunction
 
 function! FugitiveStatusLine()
     if exists('*fugitive#head') && (&ft == 'gitcommit' || &ft == 'fugitive')
-        let _ = fugitive#head()
-        return strlen(_) ? '⭠ '._ : ''
+        return fugitive#head()
     endif
     return ''
 endfunction
@@ -456,8 +455,7 @@ function! ModeStatusLine()
 endfunction
 
 function! RelativePathStatusLine()
-    return ('' != ReadonlyStatusLine() ? ReadonlyStatusLine() . ' ' : '') .
-                \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+    return (&ft == 'vimfiler' ? vimfiler#get_status_string() :
                 \  &ft == 'vimshell' ? vimshell#get_status_string() :
                 \  &ft == 'agsv' ? ags#get_status_string() :
                 \  &ft == 'agse' ? '' :
@@ -467,8 +465,7 @@ function! RelativePathStatusLine()
 endfunction
 
 function! FilenameStatusLine()
-    return ('' != ReadonlyStatusLine() ? ReadonlyStatusLine() . ' ' : '') .
-                \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+    return (&ft == 'vimfiler' ? vimfiler#get_status_string() :
                 \  &ft == 'vimshell' ? vimshell#get_status_string() :
                 \  &ft == 'agsv' ? ags#get_status_string() :
                 \  &ft == 'agse' ? '' :
@@ -486,7 +483,7 @@ function! AbsolutepathStatusLine()
 endfunction
 
 function! ModifiedStatusLine()
-    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : ''
 endfunction
 
 function! WinnrStatusLine()
