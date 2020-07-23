@@ -147,10 +147,11 @@ endif
 " colors and transparency {{{
 " --------------------------------------------------------------------------------
 try
-    set background=light
     if has('gui_running')
+        set background=dark
         colorscheme solarized8
     else
+        set background=light
         colorscheme solarized
     endif
 catch /E185:/

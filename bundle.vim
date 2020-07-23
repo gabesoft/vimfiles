@@ -371,17 +371,25 @@ let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
+function! s:get_lightline_colorscheme()
+    if &background ==# 'light'
+        return 'solarized_light'
+    else
+        return 'solarized_dark'
+    endif
+endfunction
+
 let g:lightline = {
-            \ 'colorscheme': 'solarized',
+            \ 'colorscheme': s:get_lightline_colorscheme(),
             \ 'mode_map': { 'c': 'NORMAL' },
             \ 'component': {
-            \   'lineinfo': '⭡ %3l:%-2v',
+            \   'lineinfo': '%3l:%-2v',
             \ },
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'fugitive', 'relativepath', 'anzu' ] ]
             \ },
             \ 'inactive': {
-            \   'left': [ [ 'absolutepath', 'winnum' ] ]
+            \   'left': [ [ 'winnum' ], [ 'relativepath' ]  ]
             \ },
             \ 'component_function' : {
             \   'modified'     : 'ModifiedStatusLine',
@@ -397,8 +405,8 @@ let g:lightline = {
             \   'mode'         : 'ModeStatusLine',
             \   'anzu'         : 'anzu#search_status'
             \ },
-            \ 'separator'    : { 'left': '', 'right': '' },
-            \ 'subseparator' : { 'left': '', 'right': '' }
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
             \ }
 
 augroup LightLineColorScheme
@@ -407,10 +415,16 @@ augroup LightLineColorScheme
 augroup END
 
 function! s:lightline_update()
-    let g:lightline.colorscheme = 'solarized'
-    call lightline#init()
-    call lightline#colorscheme()
-    call lightline#update()
+    if !exists('g:loaded_lightline')
+        return
+    endif
+    try
+        let g:lightline.colorscheme = s:get_lightline_colorscheme()
+        call lightline#init()
+        call lightline#colorscheme()
+        call lightline#update()
+    catch
+    endtry
 endfunction
 
 function! ReadonlyStatusLine()
