@@ -436,7 +436,7 @@ function! ReadonlyStatusLine()
 endfunction
 
 function! FugitiveStatusLine()
-    if exists('*fugitive#head') && &ft != 'nerdtree' && &ft != 'agsv'
+    if exists('*fugitive#head') && (&ft == 'gitcommit' || &ft == 'fugitive')
         let _ = fugitive#head()
         return strlen(_) ? '⭠ '._ : ''
     endif
