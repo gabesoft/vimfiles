@@ -381,12 +381,15 @@ endfunction
 
 let g:lightline = {
             \ 'colorscheme': s:get_lightline_colorscheme(),
-            \ 'mode_map': { 'c': 'NORMAL' },
+            \ 'mode_map': {
+            \     'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V': 'V-LINE', "\<C-v>": 'V-BLOCK',
+            \     'c': 'C', 's': 'S', 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'T'
+            \     },
             \ 'component': {
             \   'lineinfo': '%3l:%-2v',
             \ },
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'fugitive', 'relativepath', 'anzu' ] ]
+            \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'fugitive', 'filenameorrelativepath', 'anzu' ] ]
             \ },
             \ 'inactive': {
             \   'left': [ [ 'winnum' ], [ 'relativepath' ]  ]
@@ -397,7 +400,8 @@ let g:lightline = {
             \   'fugitive'     : 'FugitiveStatusLine',
             \   'filename'     : 'FilenameStatusLine',
             \   'absolutepath' : 'AbsolutepathStatusLine',
-            \   'relativepath' : 'RelativepathStatusLine',
+            \   'relativepath' : 'RelativePathStatusLine',
+            \   'filenameorrelativepath' : 'FilenameOrRelativePathStatusLine',
             \   'winnum'       : 'WinnrStatusLine',
             \   'fileformat'   : 'FileformatStatusLine',
             \   'filetype'     : 'FiletypeStatusLine',
@@ -451,7 +455,7 @@ function! ModeStatusLine()
                 \ winwidth(0) > 30 ? lightline#mode() : ''
 endfunction
 
-function! RelativepathStatusLine()
+function! RelativePathStatusLine()
     return ('' != ReadonlyStatusLine() ? ReadonlyStatusLine() . ' ' : '') .
                 \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
                 \  &ft == 'vimshell' ? vimshell#get_status_string() :
@@ -471,6 +475,10 @@ function! FilenameStatusLine()
                 \  &ft == 'nerdtree' ? '' :
                 \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
                 \ ('' != ModifiedStatusLine() ? ' ' . ModifiedStatusLine() : '')
+endfunction
+
+function! FilenameOrRelativePathStatusLine()
+    return winwidth(0) > 100 ? RelativePathStatusLine() : FilenameStatusLine()
 endfunction
 
 function! AbsolutepathStatusLine()
