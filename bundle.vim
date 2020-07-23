@@ -389,7 +389,7 @@ let g:lightline = {
             \   'lineinfo': '%3l:%-2v',
             \ },
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'fugitive', 'filenameorrelativepath', 'anzu' ] ]
+            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filenameorrelativepath', 'anzu' ], [ 'readonly' ] ]
             \ },
             \ 'inactive': {
             \   'left': [ [ 'winnum' ], [ 'relativepath' ]  ]
@@ -432,7 +432,7 @@ function! s:lightline_update()
 endfunction
 
 function! ReadonlyStatusLine()
-    return &readonly ? 'RO' : ''
+    return &readonly || &ft == 'agsv' ? 'RO' : ''
 endfunction
 
 function! FugitiveStatusLine()
@@ -458,7 +458,7 @@ function! RelativePathStatusLine()
     return (&ft == 'vimfiler' ? vimfiler#get_status_string() :
                 \  &ft == 'vimshell' ? vimshell#get_status_string() :
                 \  &ft == 'agsv' ? ags#get_status_string() :
-                \  &ft == 'agse' ? '' :
+                \  &ft == 'agse' ? ags#get_status_string() :
                 \  &ft == 'nerdtree' ? '' :
                 \ '' != expand('%:f') ? expand('%:f') : '[No Name]') .
                 \ ('' != ModifiedStatusLine() ? ' ' . ModifiedStatusLine() : '')
