@@ -465,7 +465,7 @@ function! RelativePathStatusLine()
                 \  &ft == 'vimshell' ? vimshell#get_status_string() :
                 \  &ft == 'agsv' ? ags#get_status_string() :
                 \  &ft == 'agse' ? ags#get_status_string() :
-                \  &ft == 'nerdtree' ? '' :
+                \  &ft == 'nerdtree' ? NERDTreeRootPath() :
                 \ '' != expand('%:f') ? expand('%:f') : '[No Name]') .
                 \ ('' != ModifiedStatusLine() ? ' ' . ModifiedStatusLine() : '')
 endfunction
@@ -475,9 +475,17 @@ function! FilenameStatusLine()
                 \  &ft == 'vimshell' ? vimshell#get_status_string() :
                 \  &ft == 'agsv' ? ags#get_status_string() :
                 \  &ft == 'agse' ? '' :
-                \  &ft == 'nerdtree' ? '' :
+                \  &ft == 'nerdtree' ? NERDTreeRootName() :
                 \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
                 \ ('' != ModifiedStatusLine() ? ' ' . ModifiedStatusLine() : '')
+endfunction
+
+function! NERDTreeRootPath()
+    return exists('b:NERDTree') ? b:NERDTree.root.path.str() : ''
+endfunction
+
+function! NERDTreeRootName()
+    return exists('b:NERDTree') ? fnamemodify(b:NERDTree.root.path.str(), ':t') : ''
 endfunction
 
 function! FilenameOrRelativePathStatusLine()

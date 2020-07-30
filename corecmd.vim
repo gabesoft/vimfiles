@@ -153,8 +153,8 @@ autocmd FocusGained,BufEnter,BufWinEnter * :silent checktime
 " Overwrite tab width settings for some languages {{{
 " The default tab settings are in vimrc
 " --------------------------------------------------------------------------------
-autocmd FileType coffee set tabstop=2 | set softtabstop=2 | set shiftwidth=2
-autocmd FileType templatehtml set tabstop=2 | set softtabstop=2 | set shiftwidth=2
+autocmd FileType coffee setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
+autocmd FileType templatehtml setlocal tabstop=2 | setlocal softtabstop=2 | setlocal shiftwidth=2
 " }}}
 
 " Keep clipboard contents on exit {{{
