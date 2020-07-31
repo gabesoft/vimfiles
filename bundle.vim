@@ -181,7 +181,7 @@ nnoremap <F1> :Helptags<CR>
 " --------------------------------------------------------------------------------
 let NERDTreeIgnore = ['\.pyc$', '\.rbc$', '\~$']
 let NERDTreeWinPos = 'right'
-let NERDTreeWinSize = 35
+let NERDTreeWinSize = 40
 let NERDTreeDirArrows = 1
 let NERDTreeShowLineNumbers = 1
 let NERDTreeShowHidden = 1
@@ -452,7 +452,6 @@ function! ModeStatusLine()
     let fname = expand('%:t')
     return fname == '__Tagbar__' ? 'Tagbar' :
                 \ fname == 'ControlP' ? 'CtrlP' :
-                \ fname =~ 'NERD_tree' ? 'NERDTree' :
                 \ &ft == 'vimfiler' ? 'VimFiler' :
                 \ &ft == 'vimshell' ? 'VimShell' :
                 \ &ft == 'agsv' ? 'AgsView' :
