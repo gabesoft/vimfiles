@@ -58,7 +58,7 @@ Plug 'junegunn/gv.vim'
 
 " ruby/rails
 Plug 'tpope/vim-rails'
-Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'nelstrom/vim-textobj-rubyblock' "ar, ir
 Plug 'gabesoft/vim-haml'
 
 " rust
@@ -74,16 +74,18 @@ Plug 'gabesoft/vim-java'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
 " text objects
-Plug 'glts/vim-textobj-comment'
-Plug 'Julian/vim-textobj-variable-segment'
-Plug 'kana/vim-niceblock'
+Plug 'glts/vim-textobj-comment' "ac, ic
+Plug 'Julian/vim-textobj-variable-segment' "av, iv
+Plug 'kana/vim-niceblock' "vI, vA
 Plug 'kana/vim-operator-user'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-entire' "ae, ie
+Plug 'kana/vim-textobj-function' "af, if
+Plug 'kana/vim-textobj-indent' "ai, ii
+Plug 'kana/vim-textobj-line' "al, il
 Plug 'kana/vim-textobj-user'
 Plug 'tpope/vim-surround'
 Plug 'haya14busa/vim-operator-flashy'
+Plug 'haya14busa/vim-textobj-function-syntax'
 
 " terminal
 Plug 'dag/vim-fish'
