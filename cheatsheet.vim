@@ -5,11 +5,14 @@
 " Determine which script set a particular option.
 "
 " To check which script set the file type last
-" verbose set ft ?
+" :verbose set ft ?
 "
 " To open the default filetype file run
-" e $VIMRUNTIME\filetype.vim
-" e $VIMRUNTIME\ftplugin
+" :e $VIMRUNTIME\filetype.vim
+" :e $VIMRUNTIME\ftplugin
+"
+" To find out which scripts have been loaded
+" :scriptnames
 
 " Function Keys: {{{
 " ------------------------------------------------------------------------------
