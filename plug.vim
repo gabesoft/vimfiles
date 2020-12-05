@@ -6,8 +6,8 @@ call plug#begin(expand('$VIMHOME/plugs'))
 " web development
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
 Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'groenewege/vim-less'
 Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'mustache/vim-mustache-handlebars'
@@ -45,7 +45,7 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-over'
 
 " autocomplete
-Plug 'zxqfl/tabnine-vim'
+Plug 'codota/tabnine-vim'
 
 " brace matching
 Plug 'tmhedberg/matchit'
@@ -113,5 +113,6 @@ Plug 'tpope/vim-commentary'
 " Plug 'kshenoy/vim-signature'
 " Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive \| npm install . -d' }
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()

@@ -1,6 +1,16 @@
 " Vim Cheat Sheet
 " ------------------------------------------------------------------------------
 
+" Settings Info: {{{
+" Determine which script set a particular option.
+"
+" To check which script set the file type last
+" verbose set ft ?
+"
+" To open the default filetype file run
+" e $VIMRUNTIME\filetype.vim
+" e $VIMRUNTIME\ftplugin
+
 " Function Keys: {{{
 " ------------------------------------------------------------------------------
 " <F1>  fuzzy search help
