@@ -337,9 +337,6 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 let g:UltiSnipsListSnippets = '<C-Q>'
 let g:UltiSnipsSnippetsDir = expand($VIMHOME) . '/snips'
 let g:UltiSnipsSnippetDirectories = [ expand($VIMHOME) . '/snips' ]
-
-autocmd FileType typescript.tsx UltiSnipsAddFiletypes javascript
-autocmd FileType typescript UltiSnipsAddFiletypes javascript
 " }}}
 
 " ArgTextObj - https://github.com/vim-scripts/argtextobj.vim {{{
