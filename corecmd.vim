@@ -195,11 +195,11 @@ autocmd FileType dustjs let b:match_words = '<:>,<\(\w\w*\):</\1,{:}'
 " }}}
 
 " Typescript settings {{{
-" - make vim-commentary work properly in typescript.tsx files
+" - make vim-commentary work properly in typescriptreact files
 " - use prettier for formatting
 " --------------------------------------------------------------------------------
-autocmd FileType typescript.tsx,typescriptreact setlocal commentstring=//\ %s
-autocmd FileType typescript,typescript.tsx,typescriptreact setlocal formatprg=npx\ prettier\ --config\ ./settings/prettierrc.js\ --parser\ typescript
+autocmd FileType typescriptreact setlocal commentstring=//\ %s
+autocmd FileType typescript,typescriptreact setlocal formatprg=npx\ prettier\ --config\ ./settings/prettierrc.js\ --parser\ typescript
 " }}}
 
 " Proto settings {{{
