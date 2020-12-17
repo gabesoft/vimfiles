@@ -21,7 +21,6 @@ Plug 'lifepillar/vim-solarized8'
 
 " cursor motion
 Plug 'easymotion/vim-easymotion'
-Plug 'justinmk/vim-sneak'
 
 " file system
 Plug 'justinmk/vim-dirvish'

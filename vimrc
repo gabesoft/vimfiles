@@ -124,7 +124,11 @@ set backup
 set backupskip=/tmp/*,/private/tmp/*"   "make vim able to edit crontab files
 
 if has('persistent_undo')
-    set undofile
+    " setting undofile causes undo to behave unexpectedly
+    " when pressing undo it undoes cursor movements as well
+    " causing multiple undo presses for one edit undo
+    set noundofile
+
     set undolevels=2000
     set undoreload=10000
 endif
