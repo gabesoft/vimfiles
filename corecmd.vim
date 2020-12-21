@@ -22,6 +22,7 @@ function! s:OnColorSchemeChange()
     highlight clear CursorLineNr    "remove highlight color from the current line number
     highlight Cursor guibg=#268BD2
     highlight iCursor guibg=#268BD2
+    doautocmd syntax                "re-load syntax
 endfunction
 " }}}
 
