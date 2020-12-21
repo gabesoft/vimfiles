@@ -106,12 +106,6 @@ inoremap <C-A-j> <ESC>:m+<CR>==gi
 inoremap <C-A-k> <ESC>:m-2<CR>==gi
 vnoremap <C-A-j> :m'>+<CR>gv=gv
 vnoremap <C-A-k> :m-2<CR>gv=gv
-
-" mac terminal specific
-if OSX() && !has('gui_running')
-    nnoremap j :m+<CR>==
-    nnoremap k :m-2<CR>==
-endif
 " }}}
 
 " prevent accidental undo in insert mode {{{
