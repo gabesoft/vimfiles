@@ -7,7 +7,6 @@ call plug#begin(expand('$VIMHOME/plugs'))
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'groenewege/vim-less'
 Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'mustache/vim-mustache-handlebars'
@@ -112,6 +111,11 @@ Plug 'tpope/vim-commentary'
 " Plug 'kshenoy/vim-signature'
 " Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive \| npm install . -d' }
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
+" no longer needed as it has been merged into the vim default configuration
 " Plug 'peitalin/vim-jsx-typescript'
+
+" was used because vim-jsx-typescript had some bugs but those seem to be fixed
+" Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
