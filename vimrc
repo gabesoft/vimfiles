@@ -18,11 +18,6 @@ return  (has('win16') || has('win32') || has('win64'))
 endfunction
 " }}}
 
-" Force loading python3
-" --------------------------------------------------------------------------------
-if has('python3')
-endif
-
 " enable syntax and filetype settings {{{
 " --------------------------------------------------------------------------------
 set nocompatible
@@ -449,6 +444,13 @@ set iskeyword-=-
 " --------------------------------------------------------------------------------
 if filereadable(expand("$VIMHOME/vimrc.local"))
     source $VIMHOME/vimrc.local
+endif
+" }}}
+
+" Force loading python3 {{{
+" Load python after vimrc.local runs in case it needs to set some paths
+" --------------------------------------------------------------------------------
+if has('python3')
 endif
 " }}}
 
