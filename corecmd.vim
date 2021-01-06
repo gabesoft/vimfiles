@@ -17,12 +17,21 @@ augroup ColorSchemeChange
 augroup END
 
 function! s:OnColorSchemeChange()
-    highlight clear SignColumn      "signColumn should match background
-    highlight clear LineNr          "lineNr matches background
-    highlight clear CursorLineNr    "remove highlight color from the current line number
+    "signColumn should match background
+    highlight clear SignColumn
+
+    "lineNr matches background
+    highlight clear LineNr
+
+    "remove highlight color from the current line number
+    highlight clear CursorLineNr
+
     highlight Cursor guibg=#268BD2
     highlight iCursor guibg=#268BD2
-    doautocmd syntax                "re-load syntax
+    highlight! link Flashy Search
+
+    "re-load syntax
+    doautocmd syntax
 endfunction
 " }}}
 
