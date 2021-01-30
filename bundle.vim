@@ -153,6 +153,7 @@ nnoremap <silent><Leader>fc :Commands<CR>
 nnoremap <silent><Leader>fo :BCommits<CR>
 nnoremap <silent><Leader>fm :Maps<CR>
 nnoremap <silent><Leader>ft :Filetypes<CR>
+nnoremap <silent><Leader>fw :Windows<CR>
 nnoremap <F1> :Helptags<CR>
 " }}}
 

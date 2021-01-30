@@ -200,7 +200,7 @@ endif
 " }}}
 
 " invisible characters and encoding {{{
-" use set sytax=whitespace to see al white space characters
+" use set sytax=whitespace to see all white space characters
 " --------------------------------------------------------------------------------
 set encoding=utf-8
 scriptencoding utf-8
@@ -223,6 +223,14 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+" }}}
+
+" spell check {{{
+" on by default
+" turn off with cos (from vim-unimpaired)
+" --------------------------------------------------------------------------------
+set spell
+set spelllang=en_us
 " }}}
 
 " number formats and shift round {{{
