@@ -229,7 +229,7 @@ set shiftwidth=4
 " on by default
 " turn off with cos (from vim-unimpaired)
 " --------------------------------------------------------------------------------
-set spell
+set nospell
 set spelllang=en_us
 " }}}
 
@@ -323,7 +323,7 @@ set nofoldenable
 set foldmethod=indent
 set foldlevel=2
 set foldnestmax=2
-set cursorline
+set nocursorline
 set nocursorcolumn
 set modelines=1
 set modeline

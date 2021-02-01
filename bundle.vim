@@ -11,8 +11,8 @@ let g:incsearch#auto_nohlsearch = 1
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-map n  <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
-map N  <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
+map n  :call <SID>perform_search_n()<CR>
+map N  :call <SID>perform_search_N()<CR>
 map *  <Plug>(asterisk-z*)<Plug>(incsearch-nohl)<Plug>(anzu-star)
 map g* <Plug>(asterisk-g*)<Plug>(incsearch-nohl)
 map #  <Plug>(asterisk-z#)<Plug>(incsearch-nohl)<Plug>(anzu-sharp)
@@ -37,6 +37,63 @@ function! s:config_fuzzyall(...) abort
                 \ }), get(a:, 1, {}))
 endfunction
 
+
+if has("gui_running")
+    highlight! link IncSearch ReplaceMode
+endif
+highlight default link SearchCurrent IncSearch
+
+function! s:perform_search_n()
+    call feedkeys("\<Plug>(incsearch-nohl)")
+    call feedkeys("\<Plug>(anzu-n-with-echo)")
+    call s:perform_search_start()
+endfunction
+
+function! s:perform_search_N()
+    call feedkeys("\<Plug>(incsearch-nohl)")
+    call feedkeys("\<Plug>(anzu-N-with-echo)")
+    call s:perform_search_start()
+endfunction
+
+function! s:perform_search_start()
+    augroup perform-search
+        autocmd!
+        autocmd CursorMoved * call s:highlight_current_match()
+    augroup END
+endfunction
+
+function! s:highlight_current_match_clear()
+    if exists("w:current_match_id")
+        call matchdelete(w:current_match_id)
+        unlet w:current_match_id
+    endif
+    if exists("w:current_match_id_cursor")
+        call matchdelete(w:current_match_id_cursor)
+        unlet w:current_match_id_cursor
+    endif
+endfunction
+
+function! s:highlight_current_match()
+    call s:highlight_current_match_clear()
+    let [bufnum, line_num, col_num, off] = getpos('.')
+    let query = @/
+    let query = substitute(query, '^\\<', '', '')
+    let query = substitute(query, '\\>$', '', '')
+    let pattern = '\m\%#\(\c' . query . '\m\)'
+    let w:current_match_id = matchadd("SearchCurrent", pattern, 50)
+    let w:current_match_id_cursor = matchadd("Cursor", '\v%#', 51)
+    redraw
+    augroup perform-search
+        autocmd!
+        autocmd CursorMoved * call s:highlight_current_match_clear()
+    augroup END
+endfunction
+
+augroup vim-incsearch
+    autocmd!
+    autocmd User IncSearchEnter call s:highlight_current_match_clear()
+augroup END
+
 noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
 noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
@@ -55,18 +112,20 @@ nnoremap <leader>ma :Bufferize map<CR>
 " }}}
 
 " Vim-Sneak {{{
+" no longer used
 " --------------------------------------------------------------------------------
-let g:sneak#s_next = 1
-let g:sneak#use_ic_scs = 1
+" let g:sneak#s_next = 1
+" let g:sneak#use_ic_scs = 1
 
-hi link Sneak Search
-hi link SneakLabel Label
-hi link SneakScope Incsearch
+" hi link Sneak Search
+" hi link SneakLabel Label
+" hi link SneakScope Incsearch
 " }}}
 
 " Vim-Peekaboo {{{
+" no longer used
 " --------------------------------------------------------------------------------
-let g:peekaboo_window = 'vertical botright 50new'
+" let g:peekaboo_window = 'vertical botright 50new'
 " }}}
 
 " Vim-Startify {{{

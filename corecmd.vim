@@ -30,6 +30,10 @@ function! s:OnColorSchemeChange()
     highlight iCursor guibg=#268BD2
     highlight! link Flashy Search
 
+    if has("gui_running")
+        highlight! link IncSearch ReplaceMode
+    endif
+
     "re-load syntax
     doautocmd syntax
 endfunction
@@ -196,6 +200,11 @@ function! s:CapitalizeFirstLetter()
 endfunction
 
 " autocmd InsertCharPre * call <SID>CapitalizeFirstLetter()
+" }}}
+
+" AGS settings {{{
+" --------------------------------------------------------------------------------
+autocmd FileType agsv,agse set nospell
 " }}}
 
 " Dust settings {{{
