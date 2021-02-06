@@ -375,6 +375,7 @@ nnoremap <Leader>aq :AgsQuit<CR>
 " --------------------------------------------------------------------------------
 let g:operator#flashy#flash_time = 200
 
+" Keep in sink with OnColorSchemeChange
 highlight! link Flashy Cursor
 
 map y <Plug>(operator-flashy)

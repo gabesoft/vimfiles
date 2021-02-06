@@ -28,7 +28,7 @@ function! s:OnColorSchemeChange()
 
     highlight Cursor guibg=#268BD2
     highlight iCursor guibg=#268BD2
-    highlight! link Flashy Search
+    highlight! link Flashy Cursor
 
     if has("gui_running")
         highlight! link IncSearch ReplaceMode
