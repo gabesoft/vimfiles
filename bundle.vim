@@ -375,7 +375,7 @@ nnoremap <Leader>aq :AgsQuit<CR>
 " --------------------------------------------------------------------------------
 let g:operator#flashy#flash_time = 200
 
-highlight! link Flashy Search
+highlight! link Flashy Cursor
 
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
