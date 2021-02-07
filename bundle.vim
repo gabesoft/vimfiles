@@ -13,9 +13,9 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 map n  :call <SID>perform_search_n()<CR>
 map N  :call <SID>perform_search_N()<CR>
-map *  <Plug>(asterisk-z*)<Plug>(incsearch-nohl)<Plug>(anzu-star)
+map *  :call <SID>perform_search_star()<CR>
 map g* <Plug>(asterisk-g*)<Plug>(incsearch-nohl)
-map #  <Plug>(asterisk-z#)<Plug>(incsearch-nohl)<Plug>(anzu-sharp)
+map #  :call <SID>perform_search_sharp()<CR>
 map g# <Plug>(asterisk-g#)<Plug>(incsearch-nohl)
 
 function! s:config_easyfuzzymotion(...) abort
@@ -52,6 +52,20 @@ endfunction
 function! s:perform_search_N()
     call feedkeys("\<Plug>(incsearch-nohl)")
     call feedkeys("\<Plug>(anzu-N-with-echo)")
+    call s:perform_search_start()
+endfunction
+
+function! s:perform_search_star()
+    call feedkeys("\<Plug>(asterisk-z*)")
+    call feedkeys("\<Plug>(incsearch-nohl)")
+    call feedkeys("\<Plug>(anzu-star)")
+    call s:perform_search_start()
+endfunction
+
+function! s:perform_search_sharp()
+    call feedkeys("\<Plug>(asterisk-z#)")
+    call feedkeys("\<Plug>(incsearch-nohl)")
+    call feedkeys("\<Plug>(anzu-sharp)")
     call s:perform_search_start()
 endfunction
 
