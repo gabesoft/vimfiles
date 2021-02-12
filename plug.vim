@@ -45,9 +45,11 @@ Plug 'osyo-manga/vim-over'
 " autocomplete
 Plug 'codota/tabnine-vim'
 
-" brace matching
+" brace matching and autoclose
 Plug 'tmhedberg/matchit'
 Plug 'Valloric/MatchTagAlways'
+Plug 'cohama/lexima.vim'
+
 
 " git
 Plug 'tpope/vim-rhubarb'

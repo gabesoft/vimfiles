@@ -247,7 +247,7 @@ set timeout
 set ttimeout
 " Time Vim will wait for successive Vim keycodes which are entered
 " manually by the user. This is only relevant if timeout is enabled.
-set timeoutlen=5000
+set timeoutlen=1000
 " Time vim will wait for different parts of a terminal key codes.
 " This should be a small value since the keycodes are sent by the
 " terminal all at once.
@@ -284,9 +284,13 @@ if has("gui_running")
     set guicursor=n-v-c:block-Cursor
     set guicursor+=i:ver20-iCursor
     set guicursor+=n-v-c:blinkon0
+    set guicursor+=o:hor50-Cursor-blinkon0
+    set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 endif
+" }}}
 
-" change cursor shape for insert and normal mode in iTerm2 with Tmux
+" change cursor shape for insert and normal mode in iTerm2 with Tmux {{{
+" --------------------------------------------------------------------------------
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -471,6 +475,5 @@ set secure
 " --------------------------------------------------------------------------------
 let html_no_rendering=1
 " }}}
-
 
 " vim:foldmethod=marker:foldlevel=0
