@@ -136,7 +136,7 @@ autocmd FileType crontab colorscheme vividchalk
 
 " Help settings {{{
 " --------------------------------------------------------------------------------
-autocmd FileType help setlocal nospell | setlocal number
+autocmd FileType help setlocal nospell | setlocal number | setlocal relativenumber
 " }}}
 
 " Auto save on text changed {{{

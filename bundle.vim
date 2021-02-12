@@ -70,6 +70,9 @@ function! s:perform_search_sharp()
 endfunction
 
 function! s:perform_search_start()
+    " expand any existing folds
+    call feedkeys("zv")
+
     augroup perform-search
         autocmd!
         autocmd CursorMoved * call s:highlight_current_match()
