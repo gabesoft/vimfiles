@@ -94,7 +94,6 @@ Plug 'gabesoft/vim-pager'
 
 Plug 'AndrewRadev/bufferize.vim'
 Plug 'duff/vim-scratch'
-Plug 'gabesoft/splitjoin.vim'
 Plug 'gabesoft/vim-twm'
 Plug 'gabesoft/vim-unimpaired'
 Plug 'gerw/vim-HiLinkTrace'
@@ -113,6 +112,7 @@ Plug 'tpope/vim-commentary'
 " Plug 'kshenoy/vim-signature'
 " Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive \| npm install . -d' }
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Plug 'gabesoft/splitjoin.vim'
 
 " no longer needed as it has been merged into the vim default configuration
 " Plug 'peitalin/vim-jsx-typescript'

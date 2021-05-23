@@ -9,6 +9,11 @@ xnoremap < <gv
 xnoremap > >gv
 " }}}
 
+" join lines {{{
+" --------------------------------------------------------------------------------
+nnoremap gJ Jx
+" }}}
+
 " allow the . to execute once for each line of a visual selection {{{
 " --------------------------------------------------------------------------------
 xnoremap . :normal .<CR>

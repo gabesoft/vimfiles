@@ -642,15 +642,6 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 0
 " }}}
 
-" SplitJoin {{{
-" --------------------------------------------------------------------------------
-let g:splitjoin_normalize_whitespace = 1
-let g:splitjoin_split_mapping = ''
-let g:splitjoin_join_mapping = ''
-nnoremap gJ :silent SplitjoinJoin<CR>
-nnoremap gS :silent SplitjoinSplit<CR>
-" }}}
-
 " MatchTagAlways {{{
 " --------------------------------------------------------------------------------
 let g:mta_use_matchparen_group = 0

@@ -8,3 +8,4 @@ plugin/*
 .vim
 init.vim
 Highlight test
+.DS_Store
