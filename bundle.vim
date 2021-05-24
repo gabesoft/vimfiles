@@ -145,6 +145,12 @@ nnoremap <leader>ma :Bufferize map<CR>
 " let g:peekaboo_window = 'vertical botright 50new'
 " }}}
 
+" cheat.sh-vim {{{
+" --------------------------------------------------------------------------------
+let g:CheatSheetFt='sh'
+let g:CheatSheetStayInOrigBuf=0
+" }}}
+
 " Vim-Startify {{{
 " --------------------------------------------------------------------------------
 let g:startify_change_to_dir = 0

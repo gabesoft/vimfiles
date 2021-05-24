@@ -91,6 +91,7 @@ Plug 'haya14busa/vim-textobj-function-syntax'
 Plug 'dag/vim-fish'
 Plug 'ericpruitt/tmux.vim'
 Plug 'gabesoft/vim-pager'
+Plug 'dbeniamine/cheat.sh-vim'
 
 Plug 'AndrewRadev/bufferize.vim'
 Plug 'duff/vim-scratch'
