@@ -37,11 +37,12 @@ function! s:config_fuzzyall(...) abort
                 \ }), get(a:, 1, {}))
 endfunction
 
+highlight default link SearchCurrent Cursor
 
 if has("gui_running")
-    highlight! link IncSearch ReplaceMode
+    highlight! link IncSearch Cursor
+    highlight! link SearchCurrent Cursor
 endif
-highlight default link SearchCurrent IncSearch
 
 function! s:perform_search_n()
     call feedkeys("\<Plug>(incsearch-nohl)")
@@ -441,6 +442,15 @@ nmap <Leader>tC :Tabularize /^[^:]*\zs:/r0c0l0<CR>
 vmap <Leader>tC :Tabularize /^[^:]*\zs:/r0c0l0<CR>gv
 nmap <Leader>t/ :Tabularize /,\zs<CR>
 vmap <Leader>t/ :Tabularize /,\zs<CR>gv
+" }}}
+
+" Nord {{{
+" --------------------------------------------------------------------------------
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold_vertical_split_line = 1
+let g:nord_italic = 1
+let g:nord_bold = 1
+let g:nord_italic_comments = 1
 " }}}
 
 " Lightline {{{

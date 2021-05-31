@@ -17,6 +17,9 @@ Plug 'gabesoft/vim-templatehtml'
 " colorscheme
 Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'rakr/vim-one'
 
 " cursor motion
 Plug 'easymotion/vim-easymotion'

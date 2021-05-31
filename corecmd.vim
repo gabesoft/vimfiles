@@ -29,10 +29,8 @@ function! s:OnColorSchemeChange()
     highlight Cursor guibg=#268BD2
     highlight iCursor guibg=#268BD2
     highlight! link Flashy Cursor
-
-    if has("gui_running")
-        highlight! link IncSearch ReplaceMode
-    endif
+    highlight! link IncSearch Cursor
+    highlight! link SearchCurrent Cursor
 
     "re-load syntax
     doautocmd syntax
@@ -131,7 +129,6 @@ autocmd InsertLeave * :set relativenumber
 " Crontab settings {{{
 " --------------------------------------------------------------------------------
 autocmd FileType crontab set nobackup nowritebackup
-autocmd FileType crontab colorscheme vividchalk
 " }}}
 
 " Help settings {{{

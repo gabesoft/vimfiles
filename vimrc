@@ -150,8 +150,8 @@ try
         set background=dark
         colorscheme solarized8
     else
-        set background=light
-        colorscheme solarized
+        set background=dark
+        colorscheme nord
     endif
 catch /E185:/
     colorscheme default
