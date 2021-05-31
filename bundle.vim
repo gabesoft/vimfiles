@@ -448,9 +448,9 @@ vmap <Leader>t/ :Tabularize /,\zs<CR>gv
 " --------------------------------------------------------------------------------
 let g:nord_cursor_line_number_background = 1
 let g:nord_bold_vertical_split_line = 1
-let g:nord_italic = 1
-let g:nord_bold = 1
-let g:nord_italic_comments = 1
+if has("gui_running")
+    let g:nord_italic_comments = 1
+endif
 " }}}
 
 " Lightline {{{
@@ -463,10 +463,13 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
 function! s:get_lightline_colorscheme()
-    if &background ==# 'light'
-        return 'solarized_light'
-    else
-        return 'solarized_dark'
+    let current_scheme = get(g:, 'colors_name', 'solarized')
+    if current_scheme =~ "solarized" || !has("gui_running")
+        if &background ==# 'light'
+            return 'solarized_light'
+        else
+            return 'solarized_dark'
+        endif
     endif
 endfunction
 
