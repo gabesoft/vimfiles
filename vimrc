@@ -145,39 +145,36 @@ endif
 
 " colors and transparency {{{
 " --------------------------------------------------------------------------------
-try
-    if has('gui_running')
-        set background=dark
-        colorscheme solarized8
-    else
-        set background=dark
-        colorscheme nord
-    endif
-catch /E185:/
-    colorscheme default
-endtry
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold_vertical_split_line = 1
 
 if has('gui_running')
     let g:solarized_termcolors=256
     let g:solarized_termtrans=0
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
+
+    set background=dark
+    colorscheme solarized8
 else
     let g:solarized_termcolors=16
     let g:solarized_termtrans=1
     let g:solarized_contrast="high"
     let g:solarized_visibility="high"
 
-    if $TERM_PROGRAM == 'Apple_Terminal'
-        let g:solarized_termcolors=&t_Co
+    if exists('$TERM_THEME') && $TERM_THEME == 'solarized_light'
+        set background=light
+        colorscheme solarized8
+    endif
 
-        if exists('$TERM_THEME') && $TERM_THEME == 'solarized_light'
-            set background=light
-        endif
+    if exists('$TERM_THEME') && $TERM_THEME == 'solarized_dark'
+        set background=dark
+        colorscheme solarized8
+    endif
 
-        if g:colors_name == 'solarized' && &background == 'dark'
-            hi Visual term=reverse cterm=reverse ctermfg=10 ctermbg=7
-        endif
+    if exists('$TERM_THEME') && $TERM_THEME == 'nord'
+        set background=dark
+        colorscheme nord
     endif
 endif
 " }}}
