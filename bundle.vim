@@ -470,6 +470,8 @@ function! s:get_lightline_colorscheme()
         else
             return 'solarized_dark'
         endif
+    else
+        return current_scheme
     endif
 endfunction
 
@@ -510,6 +512,7 @@ let g:lightline = {
 augroup LightLineColorScheme
     autocmd!
     autocmd ColorScheme * call s:lightline_update()
+    autocmd VimEnter * call s:lightline_update()
 augroup END
 
 function! s:lightline_update()
