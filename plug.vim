@@ -15,11 +15,14 @@ Plug 'chr4/nginx.vim'
 Plug 'gabesoft/vim-templatehtml'
 
 " colorscheme
+" see more at https://colorswat.ch/vim/
 Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
+Plug 'junegunn/seoul256.vim'
 
 " cursor motion
 Plug 'easymotion/vim-easymotion'

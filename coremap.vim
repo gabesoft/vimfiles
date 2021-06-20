@@ -158,6 +158,7 @@ nnoremap <F7> :%!python -m json.tool<CR>''zz<CR>
 " }}}
 
 " F9: output all highlight groups {{{
+" See also :hi or https://github.com/cocopon/colorswatch.vim
 " --------------------------------------------------------------------------------
 " nnoremap <F9> :so $VIMRUNTIME/syntax/hitest.vim<CR>
 " }}}
