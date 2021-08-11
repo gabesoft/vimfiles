@@ -23,6 +23,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/seoul256.vim'
+Plug 'mhartington/oceanic-next'
 
 " cursor motion
 Plug 'easymotion/vim-easymotion'
