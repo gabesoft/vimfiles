@@ -7,6 +7,7 @@ call plug#begin(expand('$VIMHOME/plugs'))
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'groenewege/vim-less'
 Plug 'jimmyhchan/dustjs.vim', { 'do': 'rm -rfv snippets' }
 Plug 'mustache/vim-mustache-handlebars'
