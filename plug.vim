@@ -52,6 +52,7 @@ Plug 'osyo-manga/vim-over'
 
 " autocomplete
 Plug 'codota/tabnine-vim'
+Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
 
 " brace matching and autoclose
 Plug 'tmhedberg/matchit'
