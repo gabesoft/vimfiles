@@ -57,8 +57,6 @@ Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
 " brace matching and autoclose
 Plug 'tmhedberg/matchit'
 Plug 'Valloric/MatchTagAlways'
-Plug 'cohama/lexima.vim'
-
 
 " git
 Plug 'tpope/vim-rhubarb'
@@ -123,6 +121,7 @@ Plug 'tpope/vim-commentary'
 " Plug 'maksimr/vim-jsbeautify', { 'do': 'git submodule update --init --recursive \| npm install . -d' }
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Plug 'gabesoft/splitjoin.vim'
+" Plug 'cohama/lexima.vim'
 
 " no longer needed as it has been merged into the vim default configuration
 " Plug 'peitalin/vim-jsx-typescript'
