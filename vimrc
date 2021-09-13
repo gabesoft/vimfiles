@@ -187,6 +187,7 @@ set linebreak
 set nowrap
 set backspace=indent,eol,start
 set cpoptions-=m
+set cinoptions=(s,=l1
 " }}}
 
 " output encoding {{{
