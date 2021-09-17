@@ -36,9 +36,6 @@ Plug 'scrooloose/nerdtree'
 " snippets
 Plug 'SirVer/ultisnips'
 
-" multiple cursors
-Plug 'terryma/vim-multiple-cursors'
-
 " search
 Plug 'gabesoft/vim-ags'
 Plug 'haya14busa/incsearch-easymotion.vim'
@@ -51,8 +48,8 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-over'
 
 " autocomplete
-Plug 'codota/tabnine-vim'
 Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'codota/tabnine-vim'
 
 " brace matching and autoclose
 Plug 'tmhedberg/matchit'
@@ -122,6 +119,8 @@ Plug 'tpope/vim-commentary'
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Plug 'gabesoft/splitjoin.vim'
 " Plug 'cohama/lexima.vim'
+" Plug 'terryma/vim-multiple-cursors'
+
 
 " no longer needed as it has been merged into the vim default configuration
 " Plug 'peitalin/vim-jsx-typescript'
