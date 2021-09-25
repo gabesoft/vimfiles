@@ -342,14 +342,16 @@ let g:surround_indent = 1
 
 " YouCompleteMe/TabNine {{{
 " --------------------------------------------------------------------------------
-let g:acp_enableAtStartup = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_key_detailed_diagnostics = ''
+let g:ycm_auto_hover = ''
 let g:ycm_semantic_triggers =  {
             \ 'css'  : ['    ', '@', ':',  ': ', '!'],
             \ 'scss' : ['    ', '@', ':',  ': ', '!']
             \ }
+
+nmap <leader>d <plug>(YCMHover)
 " }}}
 
 " Vim-Over - https://github.com/osyo-manga/vim-over {{{
