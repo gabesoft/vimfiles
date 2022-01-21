@@ -14,6 +14,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'briancollins/vim-jst'
 Plug 'chr4/nginx.vim'
 Plug 'gabesoft/vim-templatehtml'
+Plug 'hhvm/vim-hack'
 
 " colorscheme
 " see more at https://colorswat.ch/vim/
