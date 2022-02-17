@@ -187,7 +187,7 @@ let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Title'],
-  \ 'fg+':     ['fg', 'Statement', 'Special', 'Normal'],
+  \ 'fg+':     ['fg', 'Error', 'Special', 'Normal'],
   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
   \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
