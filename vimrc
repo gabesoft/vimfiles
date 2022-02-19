@@ -61,7 +61,8 @@ if has("gui_running")
         set guifont=Monaco:h10:cANSI
     elseif OSX()
         " set guifont=iosevka:h14,Source\ Code\ Pro:h14
-        set guifont=JetBrainsMono-Regular:h12
+        " set guifont=JetBrainsMono-Regular:h12
+        set guifont=MonoLisa\ Nerd\ Font:h13
     else
         " set guifont=iosevka\ 12,Camingo\ Code\ 12
         set guifont=JetBrains\ Mono\ 11
