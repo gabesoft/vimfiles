@@ -92,6 +92,9 @@ Plug 'tpope/vim-surround'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'haya14busa/vim-textobj-function-syntax'
 
+" configuration
+Plug 'editorconfig/editorconfig-vim'
+
 " terminal
 Plug 'dag/vim-fish'
 Plug 'ericpruitt/tmux.vim'
