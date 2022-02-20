@@ -177,6 +177,8 @@ else
         set background=dark
         colorscheme nord
     endif
+
+    highlight Comment cterm=italic ctermfg=013
 endif
 " }}}
 
