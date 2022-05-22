@@ -548,7 +548,7 @@ endfunction
 
 function! FugitiveStatusLine()
     if exists('*fugitive#head') && (&ft == 'gitcommit' || &ft == 'fugitive')
-        return fugitive#head()
+        return FugitiveHead()
     endif
     return ''
 endfunction
