@@ -20,7 +20,7 @@ Plug 'hhvm/vim-hack'
 " see more at https://colorswat.ch/vim/
 Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
-Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'main' }
 Plug 'cocopon/iceberg.vim'
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
@@ -80,7 +80,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 
 " text objects
 Plug 'glts/vim-textobj-comment' "ac, ic
-Plug 'Julian/vim-textobj-variable-segment' "av, iv
+Plug 'Julian/vim-textobj-variable-segment', { 'branch': 'main' } "av, iv
 Plug 'kana/vim-niceblock' "vI, vA
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire' "ae, ie
