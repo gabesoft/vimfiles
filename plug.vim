@@ -75,8 +75,11 @@ Plug 'derekwyatt/vim-scala'
 " java
 Plug 'gabesoft/vim-java'
 
-"groovy
+" groovy
 Plug 'martinda/Jenkinsfile-vim-syntax'
+
+" kotlin
+Plug 'udalov/kotlin-vim'
 
 " text objects
 Plug 'glts/vim-textobj-comment' "ac, ic
