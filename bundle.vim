@@ -329,6 +329,11 @@ let g:EasyMotion_off_screen_search = 0
 nnoremap <F10> :Gcd<CR>:pwd<CR>
 " }}}
 
+" Rhubarb {{{
+" --------------------------------------------------------------------------------
+let g:github_enterprise_urls = ['https://slack-github.com']
+"  }}}
+
 " Surround - https://github.com/tpope/vim-surround {{{
 " --------------------------------------------------------------------------------
 let g:surround_{char2nr('-')} = "<% \r %>"
