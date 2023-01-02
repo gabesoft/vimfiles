@@ -158,7 +158,7 @@ autocmd InsertLeave,TextChanged,TextChangedI * call <SID>AutoSave()
 
 " Autoread (works with set autoread) {{{
 " --------------------------------------------------------------------------------
-autocmd FocusGained,BufEnter,BufWinEnter * :silent checktime
+autocmd FocusGained,BufEnter,BufWinEnter * :silent! checktime
 " }}}
 
 " Overwrite tab width settings for some languages {{{
