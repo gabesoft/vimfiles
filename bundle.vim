@@ -359,6 +359,19 @@ let g:ycm_semantic_triggers =  {
 nmap <leader>d <plug>(YCMHover)
 " }}}
 
+" Deoplete + TabNine {{{
+" --------------------------------------------------------------------------------
+let g:deoplete#enable_at_startup = 1
+
+call deoplete#custom#var('tabnine', {
+\ 'line_limit': 1500,
+\ 'max_num_results': 20,
+\ })
+
+" Complete via tab
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" }}}
+
 " Vim-Over - https://github.com/osyo-manga/vim-over {{{
 " --------------------------------------------------------------------------------
 let g:over_enable_auto_nohlsearch = 1

@@ -49,8 +49,18 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-over'
 
 " autocomplete
-Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
-Plug 'codota/tabnine-vim'
+" Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
+" Plug 'codota/tabnine-vim'
+
+" autocomplete via deoplete
+" pynvim must be installed as below
+" > pip3 install pynvim
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 " brace matching and autoclose
 Plug 'tmhedberg/matchit'
