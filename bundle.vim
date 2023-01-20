@@ -225,6 +225,12 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
+" Use case insensitive search for Files and GFiles
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['-i']}, <bang>0)
+command! -bang -nargs=? -complete=dir GFiles
+    \ call fzf#vim#gitfiles(<q-args>, {'options': ['-i']}, <bang>0)
+
 nnoremap <silent><Leader>ff :Files<CR>
 nnoremap <silent><Leader>fg :GFiles<CR>
 nnoremap <silent><Leader>fb :Buffers<CR>
@@ -361,15 +367,15 @@ nmap <leader>d <plug>(YCMHover)
 
 " Deoplete + TabNine {{{
 " --------------------------------------------------------------------------------
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
-call deoplete#custom#var('tabnine', {
-\ 'line_limit': 1500,
-\ 'max_num_results': 20,
-\ })
+" call deoplete#custom#var('tabnine', {
+" \ 'line_limit': 1500,
+" \ 'max_num_results': 20,
+" \ })
 
 " Complete via tab
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " }}}
 
 " Vim-Over - https://github.com/osyo-manga/vim-over {{{
@@ -681,6 +687,27 @@ let g:indentLine_fileTypeExclude = [ 'text', 'gitcommit', 'agsv', 'agse' ]
 "let g:solarized_termtrans=1
 "let g:solarized_contrast="normal"
 "let g:solarized_visibility="normal"
+" }}}
+
+" NeoSolarized {{{
+" --------------------------------------------------------------------------------
+" Default value is "normal", Setting this option to "high" or "low" does use the
+" same Solarized palette but simply shifts some values up or down in order to
+" expand or compress the tonal range displayed.
+let g:neosolarized_contrast = "high"
+
+" Special characters such as trailing whitespace, tabs, newlines, when displayed
+" using ":set list" can be set to one of three levels depending on your needs.
+" Default value is "normal". Provide "high" and "low" options.
+let g:neosolarized_visibility = "high"
+
+" I make vertSplitBar a transparent background color. If you like the origin
+" solarized vertSplitBar style more, set this value to 0.
+let g:neosolarized_vertSplitBgTrans = 1
+
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 1
 " }}}
 
 " Vim-Rails - https://github.com/tpope/vim-rail://github.com/tpope/vim-rails {{{

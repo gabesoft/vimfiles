@@ -5,6 +5,7 @@ call plug#begin(expand('$VIMHOME/plugs'))
 
 " web development
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -26,6 +27,7 @@ Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/seoul256.vim'
 Plug 'mhartington/oceanic-next'
+Plug 'overcache/NeoSolarized'
 
 " cursor motion
 Plug 'easymotion/vim-easymotion'
@@ -49,8 +51,8 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-over'
 
 " autocomplete
-" Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
-" Plug 'codota/tabnine-vim'
+Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'codota/tabnine-vim'
 
 " autocomplete via deoplete
 " pynvim must be installed as below
@@ -58,8 +60,6 @@ Plug 'osyo-manga/vim-over'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
 Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 " brace matching and autoclose

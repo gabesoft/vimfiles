@@ -62,3 +62,4 @@ Abolish {,}seciton {,}section
 Abolish {,}clipaord{,} {,}clipboard{,}
 Abolish {,}sholud{,} {,}should{,}
 Abolish {,}lenght{,} {,}length{,}
+Abolish funciton function
