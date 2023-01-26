@@ -38,7 +38,7 @@ vnoremap K <nop>
 
 " close all buffers and quit vim {{{
 " --------------------------------------------------------------------------------
-nmap <Leader>xa :xa<CR>
+nmap <Leader>q :xa<CR>
 " }}}
 
 " Keep the cursor position after indentation {{{
