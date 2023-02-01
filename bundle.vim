@@ -303,10 +303,10 @@ map <leader>b <plug>(easymotion-b)
 map <leader>w <plug>(easymotion-w)
 map <leader>j <plug>(easymotion-j)
 map <leader>k <plug>(easymotion-k)
-map f <plug>(easymotion-f)
-map F <plug>(easymotion-F)
-map t <plug>(easymotion-t)
-map T <plug>(easymotion-T)
+map f <plug>(easymotion-fl)
+map F <plug>(easymotion-Fl)
+map t <plug>(easymotion-tl)
+map T <plug>(easymotion-Tl)
 
 " }}}
 
