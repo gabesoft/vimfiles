@@ -18,16 +18,6 @@ map g* <Plug>(asterisk-g*)<Plug>(incsearch-nohl)
 map #  :call <SID>perform_search_sharp()<CR>
 map g# <Plug>(asterisk-g#)<Plug>(incsearch-nohl)
 
-function! s:config_easyfuzzymotion(...) abort
-    return extend(copy({
-                \   'converters': [incsearch#config#fuzzy#converter()],
-                \   'modules': [incsearch#config#easymotion#module()],
-                \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-                \   'is_expr': 0,
-                \   'is_stay': 1
-                \ }), get(a:, 1, {}))
-endfunction
-
 function! s:config_fuzzyall(...) abort
     return extend(copy({
                 \   'converters': [
@@ -115,7 +105,6 @@ augroup END
 noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
 noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
 noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
-noremap <silent><expr> <leader><leader>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 augroup vim-anzu
   autocmd!
@@ -303,25 +292,7 @@ let g:javascript_plugin_jsdoc = 0
 let g:javascript_plugin_ngdoc = 0
 " }}}
 
-" EasyMotion - https://github.com/Lokaltog/vim-easymotion {{{
-"   easymotion leader = <Leader><Leader>
-"   <Leader>f{char}      | Find {char} to the right. See |f|.
-"   <Leader>F{char}      | Find {char} to the left. See |F|.
-"   <Leader>t{char}      | Till before the {char} to the right. See |t|.
-"   <Leader>T{char}      | Till after the {char} to the left. See |T|.
-"   <Leader>w            | Beginning of word forward. See |w|.
-"   <Leader>W            | Beginning of WORD forward. See |W|.
-"   <Leader>b            | Beginning of word backward. See |b|.
-"   <Leader>B            | Beginning of WORD backward. See |B|.
-"   <Leader>e            | End of word forward. See |e|.
-"   <Leader>E            | End of WORD forward. See |E|.
-"   <Leader>ge           | End of word backward. See |ge|.
-"   <Leader>gE           | End of WORD backward. See |gE|.
-"   <Leader>j            | Line downward. See |j|.
-"   <Leader>k            | Line upward. See |k|.
-"   <Leader>n            | Jump to latest "/" or "?" forward. See |n|.
-"   <Leader>N            | Jump to latest "/" or "?" backward. See |N|.
-"   <Leader>s            | Find(Search) {char} forward and backward.
+" EasyMotion {{{
 " --------------------------------------------------------------------------------
 let g:EasyMotion_keys = 'etuhonaspgcrlmkwjvqzbxyf'
 let g:EasyMotion_smartcase = 1

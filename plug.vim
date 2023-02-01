@@ -41,7 +41,6 @@ Plug 'SirVer/ultisnips'
 
 " search
 Plug 'gabesoft/vim-ags'
-Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
