@@ -323,9 +323,20 @@ let g:javascript_plugin_ngdoc = 0
 "   <Leader>N            | Jump to latest "/" or "?" backward. See |N|.
 "   <Leader>s            | Find(Search) {char} forward and backward.
 " --------------------------------------------------------------------------------
-let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz,.ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let g:EasyMotion_keys = 'etuhonaspgcrlmkwjvqzbxyf'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_off_screen_search = 0
+let g:EasyMotion_do_mapping = 0
+
+map <leader>b <plug>(easymotion-b)
+map <leader>w <plug>(easymotion-w)
+map <leader>j <plug>(easymotion-j)
+map <leader>k <plug>(easymotion-k)
+map f <plug>(easymotion-f)
+map F <plug>(easymotion-F)
+map t <plug>(easymotion-t)
+map T <plug>(easymotion-T)
+
 " }}}
 
 " Fugitive - https://github.com/tpope/vim-fugitive {{{

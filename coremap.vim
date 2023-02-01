@@ -66,14 +66,6 @@ endfunction
 nmap <Leader>py :call PreserveCursor("normal gggqG")<CR>
 " }}}
 
-" buffer operations {{{
-" --------------------------------------------------------------------------------
-noremap <Leader>bn :bnext<CR>
-noremap <Leader>bp :bprev<CR>
-noremap <Leader>bd :bd<CR>
-noremap <Leader>bw :w<CR>
-" }}}
-
 " indentation {{{
 " --------------------------------------------------------------------------------
 nnoremap > >>

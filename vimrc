@@ -149,36 +149,18 @@ endif
 let g:nord_cursor_line_number_background = 1
 let g:nord_bold_vertical_split_line = 1
 
+set background=dark
+
 if has('gui_running')
     let g:solarized_termcolors=256
     let g:solarized_termtrans=0
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
 
-    set background=dark
     colorscheme solarized8
 else
-    let g:solarized_termcolors=16
-    let g:solarized_termtrans=1
-    let g:solarized_contrast="high"
-    let g:solarized_visibility="high"
-
-    if exists('$TERM_THEME') && $TERM_THEME == 'solarized_light'
-        set background=light
-        colorscheme solarized8
-    endif
-
-    if exists('$TERM_THEME') && $TERM_THEME == 'solarized_dark'
-        set background=dark
-        colorscheme solarized8
-    endif
-
-    if exists('$TERM_THEME') && $TERM_THEME == 'nord'
-        set background=dark
-        colorscheme nord
-    endif
-
-    highlight Comment cterm=italic ctermfg=013
+    set termguicolors
+    colorscheme NeoSolarized
 endif
 " }}}
 
