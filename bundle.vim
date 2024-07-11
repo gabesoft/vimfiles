@@ -499,7 +499,7 @@ let g:lightline = {
             \   'lineinfo': '%3l:%-2v',
             \ },
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filenameorrelativepath', 'anzu' ], [ 'readonly' ] ]
+            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'anzu' ], [ 'readonly' ] ]
             \ },
             \ 'inactive': {
             \   'left': [ [ 'winnum' ], [ 'relativepath' ]  ]

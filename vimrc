@@ -160,7 +160,7 @@ if has('gui_running')
     colorscheme solarized8
 else
     set termguicolors
-    colorscheme NeoSolarized
+    colorscheme Nord
 endif
 " }}}
 

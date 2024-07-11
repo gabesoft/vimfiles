@@ -64,6 +64,7 @@ Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 " brace matching and autoclose
 Plug 'tmhedberg/matchit'
 Plug 'Valloric/MatchTagAlways'
+Plug 'jiangmiao/auto-pairs'
 
 " git
 Plug 'tpope/vim-rhubarb'

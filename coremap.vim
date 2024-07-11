@@ -29,13 +29,6 @@ xnoremap $ $h
 " nmap <Leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
 " }}}
 
-" Prevent default behavior for some keys {{{
-" --------------------------------------------------------------------------------
-"  Manual key
-nnoremap K <nop>
-vnoremap K <nop>
-" }}}
-
 " close all buffers and quit vim {{{
 " --------------------------------------------------------------------------------
 nmap <Leader>q :xa<CR>
@@ -63,7 +56,7 @@ function! PreserveCursor(command)
     call winrestview(view)
 endfunction
 
-nmap <Leader>py :call PreserveCursor("normal gggqG")<CR>
+nmap <Leader>i :call PreserveCursor("normal gggqG")<CR>
 " }}}
 
 " indentation {{{
