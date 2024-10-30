@@ -49,9 +49,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-over'
 
-" autocomplete
-Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
-Plug 'codota/tabnine-vim'
+" autocomplete (disabled due to install issues)
+" Plug 'tabnine/YouCompleteMe', { 'do': './install.py --all' }
+" Plug 'codota/tabnine-vim'
 
 " autocomplete via deoplete
 " pynvim must be installed as below
